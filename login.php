@@ -7,7 +7,7 @@
 <?php
     if(isset($_POST["submit"]))
     { 
-        $conn = new mysqli("127.0.0.1:3306", "u14_gXTHhvqGZN", "W=kq.QZa+JAfxXL2gNzaS7Qb", "s14_main");
+        $conn = new mysqli("127.0.0.1:3306", "u14_gXTHhvqGZN", "W=kq.QZa+JAfxXL2gNzaS7Qb");
 
         if($conn->connect_error)
         {
