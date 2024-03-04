@@ -10,6 +10,11 @@ if (!$conn) {
 // Add User
 function add_user($name, $email, $nic, $password) {
     global $conn;
+
+    if(is_email_exists($email)){
+        return;
+    }
+
     $password_hash = password_hash($password, PASSWORD_BCRYPT);
     //bcrypt is designed to resist brute-force and rainbow table attacks.
 
@@ -94,4 +99,25 @@ function is_email_exists($email) {
 
     $count = mysqli_fetch_row($result)[0];
     return $count > 0;
+}
+
+function is_password_correct($email, $enteredPassword) {
+    global $conn;
+    $email = mysqli_real_escape_string($conn, $email);
+
+    $sql = "SELECT password FROM users WHERE email = '$email'";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+        $row = mysqli_fetch_assoc($result);
+
+        // we can use password_verify function to check if saved password matches the hashed password
+        if ($row && password_verify($enteredPassword, $row['password'])) {
+            return true; 
+        } else {
+            return false; 
+        }
+    } else {
+        die("Error checking password: " . mysqli_error($conn));
+    }
 }

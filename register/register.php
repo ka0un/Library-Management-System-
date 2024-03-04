@@ -44,31 +44,32 @@
                 }
 
             }else{
-                
+
                 add_user($name, $email, $nic, $password);
+                
             }
 
         }
 
         ?>
-        
+
         <form action="register.php" method="post" id="registrationForm">
-            <div class="name">
+            <div class="register-element">
                 <input type="text" name="name" placeholder="Full Name:" required>
             </div>
-            <div class="email">
+            <div class="register-element">
                 <input type="email" name="email" placeholder="Email:" required>
             </div>
-            <div class="nic">
+            <div class="register-element">
                 <input type="text" name="nic" placeholder="Natinal ID:" required>
             </div>
-            <div class="password">
+            <div class="register-element">
                 <input type="password" name="password" placeholder="Password:" required>
             </div>
-            <div class="password">
+            <div class="register-element">
                 <input type="text" name="repeate_password" placeholder="Repeate Password:" required>
             </div>
-            <div class="submit">
+            <div class="register-button">
                 <input type="submit" name="submit" value="Submit">
             </div>
         </form>
