@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION["user"])){
+    header("Location: /index.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,6 +53,8 @@
             }else{
 
                 add_user($name, $email, $nic, $password);
+                header("Location: login.php");
+                die();
                 
             }
 

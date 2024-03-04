@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION["user"])){
+    header("Location: /index.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +19,7 @@
 
 include(__DIR__ . '/../users/users_functions.php');
 
-if(isset($_POST["submit"])){
+if(isset($_POST["login"])){
 
     $email = $_POST["email"];
     $password = $_POST["password"];
@@ -31,15 +38,23 @@ if(isset($_POST["submit"])){
     }else{
 
         if(!is_email_exists($email)){
-            echo "<b> You Havent been registered yet! </b>";
-            return;
+
+            echo "You Havent been registered yet!";
+            
+        }else{
+
+            if (is_password_correct($email, $password)){
+                session_start();
+                $_SESSION["user"] = "yes";
+                header("Location: /index.php");
+                die();
+            }else{
+                echo "Email or Password is Incorrect!";
+            }
+
         }
 
-        if (is_password_correct($email, $password)){
-            header("Location : index.php");
-        }else{
-            echo "<b> Email or Password is Incorrect! </b>";
-        }
+        
         
     }
 
@@ -57,6 +72,8 @@ if(isset($_POST["submit"])){
                 <input type="submit" value="Login" name="login">
             </div>
         </form>
+        <br>
+            <a href="register.php">register</a>
     </div>
 </body>
 </html>
