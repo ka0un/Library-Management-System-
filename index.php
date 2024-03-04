@@ -13,5 +13,6 @@ if(!isset($_SESSION["user"])){
 </head>
 <body>
     <H1>Welcome To Homepage</H1>
+    <a href="register/logout.php">Logout</a>
 </body>
 </html>
