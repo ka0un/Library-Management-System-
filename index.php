@@ -17,6 +17,7 @@ if(!isset($_SESSION["user"])){
     <a href="register/logout.php">Logout</a>
     <h1>Naduli</h1>
     <p>welcome to homepage test</p>
+    <hr>
     
 </body>
 </html>
