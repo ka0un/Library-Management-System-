@@ -1,30 +1,46 @@
 <?php
 
 function setup() {
-
-    //__DIR__ Returns the absulute path
     include(__DIR__ . '/../config.php');
 
-    $conn = new mysqli($host, $username, $password, $database, $port);
-    if($conn->connect_error){   
-        echo "<H1>Database Connection Issue</H1><br>";
-        echo "please check if your database credentials on <b>config.php</b> is correct";
-        die("Info:" . $conn->connect_error);
+    // Connect without selecting a database
+    $conn = new mysqli($host, $username, $password, "", $port);
+    if ($conn->connect_error) {
+        echo "<h1>Database Connection Issue</h1><br>";
+        echo "Please check if your database credentials in <b>config.php</b> are correct.<br>";
+        die("Info: " . $conn->connect_error);
     }
 
-    $conn->query("USE $database");
+    // Check if the database exists, create if not
+    if (!$conn->select_db($database)) {
+        $createDbQuery = "CREATE DATABASE IF NOT EXISTS $database";
+        if ($conn->query($createDbQuery) === TRUE) {
+            echo "Database created successfully or already exists.<br>";
+            $conn->select_db($database);
+        } else {
+            echo "Error creating database: " . $conn->error;
+            return;
+        }
+    }
 
-    $users_tabel_create = "CREATE TABLE users (
+    // Corrected the CREATE TABLE query
+    $users_table_create = "CREATE TABLE IF NOT EXISTS users (
         id INT AUTO_INCREMENT,
         name varchar(255),
         email varchar(255),
-        nic varchar(255)
+        nic varchar(255),
         password varchar(255),
         PRIMARY KEY (id)
     );";
 
-    $conn->query($users_tabel_create);
-    $conn->close();
+    // Execute the query
+    if ($conn->query($users_table_create) === TRUE) {
+        echo "Table 'users' created successfully or already exists.<br>";
+    } else {
+        echo "Error creating table: " . $conn->error;
+    }
 
+    $conn->close();
 }
+
 ?>
