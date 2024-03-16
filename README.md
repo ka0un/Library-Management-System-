@@ -1,6 +1,8 @@
-# Y1S2 Web Application Group Project
 
-> Libruary Management System
+# Libruary Management System
 
-Server Host : [129.146.1.186:25573](http://129.146.1.186:25573)
+![image](https://github.com/ka0un/webapp/assets/88395585/077814b8-406a-4eac-aa2b-8b154e3a346c)
+
+
+Live Prototype : [https://prototype.hapangama.com](https://prototype.hapangama.com)
 
