@@ -1,59 +1,112 @@
+body{
+    margin: 0;
+
+}
+.main{
+    display:grid;
+    grid-template-rows: 10vh auto 68.5vh 19vh;
+    
+}
 .part1 {
-    display: flex;
-    flex-direction: row;
-    background-color: aqua;
-    height: 50%;
+    grid-row:1;
+    background-color: white;
+    border: 3px solid black;
+    
 }
 
 .part2 {
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(221, 22, 158);
+    grid-row:2;
+    background-color: white;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
     
 }
 
 .content {
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(172, 218, 57);
+    
+    grid-row : 3;
+    background-color: white;
+    border: 3px solid black;
     
 }
 
 .footer {
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(33, 199, 27);
+    
+    grid-row:4;
+    background-color: white;
+    border: 3px solid black;
+    border-top: none;
     
 }
 
 .header {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 5vw auto 34vw 33vw;
+    height: 100%;
+    
+    
 }
 
 .imgbook {
-    flex: 1;
-    background-color: rgb(230, 15, 86);
+    grid-column: 1;
+    background-color: white;
+    
 }
 
 .brand {
-    flex: 2;
-    background-color: rgb(80, 58, 220);
+    grid-column: 2;
+    background-color:white;
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: larger;
+    font-weight: bold;
+    
+    
 }
 
 .nav {
-    flex: 3;
-    background-color: rgb(68, 202, 112);
+    grid-column: 3;
+    background-color: white;
+    margin-left: 100px;
+    margin-top: 20px;
 }
 
 .rightcon {
-    flex: 4;
-    background-color: rgb(140, 158, 158);
+    grid-column: 4;
+    background-color: white;
 }
 
 .imgbook img {
-    width: 30px;
-    height: 30px;
-    margin-left: 5px;
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
     margin-top: 2px;
 }
+ .footer{
+    display: grid;
+    grid-template-columns: 30vw 40vw 30vw;
+ }
+
+ .fpart1{
+    grid-column: 1;
+    background-color:white;
+    border-right: 3px solid black;
+ }
+
+ .fpart2{
+    grid-column: 2;
+    background-color: white;
+    border-right: 3px solid black;
+ }
+
+ .fpart3{
+    grid-column: 3;
+    background-color:white;
+ }
+ .text{
+    margin-top: 20px;
+    text-align: right;
+    margin-right: 50px;
+ }
+
+ 
