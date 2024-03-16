@@ -63,39 +63,38 @@ if(isset($_SESSION["user"])){
 
         ?>
 
-<div class="login_border">
+<center>
 		<div class="login_div">
 			<form action="register.php" method="post" class="register_form">
-				<h2>Register</h2>
+				<h1>Register</h1>
 				<div class="name_div">
-					<input type="text" class="name" id="input" placeholder="Full Name" name="name" required><br><br>
+					<input type="text" class="full_name" id="input" placeholder="Full Name" name="name" required><br><br>
 				</div>
 				<div class="nic_div">
-					<input type="text" class="nic" id="input" placeholder="NIC" name="nic" required><br><br>
+					<input type="text" class="nic_reg" id="input" placeholder="NIC" name="nic" required><br><br>
 				</div>
 				<div class="email_div">
-				<input type="email" class="email" id="input" placeholder="Email" name="email" required><br><br>
+				<input type="email" class="email_login" id="input" placeholder="Email" name="email" required><br><br>
 				</div>
 				<div class="password_div">
-					<input type="password" class="password" placeholder="Password" id="input" name="password" required><br><br>
+					<input type="password" placeholder="Password" id="input" name="password" required><br><br>
 				</div>
 				<div class="confirm_password_div">
-					<input type="password" class="repeate_password" placeholder="Confirm Password" id="input" name="Confirm_password" required><br><br>
+					<input type="password" placeholder="Confirm Password" id="input" name="Confirm_password" required><br><br>
 				</div>
 				<div classs="create_account_div">
-					<input type="submit" class="login_submit" name="submit" id="input" value="Create Account"><br>
+					<input type="submit" class="login_submit" id="button" name="create_account" id="input" value="Create Account"><br>
 				</div>
 		
 				<p>Alredy have an account?</p>
-				
-			</form>
-			<a href="login.php">
-					<button class="sign_in">Log In</button><br><br>
+				<a href="login.php">
+					<button class="sign_in" id="button">Log In</button><br><br>
 				</a>
+			</form>
 		</div>
-	</div>
+
 	<br><br>
-	<p>By Creating an account,you agree to out <a href="">terms and conditions.</a></p>
+	<p>By creating an account, you agree to our <a href="">terms and conditions.</a></p>
     <script>
     document.getElementById('registrationForm').onsubmit = function(e) {
         var password = document.getElementById('password').value;

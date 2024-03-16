@@ -62,26 +62,26 @@ if(isset($_POST["login"])){
 }
 
 ?>
-    	<div class="login_border">
-	<div class="login_div">
-        <form action="login.php" method="post" class="login_form">
-			<h1>Login</h1>
-			<div class = "login-lement">
-				<input type="email" id="input" placeholder="Enter Email" name="email" class="email_login" required><br><br>
-			</div>
-			<div class = "login-lement">
-				<input type="password" id="input" placeholder="Enter Password" name="password" class="password_login" required><br><br>
-			</div>
-			<a href=""> Forget Password? </a><br><br>
-			<div class = "login-button">
-				<input type="submit" value="Login" name="login" class="login_submit"><br><br>
-			</div>
-				 Registered Yet?
-        </form>
-		<a href="register.php">
-					<button class="create_accout">Create Account</button>
-		</a><br><br>
-	</div>
-	</div>
+<center>
+
+<div class="login_div">
+    <form action="login.php" method="post" class="login_form">
+        <h1>Login</h1>
+        <div class = "login-lement">
+            <input type="email" id="input" placeholder="Enter Email" name="email" class="email_login" required><br><br>
+        </div>
+        <div class = "login-lement">
+            <input type="password" id="input" placeholder="Enter Password" name="password" class="password_login" required><br><br>
+        </div>
+        <a href=""> Forget Password? </a><br><br>
+        <div class = "login-button">
+            <input type="submit" id="button" value="Login" name="login" class="login_submit"><br><br>
+        </div>
+             Haven't Registered Yet?
+    </form>
+    <a href="register.php">
+                <button id="button" class="create_accout">Create Account</button>
+    </a><br><br>
+</div>
 </body>
 </html>
