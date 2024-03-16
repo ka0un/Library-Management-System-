@@ -66,10 +66,10 @@ if(isset($_POST["login"])){
         <form action="login.php" method="post" class="login_form">
 			<h1>Login</h1>
 			<div class = "login-lement">
-				<input type="email" placeholder="Enter Email" name="email" class="email_login" required><br><br>
+				<input type="email" id="input" placeholder="Enter Email" name="email" class="email_login" required><br><br>
 			</div>
 			<div class = "login-lement">
-				<input type="password" placeholder="Enter Password" name="password" class="password_login" required><br><br>
+				<input type="password" id="input" placeholder="Enter Password" name="password" class="password_login" required><br><br>
 			</div>
 			<a href=""> Forget Password? </a><br><br>
 			<div class = "login-button">
@@ -82,9 +82,5 @@ if(isset($_POST["login"])){
 		</a><br><br>
 	</div>
 	</div>
-	<br>
-		<p>If you are having issues, feel free to <a href="">Contact Us!</a>
-		
-			
 </body>
 </html>
