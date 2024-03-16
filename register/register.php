@@ -83,14 +83,15 @@ if(isset($_SESSION["user"])){
 					<input type="password" class="repeate_password" placeholder="Confirm Password" id="input" name="Confirm_password" required><br><br>
 				</div>
 				<div classs="create_account_div">
-					<input type="submit" class="login_submit" name="create_account" id="input" value="Create Account"><br>
+					<input type="submit" class="login_submit" name="submit" id="input" value="Create Account"><br>
 				</div>
 		
 				<p>Alredy have an account?</p>
-				<a href="login.php">
+				
+			</form>
+			<a href="login.php">
 					<button class="sign_in">Log In</button><br><br>
 				</a>
-			</form>
 		</div>
 	</div>
 	<br><br>
