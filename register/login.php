@@ -15,7 +15,7 @@ if(isset($_SESSION["user"])){
 <body>
 
     <div class="container">
-    <?php
+<?php
 
 include(__DIR__ . '/../users/users_functions.php');
 
@@ -61,19 +61,26 @@ if(isset($_POST["login"])){
 }
 
 ?>
-        <form action="login.php" method="post">
-            <div class = "login-lement">
-                <input type="email" placeholder="Enter Email:" name="email" required>
-            </div>
-            <div class = "login-lement">
-                <input type="password" placeholder="Enter Password:" name="password" required>
-            </div>
-            <div class = "login-button">
-                <input type="submit" value="Login" name="login">
-            </div>
+    	<div class="login_border">
+	<div class="login_div">
+        <form action="login.php" method="post" class="login_form">
+			<h1>Login</h1>
+			<div class = "login-lement">
+				<input type="email" id="input" placeholder="Enter Email" name="email" class="email_login" required><br><br>
+			</div>
+			<div class = "login-lement">
+				<input type="password" id="input" placeholder="Enter Password" name="password" class="password_login" required><br><br>
+			</div>
+			<a href=""> Forget Password? </a><br><br>
+			<div class = "login-button">
+				<input type="submit" value="Login" name="login" class="login_submit"><br><br>
+			</div>
+				<a href=""> Havent Registered Yet? </a>
         </form>
-        <br>
-            <a href="register.php">register</a>
-    </div>
+		<a href="register.php">
+					<button class="create_accout">Create Account</button>
+		</a><br><br>
+	</div>
+	</div>
 </body>
 </html>
