@@ -1,0 +1,18 @@
+body{
+	text-align:center;
+}
+.login_div{
+	border-style:solid;
+	border-width:2px;
+}
+.login_border{
+	padding-right:30%;
+	padding-left:30%;
+}
+.login_form{
+	padding-top:60px;
+	padding-bottom:60px;	
+}
+
+
+	

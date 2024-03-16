@@ -61,19 +61,29 @@ if(isset($_POST["login"])){
 }
 
 ?>
-        <form action="login.php" method="post">
-            <div class = "login-lement">
-                <input type="email" placeholder="Enter Email:" name="email" required>
-            </div>
-            <div class = "login-lement">
-                <input type="password" placeholder="Enter Password:" name="password" required>
-            </div>
-            <div class = "login-button">
-                <input type="submit" value="Login" name="login">
-            </div>
+    <div class="login_border">
+	<div class="login_div">
+        <form action="login.php" method="post" class="login_form">
+			<h2>Login</h2>
+			<div class = "login-lement">
+				<input type="email" placeholder="Enter Email" name="email" required><br><br>
+			</div>
+			<div class = "login-lement">
+				<input type="password" placeholder="Enter Password" name="password" required><br><br>
+			</div>
+			<a href=""> Forget Password? </a><br><br>
+			<div class = "login-button">
+				<input type="submit" value="Login" name="login"><br><br>
+			</div>
+				<a href=""> Havent Registered Yet? </a><br><br>
         </form>
-        <br>
-            <a href="register.php">register</a>
-    </div>
+		<a href="register.php">
+					<button>Create Account</button>
+		</a><br><br>
+	</div>
+	</div>
+	<br>
+		<p>If you are having issues, feel free to <a href="">Contact Us!</a>
+			
 </body>
 </html>
