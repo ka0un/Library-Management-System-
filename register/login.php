@@ -15,7 +15,7 @@ if(isset($_SESSION["user"])){
 <body>
 
     <div class="container">
-    <?php
+<?php
 
 include(__DIR__ . '/../users/users_functions.php');
 
