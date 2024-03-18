@@ -260,12 +260,53 @@ body{
 
 }
 .quicklinks{
+
+    justify-content: center;
     grid-row: 2;
+    display: grid;
+    grid-template-columns: 8vw 8vw 8vw ;
 
 }
 
+quick1{
+    grid-column: 1;
 
+}
+quick2{
+    grid-column: 2;
+}
 
+quick3{
+    grid-column: 3;
+    
+}
+
+.inner3{
+    display: grid;
+    grid-template-columns: 20vw 20vw;
+    
+}
+.details{
+    grid-column: 1;
+    display: grid;
+    grid-template-rows: 6vh 6vh 6vh;
+    justify-content: center;
+    align-items: center;
+}
+.map{
+    grid-column: 2;
+}
+.address{
+    grid-row: 2;
+
+}
+.tel{
+     grid-row: 1;
+}
+.contactus{
+
+    grid-row: 3;
+}
 
 
 
