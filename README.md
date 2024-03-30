@@ -21,7 +21,7 @@ Live Prototype : [https://prototype.hapangama.com](https://prototype.hapangama.c
 - Provider - not decided yet
 
 
-### Dns Server 
+### DNS 
 - Provider - [Cloudflare DNS](https://www.cloudflare.com/application-services/products/dns/)
 
 
