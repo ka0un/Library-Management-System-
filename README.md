@@ -25,6 +25,6 @@ Live Prototype : [https://prototype.hapangama.com](https://prototype.hapangama.c
 - Provider - [Cloudflare DNS](https://www.cloudflare.com/application-services/products/dns/)
 
 
-### Database Server 
+### Database
 - Software - [MySQL](https://www.mysql.com/)
-- Provider -  [AWS Relational Database](https://aws.amazon.com/rds/)
+

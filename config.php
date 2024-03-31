@@ -1,11 +1,11 @@
 <?php
 
 // Database configuration
-$host = "webapp.cd6e0m228ddr.ap-northeast-1.rds.amazonaws.com";
+$host = "127.0.0.1";
 $port = 3306;
-$username = "admin";
-$password = "W=kq.QZa+JAfxXL2gNzaS7Qb";
-$database = "webapp";
+$username = "u14_Rf6AAvsnO7";
+$password = "5!csXM+5^fke.XNpM=fIfI99";
+$database = "s14_main";
 
 // General settings
 $siteName = "Your Website Name";
