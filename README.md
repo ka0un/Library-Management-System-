@@ -26,5 +26,5 @@ Live Prototype : [https://prototype.hapangama.com](https://prototype.hapangama.c
 
 
 ### Database
-- Software - [MySQL](https://www.mysql.com/)
+- Software - [MariaDB](https://mariadb.org/about/)
 
