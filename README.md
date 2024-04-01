@@ -3,9 +3,23 @@
 
 Live Prototype : [https://prototype.hapangama.com](https://prototype.hapangama.com)
 
-# Project Architecture
-![Untitled_Diagram22 drawio](https://github.com/ka0un/webapp/assets/88395585/1557a491-41d2-432a-88c8-de3b0448f289)
-![Untitled_Diagram drawio_4](https://github.com/ka0un/webapp/assets/88395585/23fd7aec-8105-4766-8681-36a3ba1b017c)
+
+## Managing a Library Management System: Breaking Down Complexity
+
+> A library management system is complex, so we simplify it by breaking it into smaller parts called subsystems (Abstraction) . This makes it easier to build. We've divided our system into four main components.
+
+ - Frontend (User Interface)
+
+ - High-Level Functions (Backend)
+
+ - Validator Functions (Backend)
+
+ - SQL Wrappers (Backend)
+
+Each of these parts can be constructed independently, yet they synergize to achieve our ultimate objective: a fully functional library management system. As the group leader, I've further subdivided these four subsystems into 40 tasks, assigning each task to individual group members for efficient development and collaboration.
+
+![Whiteboard 5](https://github.com/ka0un/webapp/assets/88395585/85f21c86-03ec-453e-a74f-c11537b361ef)
+
 
 # Tools & Services
 
@@ -15,16 +29,13 @@ Live Prototype : [https://prototype.hapangama.com](https://prototype.hapangama.c
 - Software : [NGINX](https://www.nginx.com/resources/glossary/nginx/)
 - Provider : [Oracle Cloud VMS](https://www.oracle.com/cloud/compute/virtual-machines/)
 
+### Database
+- Software - [MariaDB](https://mariadb.org/about/)
 
 ### Mail Server 
 - Software - [SMTP](https://www.geeksforgeeks.org/simple-mail-transfer-protocol-smtp/)
 - Provider - not decided yet
 
-
 ### DNS 
 - Provider - [Cloudflare DNS](https://www.cloudflare.com/application-services/products/dns/)
-
-
-### Database
-- Software - [MariaDB](https://mariadb.org/about/)
 
