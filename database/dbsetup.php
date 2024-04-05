@@ -29,8 +29,7 @@ function setup() {
         name VARCHAR(255),
         email VARCHAR(255),
         nic VARCHAR(255),
-        password VARCHAR(255),
-        CONSTRAINT uuid_format CHECK (uuid LIKE 'U[0-9]{7}')
+        password VARCHAR(255)
     );";
 
     // Execute the query
