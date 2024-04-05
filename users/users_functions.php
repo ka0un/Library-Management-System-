@@ -11,27 +11,31 @@ if (!$conn) {
 function add_user($name, $email, $nic, $password) {
     global $conn;
 
-    if(is_email_exists($email)){
+    if (is_email_exists($email)) {
         return;
     }
 
     $password_hash = password_hash($password, PASSWORD_BCRYPT);
-    //bcrypt is designed to resist brute-force and rainbow table attacks.
+    //doc : https://www.php.net/manual/en/function.password-hash.php
 
-    $sql = "INSERT INTO users (name, email, nic, password) VALUES (?, ?, ?, ?)";
+    $uuid = generate_uuid();
 
+    $sql = "INSERT INTO users (uuid, name, email, nic, password) VALUES (?, ?, ?, ?, ?)";
+
+    //[*] we can avoid sql injection attacks by using prepair and bind param functions insted of string concatnation !   
     $stmt = mysqli_prepare($conn, $sql);
-    //mysqli_prepare helps us to execute SQL queries securely by separating the SQL code from the user input
-
-    mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $nic, $password_hash);
-                                        // s     s       s     s
+    //doc : https://www.php.net/manual/en/mysqli.prepare.php
+    mysqli_stmt_bind_param($stmt, "sssss", $uuid, $name, $email, $nic, $password_hash);
+    //doc : https://www.php.net/manual/en/mysqli-stmt.bind-param.php
     mysqli_stmt_execute($stmt);
+    //doc : https://www.php.net/manual/en/mysqli-stmt.execute.php
 
+    //doc : https://www.php.net/manual/en/mysqli-stmt.affected-rows.php
     if (mysqli_stmt_affected_rows($stmt) == 0) {
-
         echo "Error adding user.";
     }
 
+    //doc : https://www.php.net/manual/en/mysqli-stmt.close.php
     mysqli_stmt_close($stmt);
 }
 
@@ -45,30 +49,47 @@ function remove_user($id) {
     mysqli_stmt_execute($stmt);
 
     if (mysqli_stmt_affected_rows($stmt) == 0) {
-
         echo "Error removing user.";
     }
 
     mysqli_stmt_close($stmt);
 }
 
-// Function to update user
-function update_user($id, $name, $email, $nic, $password) {
+// Function to update user details
+function update_user_details($id, $name, $email, $nic) {
     global $conn;
-    $password_hash = password_hash($password, PASSWORD_BCRYPT);
-    $sql = "UPDATE users SET name = ?, email = ?, nic = ?, password = ? WHERE id = ?";
-
+    
+    $sql = "UPDATE users SET name = ?, email = ?, nic = ? WHERE id = ?";
+    
     $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "ssssi", $name, $email, $nic, $password_hash, $id);
+    mysqli_stmt_bind_param($stmt, "sssi", $name, $email, $nic, $id);
     mysqli_stmt_execute($stmt);
-
+    
     if (mysqli_stmt_affected_rows($stmt) == 0) {
-
-        echo "Error updating user.";
+        echo "Error updating user details.";
     }
-
+    
     mysqli_stmt_close($stmt);
 }
+
+// Function to change user password
+function change_user_password($id, $password) {
+    global $conn;
+    
+    $password_hash = password_hash($password, PASSWORD_BCRYPT);
+    $sql = "UPDATE users SET password = ? WHERE id = ?";
+    
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "si", $password_hash, $id);
+    mysqli_stmt_execute($stmt);
+    
+    if (mysqli_stmt_affected_rows($stmt) == 0) {
+        echo "Error changing user password.";
+    }
+    
+    mysqli_stmt_close($stmt);
+}
+
 
 // Function to get user details
 function get_user($id) {
@@ -79,8 +100,10 @@ function get_user($id) {
     mysqli_stmt_bind_param($stmt, "i", $id);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
+    //doc : https://www.php.net/manual/en/mysqli-stmt.get-result.php
 
     if ($user = mysqli_fetch_assoc($result)) {
+    //doc : https://www.php.net/manual/en/mysqli-result.fetch-assoc.php
         return $user;
     } else {
         return null;
@@ -89,10 +112,10 @@ function get_user($id) {
     mysqli_stmt_close($stmt);
 }
 
-
 function is_email_exists($email) {
     global $conn;
     $email = mysqli_real_escape_string($conn, $email);
+    // doc : https://www.w3schools.com/Php/func_mysqli_real_escape_string.asp
 
     $sql = "SELECT COUNT(*) FROM users WHERE email = '$email'";
     $result = mysqli_query($conn, $sql);
@@ -113,11 +136,34 @@ function is_password_correct($email, $enteredPassword) {
 
         // we can use password_verify function to check if saved password matches the hashed password
         if ($row && password_verify($enteredPassword, $row['password'])) {
-            return true; 
+            //doc : https://www.php.net/manual/en/function.password-verify.php
+            return true;
         } else {
-            return false; 
+            return false;
         }
     } else {
         die("Error checking password: " . mysqli_error($conn));
     }
 }
+
+// Function to generate UUID
+function generate_uuid() {
+    global $conn;
+
+    // Count the number of rows in the table
+    $sql = "SELECT COUNT(*) FROM users";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    $row_count = $row['COUNT(*)'];
+
+    // Increment the row count to get the next UUID number
+    $next_uuid_number = $row_count + 1;
+
+    // Format the UUID with leading zeros
+    $uuid = 'U' . sprintf('%07d', $next_uuid_number);
+    //doc : https://www.php.net/manual/en/function.sprintf.php
+    //guide : https://www.w3schools.com/php/func_string_sprintf.asp
+
+    return $uuid;
+}
+

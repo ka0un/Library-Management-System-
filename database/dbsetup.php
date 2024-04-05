@@ -25,12 +25,12 @@ function setup() {
 
     // Corrected the CREATE TABLE query
     $users_table_create = "CREATE TABLE IF NOT EXISTS users (
-        id INT AUTO_INCREMENT,
-        name varchar(255),
-        email varchar(255),
-        nic varchar(255),
-        password varchar(255),
-        PRIMARY KEY (id)
+        uuid VARCHAR(255) PRIMARY KEY,
+        name VARCHAR(255),
+        email VARCHAR(255),
+        nic VARCHAR(255),
+        password VARCHAR(255),
+        CONSTRAINT uuid_format CHECK (uuid LIKE 'U0000000%')
     );";
 
     // Execute the query
