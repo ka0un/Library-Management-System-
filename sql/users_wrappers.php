@@ -15,11 +15,14 @@ function add_user($name, $email, $nic, $password) {
         return;
     }
 
+    echo 
+
     //[*] we are using PASSWORD_BCRYPT algorithm for encrypt our user's passwords and store them safely and securely
     $password_hash = password_hash($password, PASSWORD_BCRYPT);
     //doc : https://www.php.net/manual/en/function.password-hash.php
 
     $uuid = generate_uuid();
+    
 
     $sql = "INSERT INTO users (uuid, name, email, nic, password) VALUES (?, ?, ?, ?, ?)";
 

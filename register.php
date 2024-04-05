@@ -26,7 +26,6 @@ if(isset($_SESSION["user"])){
             $email = $_POST["email"];
             $nic = $_POST["nic"];
             $password = $_POST["password"];
-            $repeate_password = $_POST["repeate_password"];
             
             $error = array();
             if(empty($name) OR empty($email) OR empty($nic) OR empty($password)){
@@ -80,7 +79,7 @@ if(isset($_SESSION["user"])){
 					<input type="password" placeholder="Password" id="input" name="password" required><br><br>
 				</div>
 				<div class="confirm_password_div">
-					<input type="password" placeholder="Confirm Password" id="input" name="Confirm_password" required><br><br>
+					<input type="password" placeholder="Confirm Password" id="input" name="confirm_password" required><br><br>
 				</div>
 				<div classs="create_account_div">
 					<input type="submit" class="login_submit" id="button" name="submit" id="input" value="Create Account"><br>
@@ -97,9 +96,9 @@ if(isset($_SESSION["user"])){
 	<br><br>
 	<p>By creating an account, you agree to our <a href="">terms and conditions.</a></p>
     <script>
-    document.getElementById('registrationForm').onsubmit = function(e) {
+    document.getElementById('register_form').onsubmit = function(e) {
         var password = document.getElementById('password').value;
-        var repeatPassword = document.getElementById('repeatPassword').value;
+        var repeatPassword = document.getElementById('confirm_password').value;
 
         if (password !== repeatPassword) {
             e.preventDefault(); // Prevent form submission
