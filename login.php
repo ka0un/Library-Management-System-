@@ -18,7 +18,7 @@ if(isset($_SESSION["user"])){
     <div class="container">
 <?php
 
-include(__DIR__ . '/../sql/users_wrappers.php');
+include(__DIR__ . '/sql/users_wrappers.php');
 
 if(isset($_POST["login"])){
 
