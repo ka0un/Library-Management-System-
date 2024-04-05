@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION["user"])){
-    header("Location: /register/login.php");
+    header("Location: login.php");
 }
 ?>
 <!DOCTYPE html>
@@ -12,11 +12,8 @@ if(!isset($_SESSION["user"])){
     <title>Home</title>
 </head>
 <body>
-    <H1>Eyaas</H1>
     <H1>Welcome To Homepage</H1>
-    <a href="register/logout.php">Logout</a>
-    <h1>Naduli</h1>
-    <p>welcome to homepage test</p>
+    <a href="logout.php">Logout</a>
     
 </body>
 </html>

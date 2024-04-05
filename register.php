@@ -18,7 +18,7 @@ if(isset($_SESSION["user"])){
 
         <?php
 
-        include(__DIR__ . '/../users/users_functions.php');
+        include(__DIR__ . '/../sql/users_wrappers.php');
 
         if(isset($_POST["submit"])){
 
