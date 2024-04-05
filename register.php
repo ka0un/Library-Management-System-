@@ -97,8 +97,8 @@ if(isset($_SESSION["user"])){
 	<p>By creating an account, you agree to our <a href="">terms and conditions.</a></p>
     <script>
     document.getElementById('register_form').onsubmit = function(e) {
-        var password = document.getElementById('password').value;
-        var repeatPassword = document.getElementById('confirm_password').value;
+        var password = document.getElementsByName('password').value;
+        var repeatPassword = document.getElementsByName('confirm_password').value;
 
         if (password !== repeatPassword) {
             e.preventDefault(); // Prevent form submission
