@@ -15,8 +15,6 @@ function add_user($name, $email, $nic, $password) {
         return;
     }
 
-    echo 
-
     //[*] we are using PASSWORD_BCRYPT algorithm for encrypt our user's passwords and store them safely and securely
     $password_hash = password_hash($password, PASSWORD_BCRYPT);
     //doc : https://www.php.net/manual/en/function.password-hash.php
@@ -46,7 +44,7 @@ function add_user($name, $email, $nic, $password) {
 // Function to remove user
 function remove_user($id) {
     global $conn;
-    $sql = "DELETE FROM users WHERE id = ?";
+    $sql = "DELETE FROM users WHERE uuid = ?";
 
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($stmt, "i", $id);
@@ -63,7 +61,7 @@ function remove_user($id) {
 function update_user_details($id, $name, $email, $nic) {
     global $conn;
     
-    $sql = "UPDATE users SET name = ?, email = ?, nic = ? WHERE id = ?";
+    $sql = "UPDATE users SET name = ?, email = ?, nic = ? WHERE uuid = ?";
     
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($stmt, "sssi", $name, $email, $nic, $id);
@@ -81,7 +79,7 @@ function change_user_password($id, $password) {
     global $conn;
     
     $password_hash = password_hash($password, PASSWORD_BCRYPT);
-    $sql = "UPDATE users SET password = ? WHERE id = ?";
+    $sql = "UPDATE users SET password = ? WHERE uuid = ?";
     
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($stmt, "si", $password_hash, $id);
