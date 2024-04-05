@@ -91,26 +91,63 @@ function change_user_password($id, $password) {
 }
 
 
-// Function to get user details
-function get_user($id) {
+// Function to get user name by UUID
+function get_user_name($uuid) {
     global $conn;
-    $sql = "SELECT * FROM users WHERE id = ?";
+    $sql = "SELECT name FROM users WHERE uuid = ?";
 
     $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "i", $id);
+    mysqli_stmt_bind_param($stmt, "s", $uuid);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
-    //doc : https://www.php.net/manual/en/mysqli-stmt.get-result.php
 
-    if ($user = mysqli_fetch_assoc($result)) {
-    //doc : https://www.php.net/manual/en/mysqli-result.fetch-assoc.php
-        return $user;
+    if ($row = mysqli_fetch_assoc($result)) {
+        return $row['name'];
     } else {
         return null;
     }
 
     mysqli_stmt_close($stmt);
 }
+
+// Function to get user email by UUID
+function get_user_email($uuid) {
+    global $conn;
+    $sql = "SELECT email FROM users WHERE uuid = ?";
+
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $uuid);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+
+    if ($row = mysqli_fetch_assoc($result)) {
+        return $row['email'];
+    } else {
+        return null;
+    }
+
+    mysqli_stmt_close($stmt);
+}
+
+// Function to get user NIC by UUID
+function get_user_nic($uuid) {
+    global $conn;
+    $sql = "SELECT nic FROM users WHERE uuid = ?";
+
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $uuid);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+
+    if ($row = mysqli_fetch_assoc($result)) {
+        return $row['nic'];
+    } else {
+        return null;
+    }
+
+    mysqli_stmt_close($stmt);
+}
+
 
 function is_email_exists($email) {
     global $conn;
