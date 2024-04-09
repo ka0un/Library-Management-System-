@@ -18,7 +18,7 @@ function getConnection()
         die("Info: " . $conn->connect_error);
     }
 
-    //this will setup the required tables if they arent initialized yet
+    //this will set up the required tables if they aren't initialized yet
     setup($conn);
 
     return $conn;
