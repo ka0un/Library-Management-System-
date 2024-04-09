@@ -25,6 +25,11 @@ Each of these parts can be constructed independently, yet they synergize to achi
 
 > Softwires and Services that we are using to build prototype of our IWT 2nd Assignment
 
+### Developement Environment
+- IDE [PhpStorm](https://www.jetbrains.com/phpstorm/)
+- Code Editor [Vs Code](https://code.visualstudio.com/)
+- Server [XAMPP](https://www.apachefriends.org/download.html)
+
 ### Web Server
 - Software : [NGINX](https://www.nginx.com/resources/glossary/nginx/)
 - Provider : [Oracle Cloud VMS](https://www.oracle.com/cloud/compute/virtual-machines/)
@@ -39,3 +44,7 @@ Each of these parts can be constructed independently, yet they synergize to achi
 ### DNS 
 - Provider - [Cloudflare DNS](https://www.cloudflare.com/application-services/products/dns/)
 
+### Other
+- Version Control [GIT](https://git-scm.com/downloads)
+- Repo Hosting [Github](https://github.com/)
+- Project Management [Trello](https://trello.com/)
