@@ -109,7 +109,7 @@ function get_user_name($uuid) {
         return null;
     }
 
-    mysqli_stmt_close($stmt);
+
 }
 
 // Function to get user email by UUID
@@ -128,7 +128,6 @@ function get_user_email($uuid) {
         return null;
     }
 
-    mysqli_stmt_close($stmt);
 }
 
 // Function to get user NIC by UUID
@@ -147,7 +146,6 @@ function get_user_nic($uuid) {
         return null;
     }
 
-    mysqli_stmt_close($stmt);
 }
 
 
