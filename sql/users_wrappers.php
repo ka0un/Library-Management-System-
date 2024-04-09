@@ -199,10 +199,9 @@ function generate_uuid() {
     $next_uuid_number = $row_count + 1;
 
     // Format the UUID with leading zeros
-    $uuid = 'U' . sprintf('%07d', $next_uuid_number);
     //doc : https://www.php.net/manual/en/function.sprintf.php
     //guide : https://www.w3schools.com/php/func_string_sprintf.asp
 
-    return $uuid;
+    return 'U' . sprintf('%07d', $next_uuid_number);
 }
 

@@ -27,7 +27,7 @@ if(isset($_POST["login"])){
     
     $error = array();
     if(empty($email) OR empty($password)){
-        array_push($error, "Complete all fields");
+        $error[] = "Complete all fields";
     }
 
     if(count($error)>0){

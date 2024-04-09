@@ -29,19 +29,19 @@ if(isset($_SESSION["user"])){
             
             $error = array();
             if(empty($name) OR empty($email) OR empty($nic) OR empty($password)){
-                array_push($error, "Complete all fields");
+                $error[] = "Complete all fields";
             }
 
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                array_push($error, "Invalid Email");
+                $error[] = "Invalid Email";
             }
 
             if (strlen($password)<5){
-                array_push($error, "Password length must be larger than 5");
+                $error[] = "Password length must be larger than 5";
             }
 
             if (is_email_exists($email)){
-                array_push($error, "Email Alredy Registered !");
+                $error[] = "Email Alredy Registered !";
             }
 
             if(count($error)>0){
