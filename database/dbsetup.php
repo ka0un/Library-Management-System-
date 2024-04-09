@@ -1,6 +1,7 @@
 <?php
 
-function setup($conn) {
+function setup($conn): void
+{
     require_once __DIR__ . '/../config.php';
     require_once __DIR__ . '/../database/database.php' ;
 

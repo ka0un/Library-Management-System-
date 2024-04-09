@@ -8,7 +8,8 @@ $conn = getConnection();
 
 
 // Add User
-function add_user($name, $email, $nic, $password) {
+function add_user($name, $email, $nic, $password): void
+{
     global $conn;
 
     if (is_email_exists($email)) {
@@ -42,7 +43,8 @@ function add_user($name, $email, $nic, $password) {
 }
 
 // Function to remove user
-function remove_user($id) {
+function remove_user($id): void
+{
     global $conn;
     $sql = "DELETE FROM users WHERE uuid = ?";
 
@@ -58,7 +60,8 @@ function remove_user($id) {
 }
 
 // Function to update user details
-function update_user_details($id, $name, $email, $nic) {
+function update_user_details($id, $name, $email, $nic): void
+{
     global $conn;
     
     $sql = "UPDATE users SET name = ?, email = ?, nic = ? WHERE uuid = ?";
@@ -75,7 +78,8 @@ function update_user_details($id, $name, $email, $nic) {
 }
 
 // Function to change user password
-function change_user_password($id, $password) {
+function change_user_password($id, $password): void
+{
     global $conn;
     
     $password_hash = password_hash($password, PASSWORD_BCRYPT);
@@ -149,7 +153,8 @@ function get_user_nic($uuid) {
 }
 
 
-function is_email_exists($email) {
+function is_email_exists($email): bool
+{
     global $conn;
     $email = mysqli_real_escape_string($conn, $email);
     // doc : https://www.w3schools.com/Php/func_mysqli_real_escape_string.asp
@@ -184,7 +189,8 @@ function is_password_correct($email, $enteredPassword) {
 }
 
 // Function to generate UUID
-function generate_uuid() {
+function generate_uuid(): string
+{
     global $conn;
 
     // Count the number of rows in the table
