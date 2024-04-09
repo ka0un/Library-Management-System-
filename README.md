@@ -30,19 +30,12 @@ Each of these parts can be constructed independently, yet they synergize to achi
 - Code Editor [Vs Code](https://code.visualstudio.com/)
 - Server [XAMPP](https://www.apachefriends.org/download.html)
 
-### Web Server
-- Software : [NGINX](https://www.nginx.com/resources/glossary/nginx/)
-- Provider : [Oracle Cloud VMS](https://www.oracle.com/cloud/compute/virtual-machines/)
-
-### Database
-- Software - [MariaDB](https://mariadb.org/about/)
-
-### Mail Server 
-- Software - [SMTP](https://www.geeksforgeeks.org/simple-mail-transfer-protocol-smtp/)
-- Provider - not decided yet
-
-### DNS 
-- Provider - [Cloudflare DNS](https://www.cloudflare.com/application-services/products/dns/)
+### Server
+- Software [NGINX](https://www.nginx.com/resources/glossary/nginx/)
+- VPS [Oracle Cloud VMS](https://www.oracle.com/cloud/compute/virtual-machines/)
+- Database [MariaDB](https://mariadb.org/about/)
+- Mail [SMTP](https://www.geeksforgeeks.org/simple-mail-transfer-protocol-smtp/) 
+- Dns [Cloudflare DNS](https://www.cloudflare.com/application-services/products/dns/)
 
 ### Other
 - Version Control [GIT](https://git-scm.com/downloads)
