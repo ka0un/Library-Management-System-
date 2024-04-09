@@ -48,3 +48,13 @@ Each of these parts can be constructed independently, yet they synergize to achi
 - Version Control [GIT](https://git-scm.com/downloads)
 - Repo Hosting [Github](https://github.com/)
 - Project Management [Trello](https://trello.com/)
+- SFTP Client [FileZilla](https://filezilla-project.org/)
+- Remote DB Client [Dbeaver](https://dbeaver.io/)
+- Graphs and Diagrams [draw.io](https://draw.io/)
+
+### Indirect (not directly associated with this project)
+- Remote SSH Client [PUTTY](https://putty.org/)
+- SSL Certificate [Certbot](https://certbot.eff.org/)
+- Domain Retail [namechap.com](https://www.namecheap.com/)
+- Containerization [Docker](https://www.docker.com/)
+- Hosting-Web-Panel [Petrodactyl](https://pterodactyl.io/)
