@@ -2,10 +2,10 @@
 
 require_once __DIR__ . '/../database/database.php';
 
-// Check connection
-if (!getConnection()) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+
+$conn = getConnection();
+
+
 
 // Add User
 function add_user($name, $email, $nic, $password) {

@@ -19,7 +19,7 @@ function setup($conn) {
         echo "Error creating table: " . $conn->error . "<br>";
     }
 
-    $conn->close();
+
 }
 
 ?>
