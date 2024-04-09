@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../database/database.php';
 
 // Check connection
-if (!$conn) {
+if (!getConnection()) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
