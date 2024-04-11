@@ -136,7 +136,7 @@ function get_user_email($uuid) {
 }
 
 // Function to get user ID
-function get_user_id($email)
+function get_user_id($email) : string
 {
     global $conn;
     $sql = "SELECT uuid FROM users WHERE email = ?";

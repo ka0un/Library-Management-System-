@@ -2,13 +2,8 @@
 
 require_once __DIR__ . '/config.php';
 
-//changing the session lifetime parameter of client
-session_set_cookie_params([
-    'lifetime' => SESSION_LIFETIME_SECONDS,
-]);
-
 session_start();
-if(isset($_SESSION["uuid"])){
+if(isset($_SESSION["token"])){
     header("Location: /index.php");
 }
 ?>
@@ -50,6 +45,7 @@ if(isset($_POST["login"])){
         if(!is_email_exists($email)){
 
             echo "You Havent been registered yet!";
+
             
         }else{
 

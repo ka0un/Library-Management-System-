@@ -28,6 +28,7 @@ function validate_token($uuid, $token): bool
     if (mysqli_num_rows($result) > 0){
         if (check_if_token_outdated($uuid, $token, SESSION_LIFETIME_SECONDS)){
             delete_token($uuid, $token);
+            session_destroy();
             return false;
         }
         return true;
