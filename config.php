@@ -7,12 +7,8 @@ const DB_USERNAME = "u14_Rf6AAvsnO7";
 const DB_PASSWORD = "5!csXM+5^fke.XNpM=fIfI99";
 const DB_DATABASE = "s14_main";
 
-
-
-
-
-
-
+//Session configuration
+const SESSION_LIFETIME_SECONDS = 30;
 
 
 // Deprecated  Database configuration
@@ -23,4 +19,3 @@ $password = "5!csXM+5^fke.XNpM=fIfI99";
 $database = "s14_main";
 
 ?>
-;

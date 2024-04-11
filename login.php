@@ -1,6 +1,14 @@
 <?php
+
+require_once __DIR__ . '/config.php';
+
+//changing the session lifetime parameter of client
+session_set_cookie_params([
+    'lifetime' => SESSION_LIFETIME_SECONDS,
+]);
+
 session_start();
-if(isset($_SESSION["user"])){
+if(isset($_SESSION["uuid"])){
     header("Location: /index.php");
 }
 ?>
@@ -18,7 +26,8 @@ if(isset($_SESSION["user"])){
     <div class="container">
 <?php
 
-include(__DIR__ . '/sql/users_wrappers.php');
+include(__DIR__ . '/sql/users.php');
+include(__DIR__ . '/sql/token.php');
 
 if(isset($_POST["login"])){
 
@@ -45,10 +54,16 @@ if(isset($_POST["login"])){
         }else{
 
             if (is_password_correct($email, $password)){
-                session_start();
-                $_SESSION["user"] = "yes";
+
+                $uuid = get_user_id($email);
+                $token = generate_token($uuid);
+
+                $_SESSION["uuid"] = $uuid;
+                $_SESSION["token"] = $token;
+
                 header("Location: /index.php");
                 die();
+
             }else{
                 echo "Email or Password is Incorrect!";
             }

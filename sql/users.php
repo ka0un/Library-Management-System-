@@ -118,6 +118,7 @@ function get_user_name($uuid) {
 
 // Function to get user email by UUID
 function get_user_email($uuid) {
+
     global $conn;
     $sql = "SELECT email FROM users WHERE uuid = ?";
 
@@ -131,6 +132,19 @@ function get_user_email($uuid) {
     } else {
         return null;
     }
+
+}
+
+// Function to get user ID
+function get_user_id($email)
+{
+    global $conn;
+    $sql = "SELECT uuid FROM users WHERE email = ?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $email);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    return mysqli_fetch_assoc($result)['uuid'];
 
 }
 

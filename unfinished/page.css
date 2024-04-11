@@ -1,22 +1,19 @@
 body{
     margin: 0;
     color: white;
-
 }
+
 .main{
     display:grid;
     grid-template-rows: 11vh 3vh 66vh 19vh;
-    
 }
+
 .part1 {
     grid-row:1;
     border:3px solid black;
     grid-row:1;
     display: grid;
     grid-template-columns: 5vw 35vw 18vw 42vw;
-    
-    
-    
 }
 
 .part2 {

@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION["user"])){
+if(isset($_SESSION["uuid"])){
     header("Location: /index.php");
 }
 ?>
@@ -18,7 +18,7 @@ if(isset($_SESSION["user"])){
 
         <?php
 
-        include(__DIR__ . '/sql/users_wrappers.php');
+        include(__DIR__ . '/sql/users.php');
 
         if(isset($_POST["submit"])){
 
