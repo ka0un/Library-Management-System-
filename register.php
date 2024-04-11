@@ -18,7 +18,7 @@ if(isset($_SESSION["token"])){
 
         <?php
 
-        include(__DIR__ . '/sql/users.php');
+        require_once __DIR__ . '/sql/users.php';
 
         if(isset($_POST["submit"])){
 

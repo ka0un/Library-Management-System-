@@ -21,8 +21,8 @@ if(isset($_SESSION["token"])){
     <div class="container">
 <?php
 
-include(__DIR__ . '/sql/users.php');
-include(__DIR__ . '/sql/token.php');
+require_once __DIR__ . '/sql/users.php';
+require_once __DIR__ . '/sql/token.php';
 
 if(isset($_POST["login"])){
 
