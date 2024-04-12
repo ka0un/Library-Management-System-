@@ -21,4 +21,40 @@ const DB_DATABASE = "s14_main"; /* Your Database Name */
 const SESSION_LIFETIME_SECONDS = 3600; /* 1 hour = 3600 seconds, 1 day = 86400 seconds */
 
 //===================================================================
+//Role and Permissions configuration
+//===================================================================
+const ROLES = array(
+    1 => "Admin",
+    2 => "Assistance",
+    3 => "User",
+);
+const DEFAULT_ROLE = 3; /* Default role for new users */
+const PERMISSIONS = array(
+    1 => array(
+        "VIEW_ADMIN_DASHBOARD",
+        "permission_2",
+    ),
+    2 => array(
+        "permission_3",
+        "permission_4",
+    ),
+    3 => array(
+        "permission_5",
+        "permission_6",
+    ),
+);
+
+const STAFF = array(
+    1 => array(
+        "U0000001",
+    ),
+    2 => array(
+
+    ),
+    3 => array(
+
+    ),
+);
+
+//===================================================================
 ?>
