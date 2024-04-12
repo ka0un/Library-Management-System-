@@ -37,6 +37,9 @@ Each of these parts can be constructed independently, yet they synergize to achi
 - Mail [SMTP](https://www.geeksforgeeks.org/simple-mail-transfer-protocol-smtp/) 
 - Dns [Cloudflare DNS](https://www.cloudflare.com/application-services/products/dns/)
 
+### 3rd Party Apis
+- Profile Picture [ui-avatars](https://ui-avatars.com/)
+
 ### Other
 - Version Control [GIT](https://git-scm.com/downloads)
 - Repo Hosting [Github](https://github.com/)

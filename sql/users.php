@@ -166,6 +166,18 @@ function get_user_nic($uuid) {
 
 }
 
+function get_user_profile_picture_url($uuid, $size): string
+{
+    return get_default_user_profile_picture_url($uuid, $size);
+}
+
+function get_default_user_profile_picture_url($uuid, $size): string
+{
+    $username = get_user_name($uuid);
+    $usernamewithoutspaces = str_replace(' ', '+', $username);
+    return "https://ui-avatars.com/api/?background=random&name=". $usernamewithoutspaces . "&rounded=true&bold=true&size=" . $size;
+}
+
 
 function is_email_exists($email): bool
 {
