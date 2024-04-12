@@ -2,6 +2,7 @@
 include(__DIR__ . '/auth/session.php');
 require_once __DIR__ . '/sql/users.php';
 require_once __DIR__ . '/sql/token.php';
+require_once __DIR__ . '/auth/permission.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,6 +27,15 @@ require_once __DIR__ . '/sql/token.php';
         <li>Your Token : <?php echo $_SESSION["token"]; ?></li>
         <li>Token Time Left : <?php echo get_session_time_left ($_SESSION["token"]); ?></li>
     </ul>
+    <a href="logout.php">Logout</a>
+    <br>
+    <h2>Debug Permission Info</h2>
+    <ul>
+        <li>Role : <?php echo get_role($_SESSION["uuid"]); ?></li>
+        <li>Role ID : <?php echo get_role_id($_SESSION[get_role($_SESSION["uuid"])]); ?></li>
+        <li>Has Admin Permission : <?php echo has_permission($_SESSION["uuid"], "VIEW_ADMIN_DASHBOARD"); ?></li>
+    </ul>
+    <br>
     <a href="logout.php">Logout</a>
 </body>
 </html>
