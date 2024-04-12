@@ -32,7 +32,7 @@ const DEFAULT_ROLE = 3; /* Default role for new users */
 const PERMISSIONS = array(
     1 => array(
         "VIEW_ADMIN_DASHBOARD",
-        "permission_2",
+        "ALL",
     ),
     2 => array(
         "permission_3",
