@@ -16,7 +16,7 @@ require_once __DIR__ . '/auth/permission.php';
 <br>
 <h2>Debug User Info</h2>
 <ul>
-    <li><img alt="Profile-Picture" src=<? echo get_user_profile_picture_url($_SESSION["uuid"], 256); ?> ></li>
+    <li><img alt="Profile-Picture" src=<?php echo get_user_profile_picture_url($_SESSION["uuid"], 256); ?> ></li>
     <li>Hi, <?php echo get_user_name($_SESSION["uuid"]); ?></li>
     <li>Your Email : <?php echo get_user_email($_SESSION["uuid"]); ?></li>
     <li>Your NIC : <?php echo get_user_nic($_SESSION["uuid"]); ?></li>
