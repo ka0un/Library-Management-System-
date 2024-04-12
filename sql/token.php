@@ -75,3 +75,23 @@ function check_if_token_outdated($uuid, $token, $lifeInSeconds): bool
         return true;
     }
 }
+
+function get_session_time_left($token): int
+{
+    global $conn;
+    $sql = "SELECT start FROM sessions WHERE token = ?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $token);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    $row = mysqli_fetch_assoc($result);
+    mysqli_stmt_close($stmt);
+
+    if ($row) {
+        $tokenTimestamp = strtotime($row['start']);
+        $currentTimestamp = time();
+        return SESSION_LIFETIME_SECONDS - ($currentTimestamp - $tokenTimestamp);
+    } else {
+        return 0;
+    }
+}
