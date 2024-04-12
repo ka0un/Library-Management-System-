@@ -1,5 +1,5 @@
 <?php
-include(__DIR__ . '/session/session.php');
+include(__DIR__ . '/auth/session.php');
 require_once __DIR__ . '/sql/users.php';
 require_once __DIR__ . '/sql/token.php';
 ?>
