@@ -25,9 +25,9 @@ function validate_token($uuid, $token): bool
     $result = mysqli_stmt_get_result($stmt);
     mysqli_stmt_close($stmt);
 
-    if(mysqli_num_rows($result) > 1){
-        invalidate_all_other_outdated_tokens($uuid);
-    }
+
+    invalidate_all_other_outdated_tokens($uuid);
+
 
     if (mysqli_num_rows($result) > 0){
         if (check_if_token_outdated($uuid, $token, SESSION_LIFETIME_SECONDS)){
