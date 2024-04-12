@@ -1,0 +1,24 @@
+.formclass{
+	text-align:center;
+	border:2px solid black;
+}
+.paddingclass{
+	padding-right:500px;
+	padding-left:500px;
+}
+.bordercolor{
+	background-color:#F0F3FF;
+	margin-top:130px;
+}
+.sendmsg{
+	width:190px;
+	height:30px;
+	font-weight:bold;
+	font-size:20px;
+	background-color:#836FFF;
+	color:#F0F3FF;
+}
+#textbox{
+	width:190px;
+	height:30px;
+}
