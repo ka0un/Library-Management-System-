@@ -25,6 +25,10 @@ function validate_token($uuid, $token): bool
     $result = mysqli_stmt_get_result($stmt);
     mysqli_stmt_close($stmt);
 
+    if(mysqli_num_rows($result) > 1){
+        invalidate_all_other_outdated_tokens($uuid);
+    }
+
     if (mysqli_num_rows($result) > 0){
         if (check_if_token_outdated($uuid, $token, SESSION_LIFETIME_SECONDS)){
             delete_token($uuid, $token);
@@ -34,6 +38,23 @@ function validate_token($uuid, $token): bool
         return true;
     }
     return false;
+}
+
+function invalidate_all_other_outdated_tokens($uuid): void
+{
+    global $conn;
+    $sql = "SELECT token FROM sessions WHERE uuid = ?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $uuid);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    mysqli_stmt_close($stmt);
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        if (check_if_token_outdated($uuid, $row['token'], SESSION_LIFETIME_SECONDS)){
+            delete_token($uuid, $row['token']);
+        }
+    }
 }
 
 function delete_token($uuid, $token): void
