@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../database/database.php';
+require_once __DIR__ . '/../config.php';
 
 
 $conn = getConnection();
@@ -175,7 +176,14 @@ function get_default_user_profile_picture_url($uuid, $size): string
 {
     $username = get_user_name($uuid);
     $usernamewithoutspaces = str_replace(' ', '+', $username);
-    return "https://ui-avatars.com/api/?background=random&name=". $usernamewithoutspaces . "&rounded=true&bold=true&size=" . $size;
+
+    if (USE_API_TO_DEFAULT_PROFILE_PICTURE){
+        return "https://ui-avatars.com/api/?background=random&name=". $usernamewithoutspaces . "&rounded=true&bold=true&size=" . $size;
+    }else{
+        return "https://www.pngarts.com/files/10/Default-Profile-Picture-PNG-Download-Image.png";
+    }
+
+
 }
 
 
