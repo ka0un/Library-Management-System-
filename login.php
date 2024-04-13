@@ -13,10 +13,10 @@ if(isset($_SESSION["token"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/login_reg.css">
+    <link rel="stylesheet" href="style/forms.php">
     <title>Login</title>
 </head>
-<body>
+<body style="background-color: <?php echo SECONDARY_COLOR; ?>;">
 
     <div class="container">
 <?php
@@ -84,14 +84,13 @@ if(isset($_POST["login"])){
         <div class = "login-lement">
             <input type="password" id="input" placeholder="Enter Password" name="password" class="password_login" required><br><br>
         </div>
-        <a href=""> Forget Password? </a><br><br>
         <div class = "login-button">
-            <input type="submit" id="button" value="Login" name="login" class="login_submit"><br><br>
+            <input type="submit" id="button" value="LOGIN" name="login" class="login_submit"><br><br>
         </div>
              Haven't Registered Yet?
     </form>
     <a href="register.php">
-                <button id="button" class="create_accout">Create Account</button>
+                <button id="button2" class="create_accout">CREATE ACCOUNT</button>
     </a><br><br>
 </div>
 </body>

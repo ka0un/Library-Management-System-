@@ -1,4 +1,7 @@
 <?php
+
+require_once __DIR__ . '/config.php';
+
 session_start();
 if(isset($_SESSION["token"])){
     header("Location: /index.php");
@@ -9,11 +12,11 @@ if(isset($_SESSION["token"])){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style/login_reg.css">
+    <link rel="stylesheet" href="style/forms.php">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
 </head>
-<body>
+<body style="background-color: <?php echo SECONDARY_COLOR; ?>;">
     <div class="container">
 
         <?php
@@ -82,14 +85,14 @@ if(isset($_SESSION["token"])){
 					<input type="password" placeholder="Confirm Password" id="input" name="confirm_password" required><br><br>
 				</div>
 				<div classs="create_account_div">
-					<input type="submit" class="login_submit" id="button" name="submit" id="input" value="Create Account"><br>
+					<input type="submit" class="login_submit" id="button" name="submit" id="input" value="CREATE ACCOUNT"><br>
 				</div>
 		
-				<p>Alredy have an account?</p>
+				<p id="white">Alredy have an account?</p>
 				
 			</form>
             <a href="login.php">
-					<button class="sign_in" id="button">Log In</button><br><br>
+					<button class="sign_in" id="button2">LOG IN</button><br><br>
 				</a>
 		</div>
 
