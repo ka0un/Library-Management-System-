@@ -40,6 +40,20 @@ function validate_token($uuid, $token): bool
     return false;
 }
 
+function invalidate_all_other_outdated_tokens_of_everyone(): void
+{
+    global $conn;
+    $sql = "SELECT uuid FROM sessions";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    mysqli_stmt_close($stmt);
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        invalidate_all_other_outdated_tokens($row['uuid']);
+    }
+}
+
 function invalidate_all_other_outdated_tokens($uuid): void
 {
     global $conn;
