@@ -1,6 +1,8 @@
 <?php
 
 require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/header.php';
+require_once __DIR__ . '/footer.php';
 
 session_start();
 if(isset($_SESSION["token"])){
@@ -17,7 +19,11 @@ if(isset($_SESSION["token"])){
     <title>Login</title>
 </head>
 <body style="background-color: <?php echo SECONDARY_COLOR; ?>;">
-
+<?php
+    $pathLinks = array(
+    array('text' => 'Login', 'url' => '#')); 
+    echo genarateheader($pathLinks);
+?>
     <div class="container">
 <?php
 
@@ -91,7 +97,10 @@ if(isset($_POST["login"])){
     </form>
     <a href="register.php">
                 <button id="button2" class="create_accout">CREATE ACCOUNT</button>
-    </a><br><br>
+    </a>
 </div>
-</body>
-</html>
+<?php
+   echo generateFooter();
+   
+?>
+
