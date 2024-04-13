@@ -75,8 +75,8 @@ if(isset($_POST["login"])){
 ?>
 <center>
 
-<div class="login_div">
-    <form action="login.php" method="post" class="login_form">
+<div class="form_dev">
+    <form action="login.php" method="post" class="form" id="form">
         <h1>Login</h1>
         <div class = "login-lement">
             <input type="email" id="input" placeholder="Enter Email" name="email" class="email_login" required><br><br>

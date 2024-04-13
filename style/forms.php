@@ -12,7 +12,7 @@ body{
     background-color: <?php echo SECONDARY_COLOR; ?>;
 }
 
-.login_div{
+.form_dev{
 	width:480px;
 	background-color: <?php echo PRIMARY_COLOR; ?>;
 	margin-right:30px;
@@ -21,7 +21,7 @@ body{
     padding-bottom: 20px;
 }
 
-.login_form{
+.form{
     font-family: Inter, sans-serif;
 	padding-top:0px;
 	padding-bottom:30px;
@@ -110,7 +110,7 @@ h1{
         font-size: 16px;
     }
 
-    .login_div {
+    .form_dev {
         width: 90%;
         margin-right: 0%;
         margin-top: 50px;

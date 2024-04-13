@@ -66,8 +66,8 @@ if(isset($_SESSION["token"])){
         ?>
 
 <center>
-		<div class="login_div">
-			<form action="register.php" method="post" class="register_form">
+		<div class="form_dev">
+			<form action="register.php" method="post" class="register_form" id="form">
 				<h1>Register</h1>
 				<div class="name_div">
 					<input type="text" class="full_name" id="input" placeholder="Full Name" name="name" required><br><br>
