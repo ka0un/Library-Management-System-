@@ -177,6 +177,10 @@ function get_default_user_profile_picture_url($uuid, $size): string
     $username = get_user_name($uuid);
     $usernamewithoutspaces = str_replace(' ', '+', $username);
 
+    if ($uuid === null){
+        return "https://soccerpointeclaire.com/wp-content/uploads/2021/06/default-profile-pic-e1513291410505.jpg";
+    }
+
     if (USE_API_TO_DEFAULT_PROFILE_PICTURE){
         return "https://ui-avatars.com/api/?background=random&name=". $usernamewithoutspaces . "&rounded=true&bold=true&size=" . $size;
     }else{
