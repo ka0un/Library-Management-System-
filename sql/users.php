@@ -180,7 +180,7 @@ function get_default_user_profile_picture_url($uuid, $size): string
     if (USE_API_TO_DEFAULT_PROFILE_PICTURE){
         return "https://ui-avatars.com/api/?background=random&name=". $usernamewithoutspaces . "&rounded=true&bold=true&size=" . $size;
     }else{
-        return "https://www.pngarts.com/files/10/Default-Profile-Picture-PNG-Download-Image.png";
+        return "https://soccerpointeclaire.com/wp-content/uploads/2021/06/default-profile-pic-e1513291410505.jpg";
     }
 
 
