@@ -103,6 +103,6 @@
         <img src="images/book10.jpeg" height="300px" width="200px">
       </div>
     </div>
-    <script src="script.js"></script>
+    <script src="homePage.js"></script>
   </body>
 </html>
