@@ -125,7 +125,7 @@ h1{
     }
 
     h1 {
-        font-size: 24px;
+        padding-left: 30px;
     }
 }
 </style>
