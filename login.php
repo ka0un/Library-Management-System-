@@ -79,7 +79,7 @@ if(isset($_POST["login"])){
 }
 
 ?>
-<center>
+
 
 <div class="form_dev">
     <form action="login.php" method="post" class="form" id="form">
