@@ -22,9 +22,11 @@
                             <div class="nav">
                                 <div class ="navhome"><a href ="#">HOME</a></div>
                                 <div class ="navbook"><a href ="#">BOOK</a></div>
-                                <div class ="navdashboard"><a href="#">DASHBOARD</a></div>
+                                <div class ="navdashboard"><a href="#">DASHBOARD</a></div>';
+
                                 
-                            </div>
+                                
+                $html2= '</div>
                             <div class="rightcon">
                                 <div class="text">
                                     <div class ="hellow"> Hellow User!</div>
@@ -43,6 +45,8 @@
                         <div class ="part2">
                             <div class ="path">
                                 <a href ="#">HOME</a> > ';
+
+
         foreach($pathLinks as $path)
         {
             $html .= '<a href = "'.$path['url']. '" >'.$path['text'].'</a></div';
