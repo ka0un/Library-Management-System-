@@ -21,6 +21,14 @@ const DB_DATABASE = "s14_main"; /* Your Database Name */
 const SESSION_LIFETIME_SECONDS = 3600; /* 1 hour = 3600 seconds, 1 day = 86400 seconds */
 
 //===================================================================
+//Design and Branding
+//===================================================================
+const PRIMARY_COLOR = "#292929";
+const SECONDARY_COLOR = "#D9D9D9";
+const BRAND_NAME = "Library Management System";
+const BRAND_LOGO = "https://lms1.hapangama.com/assets/images/logo.png";
+
+//===================================================================
 //Role and Permissions configuration
 //===================================================================
 const ROLES = array(
