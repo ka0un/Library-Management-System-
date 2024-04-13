@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="stylesheet" href="homePage.css" type="text/css">
   </head>
   <body>
     <div class="slideshow-container">
