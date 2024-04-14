@@ -49,7 +49,7 @@ function setup($conn): void
     );";
 
     $records_table_create = "CREATE TABLE IF NOT EXISTS records (
-        recordid VARCHAR(255) PRIMARY KEY,
+        recordid INT PRIMARY KEY AUTO_INCREMENT,
         copyid VARCHAR(255),
         uuid VARCHAR(255),
         start TIMESTAMP,
