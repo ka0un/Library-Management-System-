@@ -16,9 +16,9 @@ body{
 	width:480px;
 	background-color: <?php echo PRIMARY_COLOR; ?>;
 	margin-right:30px;
-	margin-top:40px;
+	margin-top:130px;
     border-radius: 30px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 
 .form{
