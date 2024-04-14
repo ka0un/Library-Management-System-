@@ -99,6 +99,8 @@ if(isset($_POST["login"])){
                 <button id="button2" class="create_accout">CREATE ACCOUNT</button>
     </a>
 </div>
+</body>
+</head>
 <?php
    echo generateFooter();
    
