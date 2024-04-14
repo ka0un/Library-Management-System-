@@ -25,6 +25,22 @@ function remove_record($recordid): void
     invalidate_record($recordid);
 }
 
+function force_remove_record($recordid): void
+{
+    global $conn;
+    $sql = "DELETE FROM records WHERE recordid = ?";
+
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $recordid);
+    mysqli_stmt_execute($stmt);
+
+    if (mysqli_stmt_affected_rows($stmt) == 0) {
+        echo "Error removing record.";
+    }
+
+    mysqli_stmt_close($stmt);
+}
+
 function get_latest_valid_recordID_of_copy($copyid): string
 {
     global $conn;
