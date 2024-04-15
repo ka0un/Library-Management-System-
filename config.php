@@ -19,7 +19,10 @@ const GENERATE_TABLES = true; /* Change this to false in a production env*/
 //Session configuration
 //===================================================================
 const SESSION_LIFETIME_SECONDS = 3600; /* 1 hour = 3600 seconds, 1 day = 86400 seconds */
-
+//===================================================================
+//Limits configuration
+//===================================================================
+const MAX_BOOK_RESERVATIONS = 1; /* Maximum number of books a user can reserve */
 //===================================================================
 //Design and Branding
 //===================================================================

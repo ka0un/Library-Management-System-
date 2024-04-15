@@ -7,7 +7,7 @@ function add_record($copyid, $uuid, $type, $start): void
 {
     global $conn;
 
-    $sql = "INSERT INTO records (copyid, uuid, type, start, is_invalid) VALUES (?, ?, ?, ?, 1)";
+    $sql = "INSERT INTO records (copyid, uuid, type, start, is_invalid) VALUES (?, ?, ?, ?, 0)";
 
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($stmt, "ssss", $copyid, $uuid, $type, $start);
@@ -53,6 +53,40 @@ function get_latest_valid_recordID_of_copy($copyid): string
 
     $row = mysqli_fetch_assoc($result);
     return $row['recordid'];
+}
+
+function get_recordids_of_active_checkouts($uuid): array
+{
+    global $conn;
+    $sql = "SELECT recordid FROM records WHERE uuid = ? AND is_invalid = 0 AND type = 'checkout'";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $uuid);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    mysqli_stmt_close($stmt);
+
+    $recordids = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        array_push($recordids, $row['recordid']);
+    }
+    return $recordids;
+}
+
+function get_recordids_of_active_reservations($uuid): array
+{
+    global $conn;
+    $sql = "SELECT recordid FROM records WHERE uuid = ? AND is_invalid = 0 AND type = 'reservation'";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $uuid);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    mysqli_stmt_close($stmt);
+
+    $recordids = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        array_push($recordids, $row['recordid']);
+    }
+    return $recordids;
 }
 
 //getters
