@@ -3,14 +3,14 @@
 require_once __DIR__ . '/../database/database.php';
 require_once __DIR__ . '/../config.php';
 
-function add_record($copyid, $uuid, $start, $is_invalid): void
+function add_record($copyid, $uuid, $type, $start): void
 {
     global $conn;
 
-    $sql = "INSERT INTO records (copyid, uuid, start, is_invalid) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO records (copyid, uuid, type, start, is_invalid) VALUES (?, ?, ?, ?, 1)";
 
     $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "ssss", $copyid, $uuid, $start, $is_invalid);
+    mysqli_stmt_bind_param($stmt, "ssss", $copyid, $uuid, $type, $start);
     mysqli_stmt_execute($stmt);
 
     if (mysqli_stmt_affected_rows($stmt) == 0) {
@@ -111,6 +111,20 @@ function is_record_invalid($recordid): bool
 
     $row = mysqli_fetch_assoc($result);
     return $row['is_invalid'];
+}
+
+function get_record_type($recordid): string
+{
+    global $conn;
+    $sql = "SELECT type FROM records WHERE recordid = ?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $recordid);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    mysqli_stmt_close($stmt);
+
+    $row = mysqli_fetch_assoc($result);
+    return $row['type'];
 }
 
 function invalidate_record($recordid): void

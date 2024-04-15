@@ -77,6 +77,21 @@ function generate_bookID(): string
     return 'B' . sprintf('%07d', $next_uuid_number);
 }
 
+function is_bookid_exists($bookid): bool
+{
+    global $conn;
+    $sql = "SELECT COUNT(*) FROM books WHERE bookid = ?";
+
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $bookid);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    mysqli_stmt_close($stmt);
+
+    $count = mysqli_fetch_row($result)[0];
+    return $count > 0;
+}
+
 function get_amount_of_books(): int
 {
     global $conn;

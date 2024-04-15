@@ -51,6 +51,7 @@ function setup($conn): void
     $records_table_create = "CREATE TABLE IF NOT EXISTS records (
         recordid INT PRIMARY KEY AUTO_INCREMENT,
         copyid VARCHAR(255),
+        type VARCHAR(255),
         uuid VARCHAR(255),
         start TIMESTAMP,
         is_invalid BOOLEAN,
