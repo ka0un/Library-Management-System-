@@ -18,8 +18,10 @@ function getConnection()
         die("Info: " . $conn->connect_error);
     }
 
-    //this will set up the required tables if they aren't initialized yet
-    setup($conn);
+    //this will set up the required tables if they aren't initialized
+    if(GENERATE_TABLES){
+        setup($conn);
+    }
 
     return $conn;
 }
