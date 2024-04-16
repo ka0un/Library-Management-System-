@@ -76,7 +76,18 @@ function generate_copyID(): string
 }
 
 //getters
+function is_copyid_exists($copyid): bool
+{
+    global $conn;
+    $sql = "SELECT * FROM copies WHERE copyid = ?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $copyid);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    mysqli_stmt_close($stmt);
 
+    return mysqli_num_rows($result) > 0;
+}
 
 function get_array_of_copyids($bookid): array
 {

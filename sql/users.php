@@ -97,6 +97,19 @@ function change_user_password($id, $password): void
     mysqli_stmt_close($stmt);
 }
 
+function is_uuid_exists($uuid): bool
+{
+    global $conn;
+    $uuid = mysqli_real_escape_string($conn, $uuid);
+    // doc : https://www.w3schools.com/Php/func_mysqli_real_escape_string.asp
+
+    $sql = "SELECT COUNT(*) FROM users WHERE uuid = '$uuid'";
+    $result = mysqli_query($conn, $sql);
+
+    $count = mysqli_fetch_row($result)[0];
+    return $count > 0;
+}
+
 
 // Function to get user name by UUID
 function get_user_name($uuid) {
