@@ -3,6 +3,8 @@
 require_once __DIR__ . '/../database/database.php';
 require_once __DIR__ . '/../config.php';
 
+$conn = getConnection();
+
 function add_reservation($copyid, $uuid, $type, $start): void
 {
     global $conn;
