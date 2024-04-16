@@ -25,6 +25,7 @@ const SESSION_LIFETIME_SECONDS = 3600; /* 1 hour = 3600 seconds, 1 day = 86400 s
 const MAX_BOOK_RESERVATIONS = 1; /* Maximum number of books a user can reserve */
 const MAX_RESERVATION_DAYS = 7; /* Maximum number of days a book can be reserved */
 const MAX_CHECKOUTS = 1; /* Maximum number of books a user can checkout */
+const MAX_CHECKOUT_DAYS = 14; /* Maximum number of days a book can be checked out */
 const FINE_PER_DAY = 0.5; /* Fine per day for overdue books */
 //===================================================================
 //Design and Branding
