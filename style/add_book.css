@@ -1,0 +1,41 @@
+.add_book_1st_div{
+	border:2px solid #292929;
+	text-align:center;
+	padding-top:20px;
+	padding-bottom:20px;
+	margin-right:500px;
+	margin-left:500px;
+	margin-top:150px;
+	border-radius:20px;
+	background-color:#292929;
+}
+#textbox{
+	border:2px solid #292929;
+	border-bottom:2px solid #D9D9D9;
+	background-color:#292929;
+	width:190px;
+	height:30px;
+	color:#D9D9D9;
+}
+h1{
+	color:#D9D9D9;
+}
+#textarea_addbook{
+	color:#D9D9D9;
+	background-color:#292929;
+	border:1px solid #D9D9D9;
+	margin-bottom:10px;
+}
+#addbook_buttons{
+	width:190px;
+	height:30px;
+	border:2px solid #D9D9D9;
+	border-radius:20px;
+}
+.add_book_submit{
+	color:#D9D9D9;
+	background-color:#292929;
+}
+.upload_image_button{
+	color:#292929;
+}
