@@ -58,19 +58,6 @@ function get_amount_of_checkouts_of_user($uuid): int
     return $row['COUNT(*)'];
 }
 
-function get_amount_of_checkouts_of_copy($copyid): int
-{
-    global $conn;
-    $sql = "SELECT COUNT(*) FROM checkouts WHERE copyid = ? AND valid = 1";
-    $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "s", $copyid);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-    mysqli_stmt_close($stmt);
-
-    $row = mysqli_fetch_assoc($result);
-    return $row['COUNT(*)'];
-}
 
 function get_checkoutid_of_active_checkout($uuid, $copyid): string
 {
@@ -103,21 +90,18 @@ function get_checkoutids_of_user($uuid): array
     return $checkoutids;
 }
 
-function get_checkoutids_of_copy($copyid): array
+function is_copy_alredy_checked_out($copyid): bool
 {
     global $conn;
-    $sql = "SELECT id FROM checkouts WHERE copyid = ? AND valid = 1";
+    $sql = "SELECT COUNT(*) FROM checkouts WHERE copyid = ? AND valid = 1";
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($stmt, "s", $copyid);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
     mysqli_stmt_close($stmt);
 
-    $checkoutids = [];
-    while ($row = mysqli_fetch_assoc($result)) {
-        array_push($checkoutids, $row['id']);
-    }
-    return $checkoutids;
+    $row = mysqli_fetch_assoc($result);
+    return $row['COUNT(*)'] > 0;
 }
 
 function invalidate_checkout($checkoutid): void
