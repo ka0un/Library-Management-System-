@@ -5,14 +5,14 @@ require_once __DIR__ . '/../config.php';
 
 $conn = getConnection();
 
-function add_reservation($copyid, $uuid, $type, $start): void
+function add_reservation($bookid, $uuid): void
 {
     global $conn;
 
-    $sql = "INSERT INTO reservations (bookid, uuid, start, valid) VALUES (?, ?, ?, ?, 1)";
+    $sql = "INSERT INTO reservations (bookid, uuid, start, valid) VALUES (?, ?, now(), 1)";
 
     $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "ssss", $copyid, $uuid, $type, $start);
+    mysqli_stmt_bind_param($stmt, "ss", $bookid, $uuid);
     mysqli_stmt_execute($stmt);
 
     if (mysqli_stmt_affected_rows($stmt) == 0) {
@@ -206,7 +206,7 @@ function get_reservation_book_id($reservationid): string
     mysqli_stmt_close($stmt);
 
     $row = mysqli_fetch_assoc($result);
-    return $row['copyid'];
+    return $row['bookid'];
 }
 
 
