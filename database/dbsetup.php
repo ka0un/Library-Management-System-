@@ -48,16 +48,24 @@ function setup($conn): void
         name VARCHAR(255)
     );";
 
-    $records_table_create = "CREATE TABLE IF NOT EXISTS records (
-        recordid INT PRIMARY KEY AUTO_INCREMENT,
-        copyid VARCHAR(255),
-        type VARCHAR(255),
+    $reservations_table_create = "CREATE TABLE IF NOT EXISTS reservations (
+        id INT PRIMARY KEY AUTO_INCREMENT,
         uuid VARCHAR(255),
+        bookid VARCHAR(255),
         start TIMESTAMP,
-        is_invalid BOOLEAN,
-        FOREIGN KEY (copyid) REFERENCES copies(copyid),
-        FOREIGN KEY (uuid) REFERENCES users(uuid)
+        FOREIGN KEY (uuid) REFERENCES users(uuid),
+        FOREIGN KEY (bookid) REFERENCES books(bookid)
     );";
+
+    $checkouts_table_create = "CREATE TABLE IF NOT EXISTS checkouts (
+        id INT PRIMARY KEY AUTO_INCREMENT,
+        uuid VARCHAR(255),
+        copyid VARCHAR(255),
+        start TIMESTAMP,
+        FOREIGN KEY (uuid) REFERENCES users(uuid),
+        FOREIGN KEY (copyid) REFERENCES copies(copyid)
+    );";
+
 
     //if table not exists create table
     if (!($conn->query($users_table_create) === TRUE)) {
@@ -74,7 +82,6 @@ function setup($conn): void
         echo "Error creating table: " . $conn->error . "<br>";
     }
 
-
     if (!($conn->query($books_table_create) === TRUE)) {
         echo "Error creating table: " . $conn->error . "<br>";
     }
@@ -83,10 +90,15 @@ function setup($conn): void
         echo "Error creating table: " . $conn->error . "<br>";
     }
 
-
-    if (!($conn->query($records_table_create) === TRUE)) {
+    if (!($conn->query($reservations_table_create) === TRUE)) {
         echo "Error creating table: " . $conn->error . "<br>";
     }
+
+    if (!($conn->query($checkouts_table_create) === TRUE)) {
+        echo "Error creating table: " . $conn->error . "<br>";
+    }
+
+
 
 
 }
