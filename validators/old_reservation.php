@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../sql/books.php';
 require_once __DIR__ . '/../sql/copies.php';
-require_once __DIR__ . '/../sql/records.php';
+require_once __DIR__ . '/../sql/old_records.php';
 require_once __DIR__ . '/../config.php';
 
 function is_book_available_for_reservation($bookid): bool
@@ -50,7 +50,7 @@ function is_book_available_for_reservation($bookid): bool
 
 }
 
-function can_user_reserve_a_book($uuid){
+function can_user_reserve_a_book($uuid) : bool{
 
     //get all active reservations of user
     $active_reservations_array = get_recordids_of_active_reservations($uuid);
@@ -67,7 +67,7 @@ function can_user_reserve_a_book($uuid){
 }
 
 
-function get_reason_why_book_cannot_be_reserved($bookid, $uuid){
+function get_reason_why_book_cannot_be_reserved($bookid, $uuid) : string{
 
     if (!is_bookid_exists($bookid)){
         return "Book does not exist";

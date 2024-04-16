@@ -1,9 +1,9 @@
 <?php
 require_once __DIR__ . '/../sql/books.php';
 require_once __DIR__ . '/../sql/copies.php';
-require_once __DIR__ . '/../sql/records.php';
+require_once __DIR__ . '/../sql/old_records.php';
 require_once __DIR__ . '/../config.php';
-require_once __DIR__ . '/reservation.php';
+require_once __DIR__ . '/old_reservation.php';
 
 function can_user_checkout_copy($uuid, $copyid): bool
 {
@@ -61,6 +61,14 @@ function get_reason_why_user_cant_checkout_copy($uuid, $copyid): string
     }
 
     return "User can checkout the copy.";
+}
+
+function get_return_date_of_copy($copyid): string
+{
+    $latest_recordid = get_latest_valid_recordID_of_copy($copyid);
+    $start_date = get_record_start($latest_recordid);
+    $return_date = date('Y-m-d', strtotime($start_date . ' + ' . MAX_CHECKOUT_DAYS . ' days'));
+    return $return_date;
 }
 
 
