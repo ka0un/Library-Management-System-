@@ -53,6 +53,7 @@ function setup($conn): void
         uuid VARCHAR(255),
         bookid VARCHAR(255),
         start TIMESTAMP,
+        valid BOOLEAN,
         FOREIGN KEY (uuid) REFERENCES users(uuid),
         FOREIGN KEY (bookid) REFERENCES books(bookid)
     );";
@@ -62,6 +63,7 @@ function setup($conn): void
         uuid VARCHAR(255),
         copyid VARCHAR(255),
         start TIMESTAMP,
+        valid BOOLEAN,
         FOREIGN KEY (uuid) REFERENCES users(uuid),
         FOREIGN KEY (copyid) REFERENCES copies(copyid)
     );";
