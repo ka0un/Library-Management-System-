@@ -144,6 +144,7 @@ table{width:100%;
     left: 0;
     background-color: rgba(128, 128, 128, 0.3); /* gray transparent overlay */
     z-index: 1; /* place the overlay below the text */
+    border-radius: 40px;
 }
 
 .hero-text {
