@@ -35,6 +35,7 @@ const SECONDARY_COLOR = "#D9D9D9";
 const BRAND_NAME = "Library Management System";
 const BRAND_LOGO = "https://lms1.hapangama.com/assets/images/logo.png";
 const USE_API_TO_DEFAULT_PROFILE_PICTURE = true; /* Use API to get default profile picture */
+const USE_API_TO_DEFAULT_BOOK_COVER = true; /* Use API to get default book cover */
 
 //===================================================================
 //Role and Permissions configuration

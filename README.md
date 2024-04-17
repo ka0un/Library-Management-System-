@@ -39,6 +39,7 @@ Each of these parts can be constructed independently, yet they synergize to achi
 
 ### 3rd Party Apis
 - Profile Picture [ui-avatars](https://ui-avatars.com/)
+- Book Cover [placehold](https://placehold.co/)
 
 ### Other
 - Version Control [GIT](https://git-scm.com/downloads)
