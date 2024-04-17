@@ -1,17 +1,20 @@
 <?php
 require_once __DIR__ . '/components/header.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <link rel="stylesheet" href="style/index.css" type="text/css">
+    <link rel="stylesheet" href="style/index.php" type="text/css">
     <title>Home</title>
 </head>
 <body>
+
 <?php
 generate_header(array());
 ?>
+
 <!--    image cas-->
 <!--        <div class="slideshow">-->
 <!--            <div class="slideshow-container">-->
@@ -38,124 +41,192 @@ generate_header(array());
 <!--            </div>-->
 <!--        </div><br>-->
 
-<div class="announce">
-    <div class="caption">
-        Announcements
+<div class="hero">
+    <div class="hero-text">
+        <h1>Welcome to the Library Management System</h1>
+        <p>Explore our collection of books, reserve and checkout your favorites, and enjoy the magic of reading!</p>
     </div>
-    <div class="table">
-        <table border="3px">
-            <div class="row1">
-                <tr>
-                    <div class="heading1">
-                        <th>Date</th>
-                    </div>
-                    <div class="heading2">
-                        <th>Time</th>
-                    </div>
-                    <div class="heading3">
-                        <th>Announcement</th>
-                    </div>
-                </tr>
+</div>
+<div class="announcements">
+    <div class="announcement">
+        <div class="Date-Section">
+            <div class="month">
+                NOV
             </div>
-            <div class="row2">
-                <tr>
-                    <div class="data1">
-                        <td>10/11</td>
-                    </div>
-                    <div class="data2">
-                        <td>08.00</td>
-                    </div>
-                    <div class="data3">
-                        <td>
-                            <b>Announcement Title</b><br>
-                            Short Announcement Description Littebit Longer Longer than you expected exactly this much longer littlebit more
-                        </td>
-                    </div>
-                </tr>
+            <div class="day">
+                10
             </div>
-            <div class="row3">
-                <tr>
-                    <div class="data4">
-                        <td>10/11</td>
-                    </div>
-                    <div class="data5">
-                        <td>08.00</td>
-                    </div>
-                    <div class="data6">
-                        <td>
-                            <b>Announcement Title</b><br>
-                            Short Announcement Description Littebit Longer Longer than you expected exactly this much longer littlebit more
-                        </td>
-                    </div>
-                </tr>
+        </div>
+        <div class="Content-Section">
+            <div class="title">
+                <b>Overdue Bandit Alert!</b>
             </div>
-            <div class="row4">
-                <tr>
-                    <div class="data7">
-                        <td>10/11</td>
-                    </div>
-                    <div class="data8">
-                        <td>08.00</td>
-                    </div>
-                    <div class="data9">
-                        <td>
-                            <b>Announcement Title</b><br>
-                            Short Announcement Description Littebit Longer Longer than you expected exactly this much longer littlebit more
-                        </td>
-                    </div>
-                </tr>
+            <div class="description">
+                Our shelves are feeling a little lighter than usual. Did you accidentally become best friends with a library book?
             </div>
-            <div class="row5">
-                <tr>
-                    <div class="data10">
-                        <td>10/11</td>
-                    </div>
-                    <div class="data11">
-                        <td>08.00</td>
-                    </div>
-                    <div class="data12">
-                        <td>
-                            <b>Announcement Title</b><br>
-                            Short Announcement Description Littebit Longer Longer than you expected exactly this much longer littlebit more
-                        </td>
-                    </div>
-                </tr>
-            </div>
-            <div class="row6">
-                <tr>
-                    <div class="data13">
-                        <td>10/11</td>
-                    </div>
-                    <div class="data14">
-                        <td>08.00</td>
-                    </div>
-                    <div class="data15">
-                        <td>
-                            <b>Announcement Title</b><br>
-                            Short Announcement Description Littebit Longer Longer than you expected exactly this much longer littlebit more
-                        </td>
-                    </div>
-                </tr>
-            </div>
-            <div class="row7">
-                <tr>
-                    <div class="data16">
-                        <td>10/11</td>
-                    </div>
-                    <div class="data17">
-                        <td>08.00</td>
-                    </div>
-                    <div class="data18">
-                        <td>
-                            <b>Announcement Title</b><br>
-                            Short Announcement Description Littebit Longer Longer than you expected exactly this much longer littlebit more
-                        </td>
-                    </div>
-                </tr>
-            </div>
-        </table>
+        </div>
     </div>
-</div><br><br>
+
+
+
+
+<div class="announcement">
+    <div class="Date-Section">
+        <div class="month">
+            OCT
+        </div>
+        <div class="day">
+            26
+        </div>
+    </div>
+    <div class="Content-Section">
+        <div class="title">
+            <b>Shh! We're Having a Silent Reading Dance Party (Don't Tell the Shhh-Police)</b>
+        </div>
+        <div class="description">
+            Ever get the urge to bust a move while buried in a good book? Us too! Join us for a silent reading dance party –  find a comfy corner, crank up the internal soundtrack, and let your bookish joy flow freely (without disturbing the peace, of course!).
+        </div>
+    </div>
+</div>
+
+    <div class="announcement">
+        <div class="Date-Section">
+            <div class="month">
+                OCT
+            </div>
+            <div class="day">
+                26
+            </div>
+        </div>
+        <div class="Content-Section">
+            <div class="title">
+                <b>We Now Accept Squirrel Currency!</b>
+            </div>
+            <div class="description">
+                We may not have an official acorn exchange program (yet!).
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div class="announce">-->
+<!--    <div class="caption">-->
+<!--        Announcements-->
+<!--    </div>-->
+<!--    <div class="table">-->
+<!--        <table border="3px">-->
+<!--            <div class="row1">-->
+<!--                <tr>-->
+<!--                    <div class="heading1">-->
+<!--                        <th>Date</th>-->
+<!--                    </div>-->
+<!--                    <div class="heading2">-->
+<!--                        <th>Time</th>-->
+<!--                    </div>-->
+<!--                    <div class="heading3">-->
+<!--                        <th>Announcement</th>-->
+<!--                    </div>-->
+<!--                </tr>-->
+<!--            </div>-->
+<!--            <div class="row2">-->
+<!--                <tr>-->
+<!--                    <div class="data1">-->
+<!--                        <td>10/11</td>-->
+<!--                    </div>-->
+<!--                    <div class="data2">-->
+<!--                        <td>08.00</td>-->
+<!--                    </div>-->
+<!--                    <div class="data3">-->
+<!--                        <td>-->
+<!--                            <b>Announcement Title</b><br>-->
+<!--                            Short Announcement Description Littebit Longer Longer than you expected exactly this much longer littlebit more-->
+<!--                        </td>-->
+<!--                    </div>-->
+<!--                </tr>-->
+<!--            </div>-->
+<!--            <div class="row3">-->
+<!--                <tr>-->
+<!--                    <div class="data4">-->
+<!--                        <td>10/11</td>-->
+<!--                    </div>-->
+<!--                    <div class="data5">-->
+<!--                        <td>08.00</td>-->
+<!--                    </div>-->
+<!--                    <div class="data6">-->
+<!--                        <td>-->
+<!--                            <b>Announcement Title</b><br>-->
+<!--                            Short Announcement Description Littebit Longer Longer than you expected exactly this much longer littlebit more-->
+<!--                        </td>-->
+<!--                    </div>-->
+<!--                </tr>-->
+<!--            </div>-->
+<!--            <div class="row4">-->
+<!--                <tr>-->
+<!--                    <div class="data7">-->
+<!--                        <td>10/11</td>-->
+<!--                    </div>-->
+<!--                    <div class="data8">-->
+<!--                        <td>08.00</td>-->
+<!--                    </div>-->
+<!--                    <div class="data9">-->
+<!--                        <td>-->
+<!--                            <b>Announcement Title</b><br>-->
+<!--                            Short Announcement Description Littebit Longer Longer than you expected exactly this much longer littlebit more-->
+<!--                        </td>-->
+<!--                    </div>-->
+<!--                </tr>-->
+<!--            </div>-->
+<!--            <div class="row5">-->
+<!--                <tr>-->
+<!--                    <div class="data10">-->
+<!--                        <td>10/11</td>-->
+<!--                    </div>-->
+<!--                    <div class="data11">-->
+<!--                        <td>08.00</td>-->
+<!--                    </div>-->
+<!--                    <div class="data12">-->
+<!--                        <td>-->
+<!--                            <b>Announcement Title</b><br>-->
+<!--                            Short Announcement Description Littebit Longer Longer than you expected exactly this much longer littlebit more-->
+<!--                        </td>-->
+<!--                    </div>-->
+<!--                </tr>-->
+<!--            </div>-->
+<!--            <div class="row6">-->
+<!--                <tr>-->
+<!--                    <div class="data13">-->
+<!--                        <td>10/11</td>-->
+<!--                    </div>-->
+<!--                    <div class="data14">-->
+<!--                        <td>08.00</td>-->
+<!--                    </div>-->
+<!--                    <div class="data15">-->
+<!--                        <td>-->
+<!--                            <b>Announcement Title</b><br>-->
+<!--                            Short Announcement Description Littebit Longer Longer than you expected exactly this much longer littlebit more-->
+<!--                        </td>-->
+<!--                    </div>-->
+<!--                </tr>-->
+<!--            </div>-->
+<!--            <div class="row7">-->
+<!--                <tr>-->
+<!--                    <div class="data16">-->
+<!--                        <td>10/11</td>-->
+<!--                    </div>-->
+<!--                    <div class="data17">-->
+<!--                        <td>08.00</td>-->
+<!--                    </div>-->
+<!--                    <div class="data18">-->
+<!--                        <td>-->
+<!--                            <b>Announcement Title</b><br>-->
+<!--                            Short Announcement Description Littebit Longer Longer than you expected exactly this much longer littlebit more-->
+<!--                        </td>-->
+<!--                    </div>-->
+<!--                </tr>-->
+<!--            </div>-->
+<!--        </table>-->
+<!--    </div>-->
+<!--</div><br><br>-->
 <div class="popbook">
     <div class="caption">
         Popular Books

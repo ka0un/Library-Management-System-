@@ -32,6 +32,7 @@ const FINE_PER_DAY = 0.5; /* Fine per day for overdue books */
 //===================================================================
 const PRIMARY_COLOR = "#292929";
 const SECONDARY_COLOR = "#D9D9D9";
+const TERTIARY_COLOR = "#5e5e5e";
 const BRAND_NAME = "Library Management System";
 const BRAND_LOGO = "https://lms1.hapangama.com/assets/images/logo.png";
 const USE_API_TO_DEFAULT_PROFILE_PICTURE = true; /* Use API to get default profile picture */
