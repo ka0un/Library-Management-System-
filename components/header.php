@@ -25,7 +25,7 @@ session_start();
 
     .part1 {
         height : 100px;
-        border-radius:45px;
+        border-radius:20px;
         display: flex;
         justify-content: space-between;
         background-color:<?php echo PRIMARY_COLOR; ?>;

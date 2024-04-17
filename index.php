@@ -227,6 +227,7 @@ generate_header(array());
 <!--        </table>-->
 <!--    </div>-->
 <!--</div><br><br>-->
+
 <div class="popbook">
     <div class="caption">
         Popular Books
@@ -234,33 +235,6 @@ generate_header(array());
     <div class="scroll-container">
         <div class="book">
             <img src="images/book1.jpeg" alt="Book Image" height="300px" width="200px">
-        </div>
-        <div class="book">
-            <img src="images/book2.jpeg" alt="Book Image" height="300px" width="200px">
-        </div>
-        <div class="book">
-            <img src="images/book3.jpeg" alt="Book Image" height="300px" width="200px">
-        </div>
-        <div class="book">
-            <img src="images/book4.jpeg" alt="Book Image" height="300px" width="200px">
-        </div>
-        <div class="book">
-            <img src="images/book5.jpeg" alt="Book Image" height="300px" width="200px">
-        </div>
-        <div class="book">
-            <img src="images/book6.jpeg" alt="Book Image" height="300px" width="200px">
-        </div>
-        <div class="book">
-            <img src="images/book7.jpeg" alt="Book Image" height="300px" width="200px">
-        </div>
-        <div class="book">
-            <img src="images/book8.jpeg" alt="Book Image" height="300px" width="200px">
-        </div>
-        <div class="book">
-            <img src="images/book9.jpeg" alt="Book Image" height="300px" width="200px">
-        </div>
-        <div class="book">
-            <img src="images/book10.jpeg" alt="Book Image" height="300px" width="200px">
         </div>
     </div>
 </div>

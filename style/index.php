@@ -72,26 +72,23 @@ table{width:100%;
     background-color: <?php echo TERTIARY_COLOR; ?>;
     padding:10px;
     margin:10px 0;
-    border-radius:5px;
     text-align:center;
     font-size:20px;
     font-weight:bold;
     color: <?php echo SECONDARY_COLOR; ?>;
     display: flex;
     flex-direction: row;
-    border-radius: 40px;
+    border-radius: 20px;
 }
 .Date-Section{
     display:flex;
     padding:10px;
-    border-radius:5px;
     margin-right:10px;
     flex-direction: column;
 }
 .Content-Section{
     display:flex;
     padding:10px;
-    border-radius:5px;
     flex-direction: column;
 }
 
@@ -132,7 +129,7 @@ table{width:100%;
     text-align: center;
     padding: 20px;
     margin-top: 10px;
-    border-radius: 40px;
+    border-radius: 20px;
 }
 
 .hero::before {
@@ -144,7 +141,7 @@ table{width:100%;
     left: 0;
     background-color: rgba(128, 128, 128, 0.3); /* gray transparent overlay */
     z-index: 1; /* place the overlay below the text */
-    border-radius: 40px;
+    border-radius: 20px;
 }
 
 .hero-text {
@@ -194,7 +191,7 @@ table{width:100%;
     }
 
     .hero-text{
-        font-size: 1.5em;
+        font-size: 1em;
     }
 
 }
