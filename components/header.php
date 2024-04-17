@@ -72,18 +72,18 @@ session_start();
 
     .navhome{
         margin-top: 10px;
-        margin-left: 20px;
+        margin-left: 40px;
     }
 
 
     .navbook{
         margin-top: 10px;
-        margin-left: 20px;
+        margin-left: 40px;
     }
 
     .navdashboard{
         margin-top: 10px;
-        margin-left: 20px;
+        margin-left: 40px;
     }
 
     .userimg{

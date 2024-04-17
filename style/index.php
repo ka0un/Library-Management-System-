@@ -154,6 +154,16 @@ table{width:100%;
     font-size: 2em;
 }
 
+.book{
+    padding: 10px;
+    display: inline-block;
+}
+.book img{
+
+    object-fit: cover;
+    border-radius: 20px;
+}
+
 /* For Mobile Devices*/
 @media only screen and (max-width: 600px) {
 

@@ -233,9 +233,76 @@ generate_header(array());
         Popular Books
     </div>
     <div class="scroll-container">
-        <div class="book">
-            <img src="images/book1.jpeg" alt="Book Image" height="300px" width="200px">
-        </div>
+
+        <!--top 10 books in the table-->
+
+        <?php
+        require_once __DIR__ . '/sql/books.php';
+        $booksid1 = 'B0000001';
+        $booksid2 = 'B0000002';
+
+        echo '<div class="book">';
+        echo '<img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px">';
+        echo '</div>';
+
+        echo '<div class="book">';
+        echo '<img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px">';
+        echo '</div>';
+
+        echo '<div class="book">';
+        echo '<img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px">';
+        echo '</div>';
+
+        echo '<div class="book">';
+        echo '<img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px">';
+        echo '</div>';
+        echo '<div class="book">';
+        echo '<img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px">';
+        echo '</div>';
+
+        echo '<div class="book">';
+        echo '<img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px">';
+        echo '</div>';
+        echo '<div class="book">';
+        echo '<img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px">';
+        echo '</div>';
+
+        echo '<div class="book">';
+        echo '<img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px">';
+        echo '</div>';
+
+        echo '<div class="book">';
+        echo '<img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px">';
+        echo '</div>';
+
+        echo '<div class="book">';
+        echo '<img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px">';
+        echo '</div>';
+
+        echo '<div class="book">';
+        echo '<img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px">';
+        echo '</div>';
+
+        echo '<div class="book">';
+        echo '<img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px">';
+        echo '</div>';
+        echo '<div class="book">';
+        echo '<img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px">';
+        echo '</div>';
+
+        echo '<div class="book">';
+        echo '<img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px">';
+        echo '</div>';
+        echo '<div class="book">';
+        echo '<img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px">';
+        echo '</div>';
+
+        echo '<div class="book">';
+        echo '<img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px">';
+        echo '</div>';
+
+        ?>
+
     </div>
 </div>
 <script src="index.js"></script>
