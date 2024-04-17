@@ -42,17 +42,17 @@ function can_user_reserve_book($uuid, $bookid): bool
 function get_reason_why_user_cannot_reserve_book($uuid, $bookid): string
 {
     //check if book exists
-    if (!is_bookid_exists($bookid)){
+    if (!is_bookid_exists($bookid)) {
         return "Book does not exist.";
     }
 
     //check if user exists
-    if (!is_uuid_exists($uuid)){
+    if (!is_uuid_exists($uuid)) {
         return "User does not exist.";
     }
 
     //check if user exceeds reservation limit
-    if (has_user_exceeded_reservation_limit($uuid)){
+    if (has_user_exceeded_reservation_limit($uuid)) {
         return "User has exceeded reservation limit.";
     }
 
@@ -62,7 +62,7 @@ function get_reason_why_user_cannot_reserve_book($uuid, $bookid): string
     $non_pr_amount_of_copies = $total_amount_of_copies - $pr_amount_of_copies;
     $reservations = get_amount_of_reservations_of_book($bookid);
 
-    if ($non_pr_amount_of_copies <= $reservations){
+    if ($non_pr_amount_of_copies <= $reservations) {
         return "No available copies for reservation.";
     }
 
