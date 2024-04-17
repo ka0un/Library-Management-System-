@@ -51,13 +51,10 @@ session_start();
     }
 
     .nav {
+        display: flex;
+        flex-direction: row;
         height: 50px;
-        horiz-align: center;
-        min-width: 0px;
-        color: <?php echo SECONDARY_COLOR; ?>;
-        font-size: 25px;
-        font-weight: lighter;
-
+        margin-top: 25px;
     }
 
     .nav a{
@@ -146,6 +143,8 @@ session_start();
             left-margin: 5px;
             display: flex;
             justify-content: flex-start;
+            font-size: 18px;
+            margin-top: 30px;
         }
 
 
@@ -167,6 +166,7 @@ session_start();
 
         .login{
             font-size: 18px;
+            margin-bottom: 40px;
         }
     }
 
