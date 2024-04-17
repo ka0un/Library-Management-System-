@@ -18,6 +18,7 @@
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1">
     <option name="suggestChangeDefaultLanguageLevel" value="false" />
   </component>
+  <component name="PhpRuntimeConfiguration" document_root_path="." />
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>

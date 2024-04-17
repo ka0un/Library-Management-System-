@@ -125,6 +125,19 @@ function set_book_reservations($bookid, $reservations): void
 
 
 // getters
+function get_book_image($bookid){
+    return get_default_book_image($bookid);
+}
+
+function get_default_book_image($bookid){
+    if(USE_API_TO_DEFAULT_BOOK_COVER0){
+        return "https://placehold.co/500x650/292929/D9D9D9/?text=".crop_text(get_book_title($bookid), 10);
+    }else{
+        return "/../images/cover.png";
+    }
+
+}
+
 function get_book_title($bookid)
 {
     global $conn;
@@ -228,5 +241,15 @@ function get_book_category_id($bookid)
     return null;
 }
 
+
+//private functions
+
+function crop_text($input, $n) {
+    if (strlen($input) > $n) {
+        return substr($input, 0, $n) . '...';
+    } else {
+        return $input;
+    }
+}
 
 
