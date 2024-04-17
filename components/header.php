@@ -1,209 +1,223 @@
 <?php
-    
-    function genarateheader($pathLinks)
-    {
-        
-        
-        $html = '
-                <style>
-                   
-
-
-.part1 {
-    height : 100px;
-    border:3px solid black;
-    border-radius:20px;
-    grid-row:1;
-    display: grid;
-    grid-template-columns: 5vw 35vw 18vw 40vw;
-    background-color:black;
-    
-    
-    
-    
-}
-
-.part2 {
-    height: 30px;
-    background-color: none;
-    padding-left: 3px;
-   
-}
-.part2 a{
-   color:black;
-}
-
-
-
-
-
-.imgbook {
-    grid-column: 1;
-}
-
-.brand {
-    padding-left: 10px;
-    grid-column: 2;
-    
-    font-size: 30px;
-    font-weight: bold;
-    height: 50px;
-    margin-top: 25px;
-    margin-left: 20px;
-
-    
-    
-}
-
-.nav {
-    grid-column: 3;
-    
-    display: grid;
-    grid-template-rows: 15vw 15vw 15vw;
-
-    height: 50px;
-    margin-top: 25px;
-    color: white;
-    
-}
-.nav a,.brand,.hellow,.log a  {
-color:white;
-}
-
-
-
-.rightcon {
-    grid-column: 4;
-    
-    height: 50px;
-    margin-top: 13px;
-    margin-left: 280px;
-    margin-right: 10px;
-    display: grid;
-    grid-template-columns: 16vw 18vw;
-    text-align: right;
-    
-    
-    
-
-}
-
-.imgbook img {
-    width: 80px;
-    height: 60px;
-    margin-left: 10px;
-    margin-top: 5px;
-}
-
-
-
- 
- 
-.text{
-    grid-column: 1;
-    display: grid;
-    grid-template-rows:4vh 6vh;
-
-}
-.hellow{
-    grid-row: 1;
-    margin-top: 15px;
-    margin-right: 3px;
-
-}
-.log{
-    grid-row:2;
-    margin-right: 3px;
-    margin-top: 3px;
-}
-.userimg{
-    grid-column: 2;
-    height:60px ;
-    width: 60px;
-    margin-left: 7px;
-    border-radius: 50%; 
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.userimg img{
-    width: 60px;
-    margin-left: 10px;
-    margin-top: 5px;
-    height: auto;
-    display: block;
-    margin: auto;
-   
-    
-}
-
-.navhome{
-    grid-column: 1;
-
-    
-    
-
-}
-
-.navdashboard{
-    grid-column: 3;
-}
-
-.navbook{
-    grid-column: 2;
-}
-
-
-
-.brand{
-background-color:black;
-}
-                </style>
-                    
-                        
-        <div class ="part1">
-            <div class="imgbook">
-                <img src ="images/booknew2.jpg">
-            </div>
-            <div class="brand">
-                SLIIT Main Library
-            </div>
-            <div class="nav">
-                <div class ="navhome"><a href ="#">HOME</a></div>
-                <div class ="navbook"><a href ="#">BOOK</a></div>
-                <div class ="navdashboard"><a href="#">DASHBOARD</a></div>
-            </div>
-            <div class="rightcon">
-                <div class="text">
-                    <div class ="hellow"> Hello User!</div>
-                    <div class ="log"><a href="register/login.php">Login</a></div>
-                </div>
-                <div class ="userimg"> <img src ="images/userimage2.jpg"></div>
-            </div>
-        </div>
-        
-        <div class ="part2">
-            <div class ="path">
-                <a href ="#">HOME</a> > ';
-
-    foreach($pathLinks as $path)
-    {
-        $html .= '<a href = "'.$path['url']. '" >'.$path['text'].'</a>';
-    } 
-
-    $html .= '</div></div>';
-
-        return $html;
-    }
-
+require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../sql/users.php';
+session_start();
 ?>
 
 
+<style>
 
-<!--example arry------ 
-    $navLinks = array(
-    array('text' => 'Book', 'url' => '#'),
-    array('text' => 'Dashboard', 'url' => '#')
-);  -->
+    .header{
+        font-size: 25px;
+        font-family: Inter, sans-serif;
+        font-weight: bold;
+    }
+
+    .brandname{
+        color: <?php echo SECONDARY_COLOR; ?>;
+        margin-left: 30px;
+        padding-right: 30px;
+        text-align: left;
+        min-width: 200px;
+        padding-top: 32.5px;
+        font-size: 30px;
+    }
+
+    .part1 {
+        height : 100px;
+        border-radius:45px;
+        display: flex;
+        justify-content: space-between;
+        background-color:<?php echo PRIMARY_COLOR; ?>;
+    }
+
+    .part2 {
+        height: 30px;
+        background-color: unset;
+        margin-left: 18px;
+        margin-top: 5px;
+    }
+
+    .part2 a{
+        color:<?php echo PRIMARY_COLOR; ?>;
+    }
+
+    .part2 a:visited {
+        color: <?php echo PRIMARY_COLOR; ?>;
+    }
+
+    .part2 a:link {
+        color: <?php echo PRIMARY_COLOR; ?>;
+    }
+
+    .nav {
+        height: 50px;
+        horiz-align: center;
+        min-width: 0px;
+        color: <?php echo SECONDARY_COLOR; ?>;
+        font-size: 25px;
+        font-weight: lighter;
+
+    }
+
+    .nav a{
+        text-decoration-line: none;
+        color: <?php echo SECONDARY_COLOR; ?>;
+    }
+
+    .nav a:visited {
+        color: <?php echo SECONDARY_COLOR; ?>;
+    }
+
+    .nav a:link {
+        color: <?php echo SECONDARY_COLOR; ?>;
+    }
+
+    .navhome{
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+
+    .navbook{
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+    .navdashboard{
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+    .userimg{
+        margin-right: 20px;
+        align-self: flex-end;
+        margin-bottom: 20px;
+    }
+
+    .userimg img{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+
+    .login{
+        margin-right: 30px;
+        align-self: flex-end;
+        margin-bottom: 35px;
+        color: <?php echo SECONDARY_COLOR; ?>;
+    }
+
+    .login a{
+        color: <?php echo SECONDARY_COLOR; ?>;
+        text-decoration-line: none;
+    }
+
+    .login a:visited {
+        color: <?php echo SECONDARY_COLOR; ?>;
+    }
+
+    .login a:link {
+        color: <?php echo SECONDARY_COLOR; ?>;
+    }
+
+
+
+    /* For Mobile Devices*/
+    @media only screen and (max-width: 928px) {
+
+        body {
+            font-size: 16px;
+        }
+
+        .brandname{
+            display: none;
+        }
+    }
+
+    /* For Mobile Devices*/
+    @media only screen and (max-width: 400px) {
+
+        body {
+            font-size: 16px;
+        }
+
+        .nav{
+            left-margin: 5px;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+
+        .navbook{
+            margin-left: 5px;
+        }
+
+        .navdashboard{
+            margin-left: 5px;
+        }
+
+        .navhome{
+            margin-left: 10px;
+        }
+
+        .brandname{
+            display: none;
+        }
+
+        .login{
+            font-size: 18px;
+        }
+    }
+
+
+</style>
+
+<link rel="stylesheet" href="/style/header.php" type="text/css">
+<div class ="header">
+    <div class ="part1">
+        <div class="brandname">
+            <?php echo BRAND_NAME; ?>
+        </div>
+        <div class="nav">
+            <div class ="navhome"><a href ="/index.php">Home</a></div>
+            <div class ="navbook"><a href ="/book.php">Books</a></div>
+            <div class ="navdashboard"><a href ="/support.php">Support</a></div>
+        </div>
+
+        <?php
+        if(isset($_SESSION['uuid']))
+        {
+            echo '<div class ="userimg"> <a href="/dashboard.php"> <img src ="'.get_user_profile_picture_url($_SESSION['uuid'], 60).'"> </a></div>';
+        }else{
+            echo '<div class="login"><a href="/login.php">Login</a></div>';
+        }
+        ?>
+
+    </div>
+
+            <?php
+
+            function generate_header($pathLinks)
+            {
+
+                //if the pathLinks is not empty
+                if(!count($pathLinks) == 0)
+                {
+                   echo "<div class =\"part2\"> <div class =\"path\">";
+                }
+
+                foreach($pathLinks as $path)
+                {
+                    $html .= '<a href = "'.$path['url']. '" >'.$path['text'].'</a>';
+                }
+
+                $html .= '</div></div></div>';
+
+                echo $html;
+            }
+
+            ?>
+
+
+

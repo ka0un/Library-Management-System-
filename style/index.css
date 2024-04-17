@@ -1,15 +1,19 @@
 *{box-sizing:border-box}
 body{font-family:Verdana, sans-serif;
-     background-color:#292929;
-     color:#D9D9D9;}
-.mySlides{display:none}
-img{vertical-align:middle}
+     background-color:#D9D9D9;
+     color:#292929;}
+.mySlides{
+    display:none
+}
+img{
+    vertical-align:middle
+}
 
 .slideshow-container{max-width:1000px;
                      position:relative;
                      margin:auto}
 
-.text{font-size:15px;
+.header_text{font-size:15px;
       padding:8px 12px;
       position:absolute;
       bottom:8px;
@@ -37,7 +41,7 @@ img{vertical-align:middle}
 @keyframes fade{from{opacity:.4} 
                 to{opacity:1}}
 
-@media only screen and (max-width:300px) {.text{font-size:11px}}
+@media only screen and (max-width:300px) {.header_text{font-size:11px}}
 
 .caption{border:3px solid #D9D9D9;
          font-size:30px;

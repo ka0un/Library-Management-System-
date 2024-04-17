@@ -27,7 +27,7 @@
                 
             }
 
-            .text{
+            .header_text{
                 height:40px;
                 border: 2px solid black;
                 margin:5px;
