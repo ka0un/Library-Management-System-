@@ -253,6 +253,17 @@ function get_book_url($bookId): string
 }
 
 
+function redirect_to_book($bookId)
+{
+    // Construct the URL with the book ID parameter
+    $url = '/book.php?id=' . urlencode($bookId);
+
+    // Redirect to the URL
+    header('Location: ' . $url);
+    exit;
+}
+
+
 //private functions
 
 function crop_text($input, $n) {
