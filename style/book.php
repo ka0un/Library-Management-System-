@@ -54,7 +54,7 @@ body {
     justify-content: flex-end;
 }
 
-.button{
+#button{
     width:260px;
     height:55px;
     font-weight:bold;
@@ -67,7 +67,7 @@ body {
     font-size: 20px;
 }
 
-.button:hover{
+#button:hover{
     cursor: pointer;
 }
 
@@ -148,7 +148,7 @@ body {
         justify-content: center;
     }
 
-    .button{
+    #button{
         align-self: center;
     }
 
