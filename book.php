@@ -97,9 +97,12 @@ $bookid = 'B0000001';
                             $exceeded_amount_of_days = abs($amount_of_chekout_days_left);
                             $fine = $exceeded_amount_of_days * FINE_PER_DAY;
                             echo '<div class="description">
-                            <span>You have exceeded max day limit!</span>  
+                            <span>You have exceeded max day limit!</span>
+                            <br>
                             <span>Copy ID : '. $checkouted_copyid . '</span>
+                            <br>
                             <span>Days Exceeded : '. $exceeded_amount_of_days . '</span>
+                            <br>
                             <span>Fine : '. $fine . '</span>
                         </div>';
 
@@ -108,8 +111,11 @@ $bookid = 'B0000001';
 
                             echo '<div class="description">
                         <span>You have already checked out a copy of this book!</span>
+                        <br>
                         <span>Copy ID : '. $checkouted_copyid . '</span>
+                        <br>
                         <span>Checkout Start Date : '. $checkout_start_date . '</span>
+                        <br>
                         <span>Days Left : '. $amount_of_chekout_days_left . '</span>
                     </div>
                         
@@ -129,7 +135,9 @@ $bookid = 'B0000001';
 
                                     echo '<div class="description">
                                     <span>You have already reserved this book!</span>
+                                    <br>
                                     <span>Visit our library to borrow your copy of the book!</span>
+                                    <br>
                                     <span>Time Left : '. $amount_reservation_time_left . '</span>
                                     </div>
                                     ';
