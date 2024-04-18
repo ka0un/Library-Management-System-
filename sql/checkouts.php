@@ -59,20 +59,6 @@ function get_amount_of_checkouts_of_user($uuid): int
 }
 
 
-function get_checkoutid_of_active_checkout($uuid, $copyid): string
-{
-    global $conn;
-    $sql = "SELECT id FROM checkouts WHERE uuid = ? AND copyid = ? AND valid = 1";
-    $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "ss", $uuid, $copyid);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-    mysqli_stmt_close($stmt);
-
-    $row = mysqli_fetch_assoc($result);
-    return $row['id'];
-}
-
 function get_checkoutids_of_user($uuid): array
 {
     global $conn;
