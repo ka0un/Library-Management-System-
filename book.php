@@ -131,7 +131,8 @@ $bookid = 'B0000001';
                                     $reservation_id = get_reservation_id($bookid, $_SESSION['uuid']);
                                     $reservation_start = get_reservation_start($reservation_id);
                                     $reservation_start_timestamp = strtotime($reservation_start);
-                                    $amount_reservation_time_left = ($reservation_start_timestamp + (MAX_RESERVATION_DAYS * 24 * 60 * 60) - time()) / (24 * 60 * 60);
+                                    $amount_reservation_time_left = ($reservation_start_timestamp + (MAX_RESERVATION_DAYS * 24 * 60 * 60) - time());
+
 
                                     echo '<div class="description">
                                     <span>You have already reserved this book!</span>
