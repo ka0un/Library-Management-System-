@@ -1,3 +1,11 @@
+<?php
+header("Content-type: text/css");
+require_once __DIR__ . '/../config.php';
+// if your file is in root use : require_once __DIR__ . '/config.php';
+?>
+
+<style>
+
 body {
     margin: 0;
     padding: 0;
@@ -74,3 +82,4 @@ body {
         width: 100%;
     }
 }
+</style>
