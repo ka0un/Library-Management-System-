@@ -51,8 +51,6 @@ $bookid = 'B0000001';
                 </div>
             </div>
             <div class="book-actions">
-                <form action="" method="post">
-                    <input type="hidden" name="bookid" value="<?php echo $bookid; ?>">
 
                 <?php
                 // if the user is not logged in, show a message to login
@@ -161,9 +159,12 @@ $bookid = 'B0000001';
                                         } else {
                                             echo '<div class="description">
                                         <span>This book is available for reservations!</span>
+                                        <form action="" method="post">
+                                        <input type="hidden" name="bookid" value="<?php echo $bookid; ?>">
                                         <div class="book-button">
                                         <input type="submit" id="button" value="Reserve" name="Reserve" class="login_submit">
                                         </div>
+                                        </form>
                                         ';
                                         }
                                     }
@@ -172,7 +173,7 @@ $bookid = 'B0000001';
                 }
 
                 ?>
-                </form>
+
 
                 <?php
                 if(isset($_POST['Reserve'])){
