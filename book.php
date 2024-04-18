@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/components/header.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +11,12 @@
     <link rel="stylesheet" href="style/book.php">
 </head>
 <body>
+<?php
+generate_header([
+    ['url' => '/books.php', 'text' => 'Books'],
+    ['url' => '#', 'text' => 'test']
+]);
+?>
     <div class="book-container">
         <div class="book-image">
             <img src="images/images.jpg" alt="Book Cover">

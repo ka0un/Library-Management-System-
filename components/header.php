@@ -40,6 +40,7 @@ session_start();
 
     .part2 a{
         color:<?php echo PRIMARY_COLOR; ?>;
+        text-decoration-line: none;
     }
 
     .part2 a:visited {
@@ -198,6 +199,12 @@ session_start();
 
             <?php
 
+//            generate_header([
+//                ['url' => '/index.php', 'text' => 'Home'],
+//                ['url' => '/about.php', 'text' => 'About'],
+//                ['url' => '/contact.php', 'text' => 'Contact']
+//            ]);
+
             function generate_header($pathLinks)
             {
 
@@ -209,7 +216,7 @@ session_start();
 
                 foreach($pathLinks as $path)
                 {
-                    $html .= '<a href = "'.$path['url']. '" >'.$path['text'].'</a>';
+                    $html .= '<a href = "'.$path['url']. '" > '.$path['text'].' > </a>';
                 }
 
                 $html .= '</div></div></div>';
