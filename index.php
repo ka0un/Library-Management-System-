@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/components/header.php';
+require_once __DIR__ . '/sql/books.php';
 ?>
 
 <!DOCTYPE html>
@@ -241,65 +242,128 @@ generate_header(array());
         $booksid1 = 'B0000001';
         $booksid2 = 'B0000002';
 
+
         echo '<div class="book">';
+        echo '<a herf="book.php?id='.$booksid1.'">';
         echo '<img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px">';
+        echo '</a>';
         echo '</div>';
 
         echo '<div class="book">';
+        echo '<a herf="book.php?id='.$booksid2.'">';
         echo '<img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px">';
+        echo '</a>';
         echo '</div>';
 
+
         echo '<div class="book">';
+        echo '<a herf="book.php?id='.$booksid1.'">';
         echo '<img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px">';
+        echo '</a>';
         echo '</div>';
 
         echo '<div class="book">';
+        echo '<a herf="book.php?id='.$booksid2.'">';
         echo '<img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px">';
+        echo '</a>';
         echo '</div>';
+
         echo '<div class="book">';
+        echo '<a herf="book.php?id='.$booksid1.'">';
         echo '<img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px">';
+        echo '</a>';
         echo '</div>';
 
         echo '<div class="book">';
+        echo '<a herf="book.php?id='.$booksid2.'">';
         echo '<img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px">';
+        echo '</a>';
         echo '</div>';
+
         echo '<div class="book">';
+        echo '<a herf="book.php?id='.$booksid1.'">';
         echo '<img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px">';
+        echo '</a>';
         echo '</div>';
 
         echo '<div class="book">';
+        echo '<a herf="book.php?id='.$booksid2.'">';
         echo '<img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px">';
+        echo '</a>';
         echo '</div>';
 
         echo '<div class="book">';
+        echo '<a herf="book.php?id='.$booksid1.'">';
         echo '<img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px">';
+        echo '</a>';
         echo '</div>';
 
         echo '<div class="book">';
+        echo '<a herf="book.php?id='.$booksid2.'">';
         echo '<img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px">';
+        echo '</a>';
         echo '</div>';
 
         echo '<div class="book">';
+        echo '<a herf="book.php?id='.$booksid1.'">';
         echo '<img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px">';
+        echo '</a>';
         echo '</div>';
 
         echo '<div class="book">';
+        echo '<a herf="book.php?id='.$booksid2.'">';
         echo '<img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px">';
+        echo '</a>';
         echo '</div>';
+
         echo '<div class="book">';
+        echo '<a herf="book.php?id='.$booksid1.'">';
         echo '<img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px">';
+        echo '</a>';
         echo '</div>';
 
         echo '<div class="book">';
+        echo '<a herf="book.php?id='.$booksid2.'">';
         echo '<img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px">';
+        echo '</a>';
         echo '</div>';
         echo '<div class="book">';
+        echo '<a herf="book.php?id='.$booksid1.'">';
         echo '<img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px">';
+        echo '</a>';
         echo '</div>';
 
         echo '<div class="book">';
+        echo '<a herf="book.php?id='.$booksid2.'">';
         echo '<img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px">';
+        echo '</a>';
         echo '</div>';
+
+        echo '<div class="book">';
+        echo '<a herf="book.php?id='.$booksid1.'">';
+        echo '<img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px">';
+        echo '</a>';
+        echo '</div>';
+
+        echo '<div class="book">';
+        echo '<a herf="book.php?id='.$booksid2.'">';
+        echo '<img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px">';
+        echo '</a>';
+        echo '</div>';
+
+        echo '<div class="book">';
+        echo '<a herf="book.php?id='.$booksid1.'">';
+        echo '<img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px">';
+        echo '</a>';
+        echo '</div>';
+
+        echo '<div class="book">';
+        echo '<a herf="book.php?id='.$booksid2.'">';
+        echo '<img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px">';
+        echo '</a>';
+        echo '</div>';
+
+
 
         ?>
 

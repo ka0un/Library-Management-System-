@@ -243,6 +243,15 @@ function get_book_category_id($bookid)
     return null;
 }
 
+function get_book_url($bookId): string
+{
+    // Construct the URL with the book ID parameter
+    $url = '/book.php?id=' . urlencode($bookId);
+
+    // Return the URL
+    return $url;
+}
+
 
 //private functions
 
