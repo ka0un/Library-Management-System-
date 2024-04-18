@@ -23,7 +23,7 @@ require_once __DIR__ . '/sql/categories.php';
 <?php
 generate_header([
     ['url' => '/books.php', 'text' => 'Books'],
-    ['url' => '#', 'text' => 'test']
+    ['url' => '#', 'text' => '<?php echo get_book_title($bookid); ?>']
 ]);
 
 $bookid = 'B0000001';
