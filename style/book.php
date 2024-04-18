@@ -84,6 +84,7 @@ body {
     align-items: center;
     margin-bottom: 10px;
     font-size: 20px;
+    flex-direction: column;
 }
 
 .book-category span:first-child,
@@ -146,6 +147,7 @@ body {
         font-size: 15px;
         display: flex;
         justify-content: center;
+        flex-direction: column;
     }
 
     #button{
