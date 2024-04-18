@@ -7,6 +7,7 @@ require_once __DIR__ . '/sql/reservations.php';
 require_once __DIR__ . '/validators/checkout.php';
 require_once __DIR__ . '/validators/reservation.php';
 require_once __DIR__ . '/sql/checkouts.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +36,7 @@ $bookid = 'B0000001';
             <div class="book-details">
                 <div class="book-category">
                     <span>Category:</span>
-                    <span>Personal Finance</span>
+                    <span></span>
                 </div>
                 <div class="book-title">
                     <h1>Rich Dad Poor Dad</h1>
