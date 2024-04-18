@@ -242,6 +242,65 @@ generate_header(array());
         $booksid1 = 'B0000001';
         $booksid2 = 'B0000002';
 
+        echo '<div class="book">';
+        echo '<a href="'.get_book_url($booksid1).'"><img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px"></a>';
+        echo '</div>';
+
+        echo '<div class="book">';
+        echo '<a href="'.get_book_url($booksid2).'"><img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px"></a>';
+        echo '</div>';
+
+        echo '<div class="book">';
+        echo '<a href="'.get_book_url($booksid1).'"><img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px"></a>';
+        echo '</div>';
+
+        echo '<div class="book">';
+        echo '<a href="'.get_book_url($booksid2).'"><img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px"></a>';
+        echo '</div>';
+        echo '<div class="book">';
+        echo '<a href="'.get_book_url($booksid1).'"><img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px"></a>';
+        echo '</div>';
+
+        echo '<div class="book">';
+        echo '<a href="'.get_book_url($booksid2).'"><img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px"></a>';
+        echo '</div>';
+        echo '<div class="book">';
+        echo '<a href="'.get_book_url($booksid1).'"><img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px"></a>';
+        echo '</div>';
+
+        echo '<div class="book">';
+        echo '<a href="'.get_book_url($booksid2).'"><img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px"></a>';
+        echo '</div>';
+        echo '<div class="book">';
+        echo '<a href="'.get_book_url($booksid1).'"><img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px"></a>';
+        echo '</div>';
+
+        echo '<div class="book">';
+        echo '<a href="'.get_book_url($booksid2).'"><img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px"></a>';
+        echo '</div>';
+        echo '<div class="book">';
+        echo '<a href="'.get_book_url($booksid1).'"><img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px"></a>';
+        echo '</div>';
+
+        echo '<div class="book">';
+        echo '<a href="'.get_book_url($booksid2).'"><img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px"></a>';
+        echo '</div>';echo '<div class="book">';
+        echo '<a href="'.get_book_url($booksid1).'"><img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px"></a>';
+        echo '</div>';
+
+        echo '<div class="book">';
+        echo '<a href="'.get_book_url($booksid2).'"><img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px"></a>';
+        echo '</div>';
+        echo '<div class="book">';
+        echo '<a href="'.get_book_url($booksid1).'"><img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px"></a>';
+        echo '</div>';
+
+        echo '<div class="book">';
+        echo '<a href="'.get_book_url($booksid2).'"><img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px"></a>';
+        echo '</div>';
+        echo '<div class="book">';
+        echo '<a href="'.get_book_url($booksid1).'"><img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px"></a>';
+        echo '</div>';
 
         echo '<div class="book">';
         echo '<a href="'.get_book_url($booksid2).'"><img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px"></a>';
