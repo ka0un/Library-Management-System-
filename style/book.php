@@ -104,6 +104,12 @@ body {
     line-height: 1.6; 
 }
 
+.book-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+}
 
 @media (max-width: 768px) {
 
@@ -138,8 +144,8 @@ body {
     .book-details {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        justify-content: left;
+        align-items: flex-start;
         padding: 10px;
     }
 
