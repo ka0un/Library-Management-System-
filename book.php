@@ -21,10 +21,6 @@ require_once __DIR__ . '/sql/categories.php';
 </head>
 <body bgcolor="<?php echo SECONDARY_COLOR;?>">
 <?php
-generate_header([
-    ['url' => '/books.php', 'text' => 'Books'],
-    ['url' => '#', 'text' => '<?php echo get_book_title($bookid); ?>']
-]);
 
 $bookid = 'B0000001';
 
@@ -32,6 +28,12 @@ if(isset($_GET['id'])) {
     $id = $_GET['id'];
     $bookid = $id;
 }
+
+generate_header([
+    ['url' => '/books.php', 'text' => 'Books'],
+    ['url' => '#', 'text' => '<?php echo get_book_title($bookid); ?>']
+]);
+
 
 ?>
     <div class="book-container">
