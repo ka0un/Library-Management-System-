@@ -29,9 +29,11 @@ if(isset($_GET['id'])) {
     $bookid = $id;
 }
 
+$book_title = get_book_title($bookid);
+
 generate_header([
     ['url' => '/books.php', 'text' => 'Books'],
-    ['url' => '#', 'text' => '<?php echo get_book_title($bookid); ?>']
+    ['url' => '#', 'text' => $book_title]
 ]);
 
 
