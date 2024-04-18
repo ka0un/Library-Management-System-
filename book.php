@@ -28,6 +28,11 @@ generate_header([
 
 $bookid = 'B0000001';
 
+if(isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $bookid = $id;
+}
+
 ?>
     <div class="book-container">
         <div class="book-image">
