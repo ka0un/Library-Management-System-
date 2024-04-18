@@ -81,7 +81,7 @@ body {
 .book-author,
 .description {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 10px;
     font-size: 20px;
     flex-direction: column;
