@@ -6,6 +6,7 @@ require_once __DIR__ . '/sql/copies.php';
 require_once __DIR__ . '/sql/reservations.php';
 require_once __DIR__ . '/validators/checkout.php';
 require_once __DIR__ . '/validators/reservation.php';
+require_once __DIR__ . '/sql/checkouts.php';
 ?>
 
 <!DOCTYPE html>
@@ -118,15 +119,6 @@ $bookid = 'B0000001';
 
                     } else {
 
-                        //check if user exceeds the reservation limits
-                        if (has_user_exceeded_reservation_limit($_SESSION['uuid'])) {
-                            echo '<div class="description">
-                            <span>You have exceeded the reservation limit!</span>
-                            </div>
-                            ';
-
-                        } else {
-
                                 //check if user has already reserved the book
                                 if (is_user_reserved_book($_SESSION['uuid'], $bookid)) {
 
@@ -143,27 +135,31 @@ $bookid = 'B0000001';
                                     ';
                                 } else {
 
-                                    //check if book has available copies for current reservation
-                                    $total_amount_of_copies = get_amount_of_copies($bookid);
-                                    $pr_amount_of_copies = get_amount_of_pr_copies($bookid);
-                                    $non_pr_amount_of_copies = $total_amount_of_copies - $pr_amount_of_copies;
-                                    $reservations = get_amount_of_reservations_of_book($bookid);
+                                    if (has_user_exceeded_reservation_limit($_SESSION['uuid'])) {
+                                        echo '<div class="description">
+                                        <span>You have exceeded the reservation limit!</span>
+                                        </div>
+                                    ';
+                                    }else {
+                                        //check if book has available copies for current reservation
+                                        $total_amount_of_copies = get_amount_of_copies($bookid);
+                                        $pr_amount_of_copies = get_amount_of_pr_copies($bookid);
+                                        $non_pr_amount_of_copies = $total_amount_of_copies - $pr_amount_of_copies;
+                                        $reservations = get_amount_of_reservations_of_book($bookid);
 
-                                    if ($non_pr_amount_of_copies <= $reservations) {
-                                        echo '<div class="description">
+                                        if ($non_pr_amount_of_copies <= $reservations) {
+                                            echo '<div class="description">
                                         <span>There are no available copies for reservation!</span>';
-                                    } else {
-                                        echo '<div class="description">
+                                        } else {
+                                            echo '<div class="description">
                                         <span>This book is available for reservations!</span>
                                         <div class="book-button">
                                         <input type="submit" id="button" value="Reserve" name="Reserve" class="login_submit">
                                         </div>
                                         ';
+                                        }
                                     }
                                 }
-
-                        }
-
                     }
                 }
 
