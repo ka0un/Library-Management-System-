@@ -7,6 +7,7 @@ require_once __DIR__ . '/sql/reservations.php';
 require_once __DIR__ . '/validators/checkout.php';
 require_once __DIR__ . '/validators/reservation.php';
 require_once __DIR__ . '/sql/checkouts.php';
+require_once __DIR__ . '/sql/categories.php';
 
 ?>
 
@@ -30,23 +31,23 @@ $bookid = 'B0000001';
 ?>
     <div class="book-container">
         <div class="book-image">
-            <img src="images/images.jpg" alt="Book Cover">
+            <img src="<?php echo get_book_image($bookid); ?>" alt="Book Cover">
         </div>
         <div class="book-info">
             <div class="book-details">
                 <div class="book-category">
                     <span>Category:</span>
-                    <span></span>
+                    <span><?php echo get_categroy_name(get_book_category_id($bookid)); ?></span>
                 </div>
                 <div class="book-title">
-                    <h1>Rich Dad Poor Dad</h1>
+                    <h1><?php echo get_book_title($bookid); ?></h1>
                 </div>
                 <div class="book-author">
                     <span>By:</span>
-                    <span>Robert Kiyosaki and Sharon L.Lechter</span>
+                    <span><?php echo get_book_author($bookid); ?></span>
                 </div>
                 <div class="book-description">
-                    <p>Rich Dad, Poor Dad by Robert T. Kiyosaki is a personal finance book that emphasizes the importance of financial education, teaches how to make money work for you, and challenges traditional beliefs about money.</p>
+                    <p><?php echo get_book_description($bookid); ?></p>
                 </div>
             </div>
             <div class="book-actions">
