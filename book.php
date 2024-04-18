@@ -131,7 +131,12 @@ $bookid = 'B0000001';
                                     $reservation_id = get_reservation_id($bookid, $_SESSION['uuid']);
                                     $reservation_start = get_reservation_start($reservation_id);
                                     $reservation_start_timestamp = strtotime($reservation_start);
-                                    $amount_reservation_time_left = ($reservation_start_timestamp + (MAX_RESERVATION_DAYS * 24 * 60 * 60) - time());
+                                    $time_left_string = $reservation_start_timestamp + (MAX_RESERVATION_DAYS * 24 * 60 * 60) - time();
+                                    // Convert the time left (in seconds) to a DateInterval object
+                                    $time_left_interval = DateInterval::createFromDateString($time_left_string . ' seconds');
+
+                                    // Format the DateInterval object into a string that represents the time left in days and hours
+                                    $time_left_string = $time_left_interval->format('%a day(s) %h hour(s)');
 
 
                                     echo '<div class="description">
@@ -139,7 +144,7 @@ $bookid = 'B0000001';
                                     <br>
                                     <span>Visit our library to borrow your copy of the book!</span>
                                     <br>
-                                    <span>Time Left : '. $amount_reservation_time_left . '</span>
+                                    <span>Time Left : '. $time_left_string . '</span>
                                     </div>
                                     ';
                                 } else {
