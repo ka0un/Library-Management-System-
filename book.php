@@ -122,7 +122,7 @@ $bookid = 'B0000001';
                                 //check if user has already reserved the book
                                 if (is_user_reserved_book($_SESSION['uuid'], $bookid)) {
 
-                                    $reservation_id = get_reservation_id($_SESSION['uuid'], $bookid);
+                                    $reservation_id = get_reservation_id($bookid, $_SESSION['uuid']);
                                     $reservation_start = get_reservation_start($reservation_id);
                                     $reservation_start_timestamp = strtotime($reservation_start);
                                     $amount_reservation_time_left = ($reservation_start_timestamp + (MAX_RESERVATION_DAYS * 24 * 60 * 60) - time()) / (24 * 60 * 60);
