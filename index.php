@@ -16,219 +16,42 @@ require_once __DIR__ . '/sql/books.php';
 generate_header(array());
 ?>
 
-<!--    image cas-->
-<!--        <div class="slideshow">-->
-<!--            <div class="slideshow-container">-->
-<!--                <div class="mySlides fade">-->
-<!--                    <div class="numbertext">1/3</div>-->
-<!--                    <img src="images/footimage1.png" alt="Slideshow Image" style="width:100%; height: 100%">-->
-<!--                    <div class="text">Caption Text</div>-->
-<!--                </div>-->
-<!--                <div class="mySlides fade">-->
-<!--                    <div class="numbertext">2/3</div>-->
-<!--                    <img src="images/image2.jpg" alt="Slideshow Image" style="width:100%">-->
-<!--                    <div class="text">Caption Two</div>-->
-<!--                </div>-->
-<!--                <div class="mySlides fade">-->
-<!--                    <div class="numbertext">3/3</div>-->
-<!--                    <img src="images/image3.jpg" alt="Slideshow Image" style="width:100%">-->
-<!--                    <div class="text">Caption Three</div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div style="text-align:center">-->
-<!--                <span class="dot"></span>-->
-<!--                <span class="dot"></span>-->
-<!--                <span class="dot"></span>-->
-<!--            </div>-->
-<!--        </div><br>-->
-
 <div class="hero">
     <div class="hero-text">
         <h1>Welcome to the Library Management System</h1>
         <p>Explore our collection of books, reserve and checkout your favorites, and enjoy the magic of reading!</p>
     </div>
 </div>
-<div class="announcements">
-    <div class="announcement">
-        <div class="Date-Section">
-            <div class="month">
-                NOV
-            </div>
-            <div class="day">
-                10
-            </div>
-        </div>
-        <div class="Content-Section">
-            <div class="title">
-                <b>Overdue Bandit Alert!</b>
-            </div>
-            <div class="description">
-                Our shelves are feeling a little lighter than usual. Did you accidentally become best friends with a library book?
-            </div>
-        </div>
-    </div>
 
+<?php
+ function display_announcement($month, $day, $title, $description){
+     echo '<div class="announcement">';
+     echo '<div class="Date-Section">';
+     echo '<div class="month">';
+     echo $month;
+     echo '</div>';
+     echo '<div class="day">';
+     echo $day;
+     echo '</div>';
+     echo '</div>';
+     echo '<div class="Content-Section">';
+     echo '<div class="title">';
+     echo '<b>';
+     echo $title;
+     echo '</b>';
+     echo '</div>';
+     echo '<div class="description">';
+     echo $description;
+     echo '</div>';
+     echo '</div>';
+     echo '</div>';
+ }
 
-
-
-<div class="announcement">
-    <div class="Date-Section">
-        <div class="month">
-            OCT
-        </div>
-        <div class="day">
-            26
-        </div>
-    </div>
-    <div class="Content-Section">
-        <div class="title">
-            <b>Shh! We're Having a Silent Reading Dance Party (Don't Tell the Shhh-Police)</b>
-        </div>
-        <div class="description">
-            Ever get the urge to bust a move while buried in a good book? Us too! Join us for a silent reading dance party –  find a comfy corner, crank up the internal soundtrack, and let your bookish joy flow freely (without disturbing the peace, of course!).
-        </div>
-    </div>
-</div>
-
-    <div class="announcement">
-        <div class="Date-Section">
-            <div class="month">
-                OCT
-            </div>
-            <div class="day">
-                26
-            </div>
-        </div>
-        <div class="Content-Section">
-            <div class="title">
-                <b>We Now Accept Squirrel Currency!</b>
-            </div>
-            <div class="description">
-                We may not have an official acorn exchange program (yet!).
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--<div class="announce">-->
-<!--    <div class="caption">-->
-<!--        Announcements-->
-<!--    </div>-->
-<!--    <div class="table">-->
-<!--        <table border="3px">-->
-<!--            <div class="row1">-->
-<!--                <tr>-->
-<!--                    <div class="heading1">-->
-<!--                        <th>Date</th>-->
-<!--                    </div>-->
-<!--                    <div class="heading2">-->
-<!--                        <th>Time</th>-->
-<!--                    </div>-->
-<!--                    <div class="heading3">-->
-<!--                        <th>Announcement</th>-->
-<!--                    </div>-->
-<!--                </tr>-->
-<!--            </div>-->
-<!--            <div class="row2">-->
-<!--                <tr>-->
-<!--                    <div class="data1">-->
-<!--                        <td>10/11</td>-->
-<!--                    </div>-->
-<!--                    <div class="data2">-->
-<!--                        <td>08.00</td>-->
-<!--                    </div>-->
-<!--                    <div class="data3">-->
-<!--                        <td>-->
-<!--                            <b>Announcement Title</b><br>-->
-<!--                            Short Announcement Description Littebit Longer Longer than you expected exactly this much longer littlebit more-->
-<!--                        </td>-->
-<!--                    </div>-->
-<!--                </tr>-->
-<!--            </div>-->
-<!--            <div class="row3">-->
-<!--                <tr>-->
-<!--                    <div class="data4">-->
-<!--                        <td>10/11</td>-->
-<!--                    </div>-->
-<!--                    <div class="data5">-->
-<!--                        <td>08.00</td>-->
-<!--                    </div>-->
-<!--                    <div class="data6">-->
-<!--                        <td>-->
-<!--                            <b>Announcement Title</b><br>-->
-<!--                            Short Announcement Description Littebit Longer Longer than you expected exactly this much longer littlebit more-->
-<!--                        </td>-->
-<!--                    </div>-->
-<!--                </tr>-->
-<!--            </div>-->
-<!--            <div class="row4">-->
-<!--                <tr>-->
-<!--                    <div class="data7">-->
-<!--                        <td>10/11</td>-->
-<!--                    </div>-->
-<!--                    <div class="data8">-->
-<!--                        <td>08.00</td>-->
-<!--                    </div>-->
-<!--                    <div class="data9">-->
-<!--                        <td>-->
-<!--                            <b>Announcement Title</b><br>-->
-<!--                            Short Announcement Description Littebit Longer Longer than you expected exactly this much longer littlebit more-->
-<!--                        </td>-->
-<!--                    </div>-->
-<!--                </tr>-->
-<!--            </div>-->
-<!--            <div class="row5">-->
-<!--                <tr>-->
-<!--                    <div class="data10">-->
-<!--                        <td>10/11</td>-->
-<!--                    </div>-->
-<!--                    <div class="data11">-->
-<!--                        <td>08.00</td>-->
-<!--                    </div>-->
-<!--                    <div class="data12">-->
-<!--                        <td>-->
-<!--                            <b>Announcement Title</b><br>-->
-<!--                            Short Announcement Description Littebit Longer Longer than you expected exactly this much longer littlebit more-->
-<!--                        </td>-->
-<!--                    </div>-->
-<!--                </tr>-->
-<!--            </div>-->
-<!--            <div class="row6">-->
-<!--                <tr>-->
-<!--                    <div class="data13">-->
-<!--                        <td>10/11</td>-->
-<!--                    </div>-->
-<!--                    <div class="data14">-->
-<!--                        <td>08.00</td>-->
-<!--                    </div>-->
-<!--                    <div class="data15">-->
-<!--                        <td>-->
-<!--                            <b>Announcement Title</b><br>-->
-<!--                            Short Announcement Description Littebit Longer Longer than you expected exactly this much longer littlebit more-->
-<!--                        </td>-->
-<!--                    </div>-->
-<!--                </tr>-->
-<!--            </div>-->
-<!--            <div class="row7">-->
-<!--                <tr>-->
-<!--                    <div class="data16">-->
-<!--                        <td>10/11</td>-->
-<!--                    </div>-->
-<!--                    <div class="data17">-->
-<!--                        <td>08.00</td>-->
-<!--                    </div>-->
-<!--                    <div class="data18">-->
-<!--                        <td>-->
-<!--                            <b>Announcement Title</b><br>-->
-<!--                            Short Announcement Description Littebit Longer Longer than you expected exactly this much longer littlebit more-->
-<!--                        </td>-->
-<!--                    </div>-->
-<!--                </tr>-->
-<!--            </div>-->
-<!--        </table>-->
-<!--    </div>-->
-<!--</div><br><br>-->
-
+    display_announcement('NOV', '10', 'Overdue Bandit Alert!', 'Our shelves are feeling a little lighter than usual. Did you accidentally become best friends with a library book?');
+    display_announcement('OCT', '26', 'Shh! We\'re Having a Silent Reading Dance Party (Don\'t Tell the Shhh-Police)', 'Ever get the urge to bust a move while buried in a good book? Us too! Join us for a silent reading dance party –  find a comfy corner, crank up the internal soundtrack, and let your bookish joy flow freely (without disturbing the peace, of course!).');
+    display_announcement('OCT', '26', 'We Now Accept Squirrel Currency!', 'We may not have an official acorn exchange program (yet!).');
+?>
+<
 <div class="popbook">
     <div class="caption">
         Popular Books
@@ -242,69 +65,24 @@ generate_header(array());
         $booksid1 = 'B0000001';
         $booksid2 = 'B0000002';
 
-        echo '<div class="book">';
-        echo '<a href="'.get_book_url($booksid1).'"><img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px"></a>';
-        echo '</div>';
+        function display_book($booksid){
+            echo '<div class="book">';
+            echo '<a href="'.get_book_url($booksid).'"><img src="'.get_book_image($booksid).'" alt="Book Image" height="300px" width="200px"></a>';
+            echo '</div>';
+        }
 
-        echo '<div class="book">';
-        echo '<a href="'.get_book_url($booksid2).'"><img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px"></a>';
-        echo '</div>';
-
-        echo '<div class="book">';
-        echo '<a href="'.get_book_url($booksid1).'"><img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px"></a>';
-        echo '</div>';
-
-        echo '<div class="book">';
-        echo '<a href="'.get_book_url($booksid2).'"><img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px"></a>';
-        echo '</div>';
-        echo '<div class="book">';
-        echo '<a href="'.get_book_url($booksid1).'"><img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px"></a>';
-        echo '</div>';
-
-        echo '<div class="book">';
-        echo '<a href="'.get_book_url($booksid2).'"><img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px"></a>';
-        echo '</div>';
-        echo '<div class="book">';
-        echo '<a href="'.get_book_url($booksid1).'"><img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px"></a>';
-        echo '</div>';
-
-        echo '<div class="book">';
-        echo '<a href="'.get_book_url($booksid2).'"><img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px"></a>';
-        echo '</div>';
-        echo '<div class="book">';
-        echo '<a href="'.get_book_url($booksid1).'"><img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px"></a>';
-        echo '</div>';
-
-        echo '<div class="book">';
-        echo '<a href="'.get_book_url($booksid2).'"><img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px"></a>';
-        echo '</div>';
-        echo '<div class="book">';
-        echo '<a href="'.get_book_url($booksid1).'"><img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px"></a>';
-        echo '</div>';
-
-        echo '<div class="book">';
-        echo '<a href="'.get_book_url($booksid2).'"><img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px"></a>';
-        echo '</div>';echo '<div class="book">';
-        echo '<a href="'.get_book_url($booksid1).'"><img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px"></a>';
-        echo '</div>';
-
-        echo '<div class="book">';
-        echo '<a href="'.get_book_url($booksid2).'"><img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px"></a>';
-        echo '</div>';
-        echo '<div class="book">';
-        echo '<a href="'.get_book_url($booksid1).'"><img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px"></a>';
-        echo '</div>';
-
-        echo '<div class="book">';
-        echo '<a href="'.get_book_url($booksid2).'"><img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px"></a>';
-        echo '</div>';
-        echo '<div class="book">';
-        echo '<a href="'.get_book_url($booksid1).'"><img src="'.get_book_image($booksid1).'" alt="Book Image" height="300px" width="200px"></a>';
-        echo '</div>';
-
-        echo '<div class="book">';
-        echo '<a href="'.get_book_url($booksid2).'"><img src="'.get_book_image($booksid2).'" alt="Book Image" height="300px" width="200px"></a>';
-        echo '</div>';
+        display_book($booksid1);
+        display_book($booksid2);
+        display_book($booksid1);
+        display_book($booksid2);
+        display_book($booksid1);
+        display_book($booksid2);
+        display_book($booksid1);
+        display_book($booksid2);
+        display_book($booksid1);
+        display_book($booksid2);
+        display_book($booksid1);
+        display_book($booksid2);
 
 
 
