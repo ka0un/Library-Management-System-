@@ -51,7 +51,7 @@ generate_header(array());
     display_announcement('OCT', '26', 'Shh! We\'re Having a Silent Reading Dance Party (Don\'t Tell the Shhh-Police)', 'Ever get the urge to bust a move while buried in a good book? Us too! Join us for a silent reading dance party –  find a comfy corner, crank up the internal soundtrack, and let your bookish joy flow freely (without disturbing the peace, of course!).');
     display_announcement('OCT', '26', 'We Now Accept Squirrel Currency!', 'We may not have an official acorn exchange program (yet!).');
 ?>
-<
+
 <div class="popbook">
     <div class="caption">
         Popular Books
