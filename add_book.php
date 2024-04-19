@@ -1,6 +1,6 @@
 <html>
 <head>
-	<link rel="stylesheet" href="add_book.css">
+	<link rel="stylesheet" href="style/add_book.css">
 </head>
 <body>
 	<div class="add_book_1st_div">

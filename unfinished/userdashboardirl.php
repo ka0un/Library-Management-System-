@@ -2,11 +2,11 @@
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
-        <link rel="stylesheet" href="style/userdashboard.php" type="text/css">
+        <link rel="stylesheet" href="userdashboard.php" type="text/css">
     </head>
     <body>
         <div class="sidebar">
-            <br><br><img src="images/img_avatar.png" width="149px" height="150px" alt="Profile Picture" style="border-radius:50%;border:3px solid <?php echo SECONDARY_COLOR; ?>">
+            <br><br><img src="../images/img_avatar.png" width="149px" height="150px" alt="Profile Picture" style="border-radius:50%;border:3px solid <?php echo SECONDARY_COLOR; ?>">
             <h2>Full Name</h2>
             <div class="sidebartext">
                 Role
