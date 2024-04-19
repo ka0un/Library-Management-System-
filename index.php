@@ -84,12 +84,9 @@ generate_header(array());
         display_book($booksid1);
         display_book($booksid2);
 
-
-
         ?>
 
     </div>
 </div>
-<script src="index.js"></script>
 </body>
 </html>
