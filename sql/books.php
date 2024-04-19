@@ -263,6 +263,23 @@ function redirect_to_book($bookId)
     exit;
 }
 
+function get_array_of_bookids(): array
+{
+    global $conn;
+    $sql = "SELECT bookid FROM books";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    mysqli_stmt_close($stmt);
+
+    $bookids = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $bookids[] = $row['bookid'];
+    }
+
+    return $bookids;
+}
+
 
 //private functions
 
@@ -273,5 +290,7 @@ function crop_text($input, $n) {
         return $input;
     }
 }
+
+
 
 
