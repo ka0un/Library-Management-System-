@@ -198,6 +198,7 @@ generate_header([
 
                     }else{
 
+                        echo get_reason_why_user_cannot_reserve_book($uuid, $bookid);
 
                     }
 

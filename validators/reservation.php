@@ -6,15 +6,6 @@ require_once __DIR__ . '/../config.php';
 
 function can_user_reserve_book($uuid, $bookid): bool
 {
-    //check if book exists
-    if (!is_bookid_exists($bookid)){
-        return false;
-    }
-
-    //check if user exists
-    if (!is_uuid_exists($uuid)){
-        return false;
-    }
 
     //check if user already reserved the book
     if (is_user_reserved_book($uuid, $bookid)){
@@ -41,15 +32,6 @@ function can_user_reserve_book($uuid, $bookid): bool
 
 function get_reason_why_user_cannot_reserve_book($uuid, $bookid): string
 {
-    //check if book exists
-    if (!is_bookid_exists($bookid)) {
-        return "Book does not exist.";
-    }
-
-    //check if user exists
-    if (!is_uuid_exists($uuid)) {
-        return "User does not exist.";
-    }
 
     //check if user exceeds reservation limit
     if (has_user_exceeded_reservation_limit($uuid)) {
