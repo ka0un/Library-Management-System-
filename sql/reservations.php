@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../database/database.php';
 require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../sql/books.php';
 
 $conn = getConnection();
 
@@ -21,6 +22,8 @@ function add_reservation($bookid, $uuid): void
 
     mysqli_stmt_close($stmt);
 
+    set_book_reservations($bookid, get_book_reservations($bookid) + 1);
+
 }
 
 function remove_reservation($reservationid): void
@@ -30,6 +33,9 @@ function remove_reservation($reservationid): void
 
 function force_remove_reservation($reservationid): void
 {
+
+    set_book_reservations(get_reservation_book_id($reservationid), get_book_reservations(get_reservation_book_id($reservationid)) - 1);
+
     global $conn;
     $sql = "DELETE FROM reservations WHERE id = ?";
 
@@ -42,20 +48,24 @@ function force_remove_reservation($reservationid): void
     }
 
     mysqli_stmt_close($stmt);
+
 }
 
 function get_amount_of_reservations_of_book($bookid): int
 {
-    global $conn;
-    $sql = "SELECT COUNT(*) FROM reservations WHERE bookid = ? AND valid = 1";
-    $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "s", $bookid);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-    mysqli_stmt_close($stmt);
 
-    $row = mysqli_fetch_assoc($result);
-    return $row['COUNT(*)'];
+    return get_book_reservations($bookid);
+
+//    global $conn;
+//    $sql = "SELECT COUNT(*) FROM reservations WHERE bookid = ? AND valid = 1";
+//    $stmt = mysqli_prepare($conn, $sql);
+//    mysqli_stmt_bind_param($stmt, "s", $bookid);
+//    mysqli_stmt_execute($stmt);
+//    $result = mysqli_stmt_get_result($stmt);
+//    mysqli_stmt_close($stmt);
+//
+//    $row = mysqli_fetch_assoc($result);
+//    return $row['COUNT(*)'];
 }
 
 function get_amount_of_reservations_of_user($uuid): int
@@ -125,6 +135,8 @@ function is_user_reserved_book($uuid, $bookid): bool
 
 function invalidate_reservation($reservationid): void
 {
+    set_book_reservations(get_reservation_book_id($reservationid), get_book_reservations(get_reservation_book_id($reservationid)) - 1);
+
     global $conn;
     $sql = "UPDATE reservations SET valid = 0 WHERE id = ?";
 
@@ -137,6 +149,7 @@ function invalidate_reservation($reservationid): void
     }
 
     mysqli_stmt_close($stmt);
+
 }
 
 function get_reservation_id($bookid, $userid): int
