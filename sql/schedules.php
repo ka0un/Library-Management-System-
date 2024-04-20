@@ -28,7 +28,8 @@ function get_schedule_time($id) : int
 {
     global $conn;
 
-    $sql = "SELECT time FROM schedules WHERE id = ?";
+    //The now() function in SQL returns the current date and time in 'YYYY-MM-DD HH:MM:SS' format. If you want to get the time in epoch format (seconds since '1970-01-01 00:00:00' UTC), you can use the UNIX_TIMESTAMP() function in your SQL query.
+    $sql = "SELECT UNIX_TIMESTAMP(time) as time FROM schedules WHERE id = ?";
 
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($stmt, "s", $id);
@@ -39,7 +40,7 @@ function get_schedule_time($id) : int
 
     mysqli_stmt_close($stmt);
 
-    return $row['time'];
+    return (int)$row['time'];
 }
 
 function check_if_id_exists($id) : bool

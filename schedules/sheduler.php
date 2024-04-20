@@ -9,6 +9,7 @@
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../sql/schedules.php';
 require_once __DIR__ . '/../schedules/reservations.php';
+
 check();
 
 //this function will be called by books.php every time someone visits the site
@@ -28,6 +29,7 @@ function check_reservations_schedules() : void
             invalidate_all_books_invalidable_reservations();
         }
     } else {
+
         create_schedule("reservations");
         invalidate_all_books_invalidable_reservations();
     }

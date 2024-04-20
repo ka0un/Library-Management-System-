@@ -8,7 +8,7 @@ require_once __DIR__ . '/validators/checkout.php';
 require_once __DIR__ . '/validators/reservation.php';
 require_once __DIR__ . '/sql/checkouts.php';
 require_once __DIR__ . '/sql/categories.php';
-include(__DIR__.'/schedules/sheduler.php');
+require_once __DIR__ . '/schedules/sheduler.php';
 ?>
 
 <!DOCTYPE html>
