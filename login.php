@@ -22,7 +22,6 @@ if(isset($_SESSION["uuid"])){
 <?php
 
 require_once __DIR__ . '/sql/users.php';
-require_once __DIR__ . '/sql/token.php';
 
 if(isset($_POST["login"])){
 
