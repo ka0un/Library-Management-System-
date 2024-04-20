@@ -72,7 +72,7 @@ function setup($conn): void
         id VARCHAR(255) PRIMARY KEY,
         time TIMESTAMP
     );
-)";
+";
 
 
     //if table not exists create table
