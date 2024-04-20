@@ -169,7 +169,6 @@ generate_header([
                                             echo '<div class="description">
                                         <span>This book is available for reservations!</span>
                                         <form action="" method="post">
-                                        <input type="hidden" name="bookid" value="<?php echo $bookid; ?>">
                                         <div class="book-button">
                                         <input type="submit" id="button" value="Reserve" name="Reserve" class="login_submit">
                                         </div>
@@ -187,7 +186,7 @@ generate_header([
                 <?php
                 if(isset($_POST['Reserve'])){
 
-                    $bookid = $_POST['bookid'];
+                    $bookid = $_GET['id'];
                     $uuid = $_SESSION['uuid'];
 
                     if(can_user_reserve_book($uuid, $bookid)){
