@@ -93,6 +93,10 @@ session_start();
         margin-bottom: 20px;
     }
 
+    .userimg:hover{
+        cursor: pointer;
+    }
+
     .userimg img{
         width: 60px;
         height: 60px;
