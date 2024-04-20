@@ -68,6 +68,12 @@ function setup($conn): void
         FOREIGN KEY (copyid) REFERENCES copies(copyid)
     );";
 
+    $schedules_table_create = "CREATE TABLE IF NOT EXISTS schedules (
+        id VARCHAR(255) PRIMARY KEY,
+        time TIMESTAMP
+    );
+)";
+
 
     //if table not exists create table
     if (!($conn->query($users_table_create) === TRUE)) {
@@ -100,9 +106,11 @@ function setup($conn): void
         echo "Error creating table: " . $conn->error . "<br>";
     }
 
+    if (!($conn->query($schedules_table_create) === TRUE)) {
+        echo "Error creating table: " . $conn->error . "<br>";
+    }
 
 
 
 }
 
-?>

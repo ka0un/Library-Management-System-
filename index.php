@@ -2,7 +2,6 @@
 require_once __DIR__ . '/components/header.php';
 require_once __DIR__ . '/sql/books.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,18 +10,15 @@ require_once __DIR__ . '/sql/books.php';
     <title>Home</title>
 </head>
 <body>
-
 <?php
 generate_header(array());
 ?>
-
 <div class="hero">
     <div class="hero-text">
         <h1>Welcome to the Library Management System</h1>
         <p>Explore our collection of books, reserve and checkout your favorites, and enjoy the magic of reading!</p>
     </div>
 </div>
-
 <?php
  function display_announcement($month, $day, $title, $description){
      echo '<div class="announcement">';
@@ -46,7 +42,6 @@ generate_header(array());
      echo '</div>';
      echo '</div>';
  }
-
     display_announcement('NOV', '10', 'Overdue Bandit Alert!', 'Our shelves are feeling a little lighter than usual. Did you accidentally become best friends with a library book?');
     display_announcement('OCT', '26', 'Shh! We\'re Having a Silent Reading Dance Party (Don\'t Tell the Shhh-Police)', 'Ever get the urge to bust a move while buried in a good book? Us too! Join us for a silent reading dance party –  find a comfy corner, crank up the internal soundtrack, and let your bookish joy flow freely (without disturbing the peace, of course!).');
     display_announcement('OCT', '26', 'We Now Accept Squirrel Currency!', 'We may not have an official acorn exchange program (yet!).');
@@ -57,20 +52,15 @@ generate_header(array());
         Popular Books
     </div>
     <div class="scroll-container">
-
-        <!--top 10 books in the table-->
-
         <?php
         require_once __DIR__ . '/sql/books.php';
         $booksid1 = 'B0000001';
         $booksid2 = 'B0000002';
-
         function display_book($booksid){
             echo '<div class="book">';
             echo '<a href="'.get_book_url($booksid).'"><img src="'.get_book_image($booksid).'" alt="Book Image" height="300px" width="200px"></a>';
             echo '</div>';
         }
-
         display_book($booksid1);
         display_book($booksid2);
         display_book($booksid1);
@@ -83,9 +73,7 @@ generate_header(array());
         display_book($booksid2);
         display_book($booksid1);
         display_book($booksid2);
-
         ?>
-
     </div>
 </div>
 </body>

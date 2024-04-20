@@ -28,6 +28,11 @@ const MAX_CHECKOUTS = 1; /* Maximum number of books a user can checkout */
 const MAX_CHECKOUT_DAYS = 14; /* Maximum number of days a book can be checked out */
 const FINE_PER_DAY = 0.5; /* Fine per day for overdue books */
 //===================================================================
+//Schedules configuration
+//===================================================================
+const RESERVATION_CHECK_INTERVAL_SECONDS = 60; /* Reservation check interval in seconds */
+const CHECKOUT_CHECK_INTERVAL_SECONDS = 60; /* Checkout check interval in seconds */
+//===================================================================
 //Design and Branding
 //===================================================================
 const PRIMARY_COLOR = "#292929";
