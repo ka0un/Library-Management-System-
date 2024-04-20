@@ -15,13 +15,6 @@ function setup($conn): void
         password VARCHAR(255)
     );";
 
-    //label for sessions
-    $sessions_table_create = "CREATE TABLE IF NOT EXISTS sessions (
-        token VARCHAR(255) PRIMARY KEY,
-        uuid VARCHAR(255),
-        start TIMESTAMP                           
-    );";
-
     $books_table_create = "CREATE TABLE IF NOT EXISTS books (
         bookid VARCHAR(255) PRIMARY KEY,
         title VARCHAR(255),
@@ -80,9 +73,6 @@ function setup($conn): void
         echo "Error creating table: " . $conn->error . "<br>";
     }
 
-    if (!($conn->query($sessions_table_create) === TRUE)) {
-        echo "Error creating table: " . $conn->error . "<br>";
-    }
 
     //books part
 

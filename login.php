@@ -3,7 +3,7 @@
 require_once __DIR__ . '/config.php';
 
 session_start();
-if(isset($_SESSION["token"])){
+if(isset($_SESSION["uuid"])){
     header("Location: /index.php");
 }
 ?>
@@ -52,10 +52,8 @@ if(isset($_POST["login"])){
             if (is_password_correct($email, $password)){
 
                 $uuid = get_user_id($email);
-                $token = generate_token($uuid);
 
                 $_SESSION["uuid"] = $uuid;
-                $_SESSION["token"] = $token;
 
                 header("Location: /index.php");
                 die();

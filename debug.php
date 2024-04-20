@@ -22,13 +22,6 @@ require_once __DIR__ . '/auth/permission.php';
     <li>Your NIC : <?php echo get_user_nic($_SESSION["uuid"]); ?></li>
 </ul>
 <br>
-<h2>Debug Token Info</h2>
-<ul>
-    <li>Your UUID : <?php echo $_SESSION["uuid"]; ?></li>
-    <li>Your Token : <?php echo $_SESSION["token"]; ?></li>
-    <li>Token Time Left : <?php echo get_session_time_left ($_SESSION["token"]); ?></li>
-</ul>
-<br>
 <h2>Debug Permission Info</h2>
 <ul>
     <li>Role : <?php echo get_role_name(get_role($_SESSION["uuid"])); ?></li>

@@ -15,10 +15,7 @@ const DB_USERNAME = "u14_Rf6AAvsnO7"; /* Your Database Username */
 const DB_PASSWORD = "5!csXM+5^fke.XNpM=fIfI99"; /* Your Database Password */
 const DB_DATABASE = "s14_main"; /* Your Database Name */
 const GENERATE_TABLES = true; /* Change this to false in a production env*/
-//===================================================================
-//Session configuration
-//===================================================================
-const SESSION_LIFETIME_SECONDS = 3600; /* 1 hour = 3600 seconds, 1 day = 86400 seconds */
+
 //===================================================================
 //Limits configuration
 //===================================================================
@@ -39,7 +36,6 @@ const PRIMARY_COLOR = "#292929";
 const SECONDARY_COLOR = "#D9D9D9";
 const TERTIARY_COLOR = "#5e5e5e";
 const BRAND_NAME = "Library Management System";
-const BRAND_LOGO = "https://lms1.hapangama.com/assets/images/logo.png";
 const USE_API_TO_DEFAULT_PROFILE_PICTURE = true; /* Use API to get default profile picture */
 const USE_API_TO_DEFAULT_BOOK_COVER = true; /* Use API to get default book cover */
 
