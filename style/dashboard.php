@@ -93,6 +93,7 @@ require_once __DIR__ . '/../config.php';
         border-radius: 60px;
         border-color: <?php echo SECONDARY_COLOR; ?>;
         border-style: solid;
+        margin-bottom: 30px;
     }
 
     .logout:hover{
@@ -195,6 +196,7 @@ require_once __DIR__ . '/../config.php';
     @media (max-width: 768px) {
         .container {
             flex-direction: column;
+            margin: 2px;
         }
         .sidebar {
             width: 100%;

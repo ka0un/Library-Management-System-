@@ -42,11 +42,11 @@ generate_header(array());
             </div>
             <div class="actions">
                 <div class="action">
-                    <form action="" method="post">
                         <div class="book-button">
+                            <a href="/logout.php">
                             <input type="submit" id="button" value="Logout" name="logout" class="logout">
+                            </a>
                         </div>
-                    </form>
                 </div>
 
             </div>
@@ -187,9 +187,4 @@ generate_header(array());
 </div>
     </body>
     </html>
-<?php
-if(isset($_POST['logout'])){
-    header("Location: /logout.php");
-}
-?>
 
