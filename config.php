@@ -55,7 +55,7 @@ const PERMISSIONS = array(
         "ALL",
     ),
     2 => array(
-        "permission_3",
+        "RESERVE_BOOK",
         "permission_4",
     ),
     3 => array(
