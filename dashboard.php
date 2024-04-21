@@ -8,6 +8,7 @@ require_once __DIR__ . '/sql/books.php';
 include(__DIR__ . '/auth/session.php');
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/sql/copies.php';
+require_once __DIR__ . '/validators/checkout.php';
 ?>
     <!DOCTYPE html>
     <html lang="en">
