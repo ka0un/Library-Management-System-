@@ -1,2 +1,5 @@
 User-agent: *
 Disallow: /
+
+# This is for preventing TurnitinBot or any web crawler from crawling our site
+# https://www.turnitin.com/robot/crawlerinfo.html#:~:text=To%20exclude%20TurnitinBot%20from%20all%20or%20portions%20of,the%20top%20most%20directory%20of%20your%20web%20site.
