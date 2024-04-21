@@ -37,6 +37,9 @@ generate_header(array());
                 <div class="nic">
                     <?php echo get_user_nic($_SESSION['uuid']); ?>
                 </div>
+                <div class="nic">
+                    <?php echo $_SESSION['uuid']; ?>
+                </div>
                 <div class="role">
                     <?php echo get_role_name(get_role($_SESSION['uuid'])); ?>
                 </div>

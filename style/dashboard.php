@@ -66,7 +66,7 @@ require_once __DIR__ . '/../config.php';
     }
 
     .role{
-        width: auto;
+        width: 200px;
         font-size: 25px;
         margin-top: 20px;
         text-align: center;
