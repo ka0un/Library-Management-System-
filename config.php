@@ -59,7 +59,7 @@ const PERMISSIONS = array(
         "permission_4",
     ),
     3 => array(
-        "permission_5",
+        "RESERVE_BOOK",
         "permission_6",
     ),
 );

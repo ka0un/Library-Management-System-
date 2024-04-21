@@ -3,9 +3,14 @@ require_once __DIR__ . '/../sql/books.php';
 require_once __DIR__ . '/../sql/copies.php';
 require_once __DIR__ . '/../sql/reservations.php';
 require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../auth/permission.php';
 
 function can_user_reserve_book($uuid, $bookid): bool
 {
+
+    if (has_permission(get_user_id($uuid), 'RESERVE_BOOK')){
+        return false;
+    }
 
     //check if user already reserved the book
     if (is_user_reserved_book($uuid, $bookid)){
@@ -32,6 +37,10 @@ function can_user_reserve_book($uuid, $bookid): bool
 
 function get_reason_why_user_cannot_reserve_book($uuid, $bookid): string
 {
+
+    if (!has_permission(get_user_id($uuid), 'RESERVE_BOOK')) {
+        return "User does not have permission to reserve books. - RESERVE_BOOK";
+    }
 
     //check if user exceeds reservation limit
     if (has_user_exceeded_reservation_limit($uuid)) {
