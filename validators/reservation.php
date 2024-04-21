@@ -62,16 +62,27 @@ function has_user_exceeded_reservation_limit($uuid): bool
 
 function is_reservation_time_exceeded($reservationid): bool
 {
-    $maximum_reservation_days = MAX_RESERVATION_DAYS;
+
     $start = get_reservation_start($reservationid);
     $start = strtotime($start);
     $current = time();
     $difference = $current - $start;
 
-    if ($difference > $maximum_reservation_days * 24 * 60 * 60){
+    if ($difference > MAX_RESERVATION_SECOUNDS){
         return true;
     }
 
     return false;
 
+}
+
+function get_reservation_time_left_string($reservationid): string
+{
+    $start = get_reservation_start($reservationid);
+    $start = strtotime($start);
+    $current = time();
+    $difference = $current - $start;
+    $time_left = MAX_RESERVATION_SECOUNDS - $difference;
+    $time_left_string = gmdate("H:i:s", $time_left);
+    return $time_left_string;
 }

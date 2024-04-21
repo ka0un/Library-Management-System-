@@ -130,18 +130,7 @@ generate_header([
 
                                 //check if user has already reserved the book
                                 if (is_user_reserved_book($_SESSION['uuid'], $bookid)) {
-
-                                    $reservation_id = get_reservation_id($bookid, $_SESSION['uuid']);
-                                    $reservation_start = get_reservation_start($reservation_id);
-                                    $reservation_start_timestamp = strtotime($reservation_start);
-                                    $time_left_string = $reservation_start_timestamp + (MAX_RESERVATION_DAYS * 24 * 60 * 60) - time();
-                                    // Convert the time left (in seconds) to a DateInterval object
-                                    $time_left_interval = DateInterval::createFromDateString($time_left_string . ' seconds');
-
-                                    // Format the DateInterval object into a string that represents the time left in days and hours
-                                    $time_left_string = $time_left_interval->format('%a day(s) %h hour(s)');
-
-
+                                    $time_left_string = get_reservation_time_left_string(get_reservation_id($bookid, $_SESSION['uuid']));
                                     echo '<div class="description">
                                     <span>You have already reserved this book!</span>
                                     <span>Visit our library to borrow your copy of the book!</span>

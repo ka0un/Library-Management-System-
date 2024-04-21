@@ -114,10 +114,10 @@ generate_header(array());
                             '.get_reservation_start($reservationid).'
                             </div>
                             <div class="c3">
-                            '.MAX_RESERVATION_DAYS . ' days' .'
+                            '.date("H:i:s", MAX_RESERVATION_SECOUNDS) .'
                             </div>
                             <div class="c4">
-                            '.MAX_RESERVATION_DAYS.'
+                            '.get_reservation_time_left_string($reservationid).'
                             </div>
                             </div>';
                         }
