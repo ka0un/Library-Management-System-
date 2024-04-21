@@ -46,7 +46,7 @@ const USE_API_TO_DEFAULT_BOOK_COVER = true; /* Use API to get default book cover
 const ROLES = array(
     1 => "Admin",
     2 => "Assistance",
-    3 => "User",
+    3 => "Member",
 );
 const DEFAULT_ROLE = 3; /* Default role for new users */
 const PERMISSIONS = array(
