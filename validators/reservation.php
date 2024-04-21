@@ -8,7 +8,7 @@ require_once __DIR__ . '/../auth/permission.php';
 function can_user_reserve_book($uuid, $bookid): bool
 {
 
-    if (has_permission(get_user_id($uuid), 'RESERVE_BOOK')){
+    if (!has_permission(get_user_id($uuid), 'RESERVE_BOOK')){
         return false;
     }
 
