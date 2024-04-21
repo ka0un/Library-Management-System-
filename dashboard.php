@@ -9,6 +9,7 @@ include(__DIR__ . '/auth/session.php');
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/sql/copies.php';
 require_once __DIR__ . '/validators/checkout.php';
+require_once __DIR__ . '/schedules/sheduler.php';
 ?>
     <!DOCTYPE html>
     <html lang="en">
