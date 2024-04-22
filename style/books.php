@@ -100,6 +100,29 @@ body{
     margin:10px;
     border-radius: 20px;
     background-color: <?php echo PRIMARY_COLOR; ?>;
+    text-decoration-line: none;
+}
+
+.book-holder:hover{
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: <?php echo PRIMARY_COLOR; ?>;
+}
+
+a:visited {
+    color: <?php echo PRIMARY_COLOR; ?>;
+}
+
+a:link {
+    color: <?php echo PRIMARY_COLOR; ?>;
+}
+
+.book-holder a{
+    text-decoration: none;
+    color: <?php echo SECONDARY_COLOR; ?>;
 }
 
 .book-holder img{

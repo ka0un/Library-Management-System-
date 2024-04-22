@@ -70,3 +70,17 @@ function get_categroy_name($categoryid): string
     return $row['name'];
 }
 
+function get_all_categoryids(): array
+{
+    global $conn;
+    $sql = "SELECT categoryid FROM categories";
+    $result = mysqli_query($conn, $sql);
+
+    $categoryids = array();
+    while ($row = mysqli_fetch_assoc($result)) {
+        $categoryids[] = $row['categoryid'];
+    }
+
+    return $categoryids;
+}
+

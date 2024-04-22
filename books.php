@@ -3,6 +3,7 @@ require_once __DIR__ . '/components/header.php';
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/sql/books.php';
 require_once __DIR__ . '/sql/copies.php';
+require_once __DIR__ . '/sql/categories.php'
 ?>
 
 <!DOCTYPE html>
@@ -24,192 +25,40 @@ require_once __DIR__ . '/sql/copies.php';
             
                 <div class ="categorylist">
                     <form id="categoryForm">
-                        <!-- Buttons styled as category items -->
-                        <button type="submit" class="cat-item-button" value="Novels">Novels</button>
-                        <button type="submit" class="cat-item-button" value="Kernels">Kernels</button>
-                        <button type="submit" class="cat-item-button" value="Storylines">Storylines</button>
-                        <button type="submit" class="cat-item-button" value="Programming">Programming</button>
-                        <button type="submit" class="cat-item-button" value="History">History</button>
+
+                        <?php
+                        function display_categories(){
+                            foreach (get_all_categoryids() as $categoryid) {
+                                echo '<button type="submit" class="cat-item-button" value="'. get_categroy_name($categoryid) .'">Novels</button>';
+                            }
+                        }
+
+                        display_categories();
+                        ?>
+
                     </form>
                 </div>
             </div>
                     
             <div class ="books">
-        
-                
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad<br>long name checking</div>
-            
-                        
-                        
-                    </div>
 
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad</div>
-                        
-                        
-                        
-                    </div>
+                <?php
 
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad</div>
-            
-                        
-                        
-                    </div>
+                function display_all_books(){
+                    foreach (get_array_of_bookids() as $bookid) {
+                        echo '<a href="'.get_book_url($bookid).'">';
+                        echo '<div class ="book-holder">';
+                        echo '<img class="front-image" src="'. get_book_image($bookid) .'" width="100px" height="100px">';
+                        echo '<div class="title">'. get_book_title($bookid) .'</div>';
+                        echo '</div>';
+                        echo '</a>';
+                    }
+                }
 
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad</div>
-                    
-                        
-                        
-                    </div>
+                display_all_books();
 
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad </div>
-                        
-                        
-                        
-                    </div>
+                ?>
 
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad</div>
-                    
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad</div>
-                        
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad </div>
-                
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad </div>
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad</div>
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad </div>
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad </div>
-                        
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad </div>
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad</div>
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad</div>
-                    </div>
-
-                    
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad</div>
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad </div>
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad Good Days With us</div>
-                    </div>
-
-                   
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad </div>
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad </div>
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad </div>
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad</div>
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad </div>
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad </div>
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad </div>
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad</div>
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad</div>
-                    </div>
-
-                    
-                
-                
-                
             </div>
         </div>
 
