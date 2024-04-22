@@ -174,15 +174,21 @@ body{
       width: 100%;
       height: auto;
       margin: 10px 10px 0px 10px;
+        display: flex;
+        flex-direction: column;
     }
 
     .front-image {
       width: 100%;
       height: auto;
+
     }
 
     .title {
       width: 100%;
+        height: 40px;
+        margin-top: 0;
+
     }
 
     #searchinput {
