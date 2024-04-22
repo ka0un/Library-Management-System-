@@ -7,7 +7,7 @@ require_once __DIR__ . '/sql/categories.php'
 ?>
 
 <!DOCTYPE html>
-<html lng="en">
+<html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
         <title>Book</title>
@@ -20,7 +20,9 @@ require_once __DIR__ . '/sql/categories.php'
         <div class ="main">
             <div class ="category">
                 <div class="searchbar">
+                    <form id="searchForm">
                     <div class ="searchbar-container"><input type ="text" id="searchinput" placeholder="Search" ></div>
+                    </form>
                 </div>
             
                 <div class ="categorylist">
@@ -44,8 +46,8 @@ require_once __DIR__ . '/sql/categories.php'
 
                 <?php
 
-                function display_all_books(){
-                    foreach (get_array_of_bookids() as $bookid) {
+                function display_books($book_id_array){
+                    foreach ($book_id_array as $bookid) {
                         echo '<a href="'.get_book_url($bookid).'">';
                         echo '<div class ="book-holder">';
                         echo '<img class="front-image" src="'. get_book_image($bookid) .'" width="100px" height="100px">';
@@ -55,9 +57,43 @@ require_once __DIR__ . '/sql/categories.php'
                     }
                 }
 
-                display_all_books();
+                display_books(get_array_of_bookids());
+
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    // Get the search term from the POST parameters
+                    $searchTerm = $_POST['searchTerm'];
+
+                    //clean the old books
+                    echo "<script type='text/javascript'>document.querySelector('.books').innerHTML = '';</script>";
+
+                    //if search term is empty, display all books
+                    if (empty($searchTerm)) {
+                        display_books(get_array_of_bookids());
+                        return;
+                    }
+
+                    // Perform the search
+                    $bookIds = books_sql_like_search($searchTerm);
+
+                    display_book($bookIds);
+                }
 
                 ?>
+
+                <script>
+                    // Get the search input element
+                    var searchInput = document.getElementById('searchinput');
+
+                    // Get the form element
+                    var searchForm = document.getElementById('searchForm');
+
+                    // Listen for input events (which are fired whenever the input changes)
+                    searchInput.addEventListener('input', function() {
+                        searchForm.submit();
+                    });
+
+                </script>
+
 
             </div>
         </div>
