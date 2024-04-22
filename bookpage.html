@@ -5,211 +5,31 @@
         <link rel ="stylesheet" href="bookpage.css">
     </head>
     <body>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-        function categoryItems(event) {
-            var clickedLabel = event.target;
-            var categoryItems = clickedLabel.nextElementSibling;
-
-            if (categoryItems) {
-                categoryItems.classList.toggle('visible');
-                var ul = categoryItems.querySelector('ul'); // Find the ul element inside .category-items
-                if (ul) {
-                    var isVisible = ul.offsetHeight > 0; // Check if ul is visible
-                    if (!isVisible) {
-                        clickedLabel.style.marginTop = "20px"; // Increase margin-top if ul is not visible
-                    } else {
-                        clickedLabel.style.marginTop = "0"; // Reset margin-top if ul is visible
-                    }
-                }
-            }
-        }
-
-        var labels = document.querySelectorAll('.category-container label');
-
-        labels.forEach(function(label) {
-            label.addEventListener('click', categoryItems);
-            label.addEventListener('mouseover', function(event) {
-                event.target.style.fontSize = '1.1em'; // Increase font size on mouseover
-            });
-            label.addEventListener('mouseleave', function(event) {
-                event.target.style.fontSize = ''; // Reset font size on mouseleave
-            });
-        });
-    });
-        </script>
-
         <div class ="main">
             <div class ="category">
                 <div class="searchbar">
-                    <div class ="searchbar-container"><input type ="text" id="searchinput" placeholder="search books here" ></div>
+                    <div class ="searchbar-container"><input type ="text" id="searchinput" placeholder="Search" ></div>
                 </div>
             
                 <div class ="categorylist">
-                    <hr>
-                    <div class="category-container">
-                        
-                        <label>Programming </label>
-                        <div class="category-items">
-                            <ul class="preview">
-                                <li><a href ="#">Python</a></li>
-                                <li><a href ="#">Java</a></li>
-                                <li><a href ="#">Java script</a></li>
-                                <li><a href ="#">C++</a></li>
-
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="category-container">
-                        <label>Engineering </label>
-                        <div class="category-items">
-                            <ul>
-                                <li>Machanics</li>
-                                <li>Calcus</li>
-                                <li>Rubber</li>
-                                <li>Construction</li>
-
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="category-container">
-                        <label>Nursing</label>
-                        <div class="category-items">
-                            <ul>
-                                <li>Heart</li>
-                                <li>Brain</li>
-                                <li>Birth-Dead</li>
-                                <li>Resposibilities</li>
-
-                            </ul>
-                        </div>
-                    </div>
-
-
-                    <div class="category-container">
-                        <label>DataScience </label>
-                        <div class="category-items">
-                        <ul>
-                            <li>Machine learning</li>
-                            <li>Neural Netwoking</li>
-                            <li>Statistics</li>
-                            <li>Probability</li>
-
-                        </ul>
-                        </div>
-                    </div>
-
-
+                    <form id="categoryForm">
+                        <!-- Buttons styled as category items -->
+                        <button type="submit" class="cat-item-button" value="Novels">Novels</button>
+                        <button type="submit" class="cat-item-button" value="Kernels">Kernels</button>
+                        <button type="submit" class="cat-item-button" value="Storylines">Storylines</button>
+                        <button type="submit" class="cat-item-button" value="Programming">Programming</button>
+                        <button type="submit" class="cat-item-button" value="History">History</button>
+                    </form>
                 </div>
-                  
             </div>
-        
+                    
             <div class ="books">
         
                 
                     <div class ="book-holder">
                         <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad Good Days With us</div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad Good Days With us</div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad Good Days With us</div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad Good Days With us</div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad Good Days With us</div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad Good Days With us</div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad </div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad </div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad </div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad
-                        </div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad </div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad </div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad </div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
+                        <div class="title">Rich Dad Poor Dad<br>long name checking</div>
+            
                         
                         
                     </div>
@@ -217,7 +37,7 @@
                     <div class ="book-holder">
                         <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
                         <div class="title">Rich Dad Poor Dad</div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
+                        
                         
                         
                     </div>
@@ -225,131 +45,154 @@
                     <div class ="book-holder">
                         <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
                         <div class="title">Rich Dad Poor Dad</div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
+            
                         
                         
+                    </div>
+
+                    <div class ="book-holder">
+                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
+                        <div class="title">Rich Dad Poor Dad</div>
+                    
+                        
+                        
+                    </div>
+
+                    <div class ="book-holder">
+                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
+                        <div class="title">Rich Dad Poor Dad </div>
+                        
+                        
+                        
+                    </div>
+
+                    <div class ="book-holder">
+                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
+                        <div class="title">Rich Dad Poor Dad</div>
+                    
+                        
+                        
+                    </div>
+
+                    <div class ="book-holder">
+                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
+                        <div class="title">Rich Dad Poor Dad</div>
+                        
+                        
+                        
+                    </div>
+
+                    <div class ="book-holder">
+                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
+                        <div class="title">Rich Dad Poor Dad </div>
+                
+                        
+                        
+                    </div>
+
+                    <div class ="book-holder">
+                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
+                        <div class="title">Rich Dad Poor Dad </div>
+                    </div>
+
+                    <div class ="book-holder">
+                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
+                        <div class="title">Rich Dad Poor Dad</div>
+                    </div>
+
+                    <div class ="book-holder">
+                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
+                        <div class="title">Rich Dad Poor Dad </div>
+                        
+                    </div>
+
+                    <div class ="book-holder">
+                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
+                        <div class="title">Rich Dad Poor Dad </div>
+                        
+                        
+                        
+                    </div>
+
+                    <div class ="book-holder">
+                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
+                        <div class="title">Rich Dad Poor Dad </div>
+                        
+                        
+                    </div>
+
+                    <div class ="book-holder">
+                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
+                        <div class="title">Rich Dad Poor Dad</div>
+                        
+                        
+                    </div>
+
+                    <div class ="book-holder">
+                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
+                        <div class="title">Rich Dad Poor Dad</div>
                     </div>
 
                     
                     <div class ="book-holder">
                         <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad Good Days With us</div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad Good Days With us</div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad Good Days With us</div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad Good Days With us</div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad Good Days With us</div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad Good Days With us</div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
+                        <div class="title">Rich Dad Poor Dad</div>
                     </div>
 
                     <div class ="book-holder">
                         <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
                         <div class="title">Rich Dad Poor Dad </div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
+                    </div>
+
+                    <div class ="book-holder">
+                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
+                        <div class="title">Rich Dad Poor Dad Good Days With us</div>
+                    </div>
+
+                   
+                    <div class ="book-holder">
+                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
+                        <div class="title">Rich Dad Poor Dad </div>
                     </div>
 
                     <div class ="book-holder">
                         <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
                         <div class="title">Rich Dad Poor Dad </div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
                     </div>
 
                     <div class ="book-holder">
                         <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
                         <div class="title">Rich Dad Poor Dad </div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad
-                        </div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad </div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad </div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
-                    </div>
-
-                    <div class ="book-holder">
-                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
-                        <div class="title">Rich Dad Poor Dad </div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
                     </div>
 
                     <div class ="book-holder">
                         <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
                         <div class="title">Rich Dad Poor Dad</div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
+                    </div>
+
+                    <div class ="book-holder">
+                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
+                        <div class="title">Rich Dad Poor Dad </div>
+                    </div>
+
+                    <div class ="book-holder">
+                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
+                        <div class="title">Rich Dad Poor Dad </div>
+                    </div>
+
+                    <div class ="book-holder">
+                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
+                        <div class="title">Rich Dad Poor Dad </div>
                     </div>
 
                     <div class ="book-holder">
                         <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
                         <div class="title">Rich Dad Poor Dad</div>
-                        <div class="author">By Rober kiyoshki and degv helwer grnders</div>
-                        
-                        
+                    </div>
+
+                    <div class ="book-holder">
+                        <img  class="front-image" src="images/bookpage1.jpeg" width="100px" height ="100px">
+                        <div class="title">Rich Dad Poor Dad</div>
                     </div>
 
                     
