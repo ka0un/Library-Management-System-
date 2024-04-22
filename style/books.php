@@ -188,30 +188,31 @@ a:link {
     .books {
       width: 100%;
       height: auto;
-      overflow: visible;
+      overflow: auto;
       margin-top: 10px;
+        margin-right: 10px;
       justify-content: center;
     }
 
     .book-holder {
-      width: 100%;
+        box-sizing: border-box;
+        width: calc(100% - 20px); /*fixed overflow issue - kasun*/
+        margin-right: 10px;
       height: auto;
-      margin: 10px 10px 0px 10px;
         display: flex;
         flex-direction: column;
     }
 
     .front-image {
-      width: 100%;
-      height: auto;
-
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
     }
 
     .title {
       width: 100%;
         height: 40px;
         margin-top: 0;
-
     }
 
     #searchinput {
