@@ -186,7 +186,7 @@ session_start();
         </div>
         <div class="nav">
             <div class ="navhome"><a href ="/index.php">Home</a></div>
-            <div class ="navbook"><a href ="/book.php">Books</a></div>
+            <div class ="navbook"><a href ="/books.php">Books</a></div>
             <div class ="navdashboard"><a href ="/support.php">Support</a></div>
         </div>
 
