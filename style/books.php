@@ -1,22 +1,30 @@
+<?php
+header("Content-type: text/css");
+require_once __DIR__ . '/../config.php';
+// if your file is in root use : require_once __DIR__ . '/config.php';
+?>
+
+<style>
+
 body{
-    background-color:white;
-    
+    background-color:<?php echo SECONDARY_COLOR; ?>;
 }
 
 .main{
     display: flex;
-    
+    padding-top: 10px;
+    font-family: Inter, sans-serif;
 }
 
 .category{
     width:18%;
-    background-color:#292929  ;
+    background-color:<?php echo PRIMARY_COLOR; ?>;
     display :grid;
     grid-template-rows: 9vh 63vh ;
     border:3px;
     border-radius: 20px;
-    margin-right: 5px;
-    overflow-y: scroll;
+    margin-right: 10px;
+    overflow-scrolling: auto;
     margin-left:0px;
     
 }
@@ -31,63 +39,55 @@ body{
     justify-content: flex-start;
     grid-template-rows: 30vh 30vh;
     overflow-x: auto;
-    background-color: #5e5e5e;
-    
+    background-color: <?php echo TERTIARY_COLOR; ?>;
     
 }
 
 .searchbar{
     grid-row:1;
-    }
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 
 
 #searchinput {
     width: 93%;
     height : 37px;
-    box-sizing: border-box;
-    border: 3px ;
-    border-radius: 20px;
+    border-radius: 10px;
     margin: 10px;
     padding-left: 14px;
-    color: #292929;
+    color: <?php echo PRIMARY_COLOR; ?>;
     font-weight: bold;
     font-size: large;
-    color: #292929;
+    border-color: <?php echo PRIMARY_COLOR; ?>;
+    background-color: <?php echo SECONDARY_COLOR; ?>;
     
 }
-
 
 
 .categorylist{
     grid-row:2;
     flex:1;
-    
-    display: flex; /* Added */
-    flex-direction: column; /* Added */
+    display: flex;
+    flex-direction: column;
     padding-left: 0px;
     width:100%
-    
-    
 }
 
 
 .cat-item-button{
-    background-color: #5e5e5e;
-    color:#292929;
+    background-color: <?php echo TERTIARY_COLOR; ?>;
+    color:<?php echo SECONDARY_COLOR; ?>;
     padding: 2px;
     height:40px;
     margin:0px;
     width:100%;
     display: flex;
-    border-top: 3px solid #292929 ;
     font-size:large;
     font-weight: bold;
     align-items: center;
     cursor: pointer;
-
-    
-    
 }
 
 .book-holder{
@@ -99,20 +99,18 @@ body{
     height:265px;
     margin:10px;
     border-radius: 20px;
-    background-color:#292929;
+    background-color: <?php echo PRIMARY_COLOR; ?>;
 }
 
 .book-holder img{
-    
     border-radius: 20px;
-    padding: 10px;
-    width:150px;
-    height: 100%;
 }
 
 .front-image{
     grid-row: 1;
-   
+    object-fit: cover;
+    width:180px;
+    height:265px;
 }
 
 .title {
@@ -121,8 +119,7 @@ body{
     font-weight: bold;
     font-size: medium;
     margin-left: 0px;
-    
-    background-color: white;
+    background-color: <?php echo SECONDARY_COLOR; ?>;
     width: 180px;
     border-bottom: 2px;
     border-radius: 0px 0px 20px 20px;
@@ -135,61 +132,75 @@ body{
 .author{
     grid-row: 3;
     margin-left:5px;
-    
     font-size:15px;
 
 }
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 600px) {
+
     .main {
-      flex-direction: column; /* Stack items vertically on smaller screens */
+        flex-direction: column;
     }
   
     .categorylist {
       display: none;
-      
     }
+
     .category{
-        width:100vw;
         height:60px;
-        
+        margin 0;
+        padding: 0;
+        width: 100%;
+        background-color: <?php echo SECONDARY_COLOR; ?>;
     }
+
     .searchbar{
-        width:100vw;
+        width: 100%;
+        height:60px;
+        display: block;
+        margin: 0;
+        padding: 0;
     }
-    #searchinput{
-        width:93%;
-    }
-  
+
     .books {
-      width: 100vw; /* Take up full width on smaller screens */
-      height: auto; /* Allow height to adjust based on content */
-      overflow: visible; /* Show all books without horizontal scroll */
-      margin-top: 5px;
+      width: 100%;
+      height: auto;
+      overflow: visible;
+      margin-top: 10px;
       justify-content: center;
     }
 
+    .book-holder {
+      width: 100%;
+      height: auto;
+      margin: 10px 10px 0px 10px;
+    }
+
+    .front-image {
+      width: 100%;
+      height: auto;
+    }
+
+    .title {
+      width: 100%;
+    }
+
     #searchinput {
-        width: 95%;
-        height : 30px;
-        box-sizing: border-box;
-        border: 3px ;
+        width: 100%;
         border-radius: 20px;
-        margin: 10px;
-        padding-left: 14px;
-        color: #292929;
         font-weight: bold;
         font-size: large;
-        color: #292929;
-        
+        padding-left: 10px;
+        margin: 0 10px 0 0;
+        height: 60px;
     }
 
 
-  }
+}
 
 
  
-
+</style>
 
 
 

@@ -8,10 +8,14 @@ require_once __DIR__ . '/sql/copies.php';
 <!DOCTYPE html>
 <html lng="en">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
         <title>Book</title>
-        <link rel ="stylesheet" href="style/books.css">
+        <link rel ="stylesheet" href="style/books.php">
     </head>
-    <body>
+    <body bgcolor=<?php echo SECONDARY_COLOR;?>>
+    <?php
+    generate_header(array());
+    ?>
         <div class ="main">
             <div class ="category">
                 <div class="searchbar">
