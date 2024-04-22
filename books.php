@@ -1,8 +1,15 @@
+<?php
+require_once __DIR__ . '/components/header.php';
+require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/sql/books.php';
+require_once __DIR__ . '/sql/copies.php';
+?>
+
 <!DOCTYPE html>
 <html lng="en">
     <head>
         <title>Book</title>
-        <link rel ="stylesheet" href="bookpage.css">
+        <link rel ="stylesheet" href="style/books.css">
     </head>
     <body>
         <div class ="main">
