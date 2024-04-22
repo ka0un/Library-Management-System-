@@ -5,68 +5,38 @@ require_once __DIR__ . '/../config.php';
 
 <style>
 
-*{box-sizing:border-box}
-body{font-family:Verdana, sans-serif;
-     background-color:#D9D9D9;
-     color:#292929;}
-.mySlides{
-    display:none
+*{
+    box-sizing:border-box
 }
+
+body{
+    font-family:Verdana, sans-serif;
+    background-color:<?php echo SECONDARY_COLOR; ?>;
+    color:<?php echo PRIMARY_COLOR; ?>;
+}
+
 img{
     vertical-align:middle
 }
 
-.slideshow-container{max-width:1000px;
-                     position:relative;
-                     margin:auto}
+.caption{
+    font-size:30px;
+    font-weight:bolder;
+    color:<?php echo PRIMARY_COLOR; ?>;
+    margin-left: 20px;
+}
 
-.header_text{font-size:15px;
-      padding:8px 12px;
-      position:absolute;
-      bottom:8px;
-      width:100%;
-      text-align:center}
+.scroll-container{
+    border:3px solid #D9D9D9;
+    overflow-x:auto;
+    white-space:nowrap;
+    padding:10px
+}
 
-.numbertext{font-size:12px;
-            padding:8px 12px;
-            position:absolute;
-            top:0}
-
-.dot{height:15px;
-     width:15px;
-     margin:5px 2px;
-     background-color:#D9D9D9;
-     border-radius:50%;
-     display:inline-block;
-     transition:background-color 0.6s ease}
-
-.active{background-color:#717171}
-      
-.fade{animation-name:fade;
-      animation-duration:1.5s}
-      
-@keyframes fade{from{opacity:.4} 
-                to{opacity:1}}
-
-@media only screen and (max-width:300px) {.header_text{font-size:11px}}
-
-.caption{border:3px solid #D9D9D9;
-         font-size:30px;
-         font-weight:bold}
-
-table{width:100%;
-      border-collapse:collapse}
-
-.table{overflow-y:auto;
-       max-height:250px}
-
-.scroll-container{border:3px solid #D9D9D9;
-                  overflow-x:auto;
-                  white-space:nowrap;
-                  padding:10px}
-      
-.scroll-container .book{padding:10px;
-                        display:inline-block}
+.scroll-container .book{
+    padding:10px;
+    display:inline-block
+}
 
 .announcement{
     background-color: <?php echo TERTIARY_COLOR; ?>;
@@ -80,6 +50,7 @@ table{width:100%;
     flex-direction: row;
     border-radius: 20px;
 }
+
 .Date-Section{
     display:flex;
     padding:10px;
@@ -115,7 +86,7 @@ table{width:100%;
     font-weight: normal;
 }
 
-/* hero.css */
+
 .hero {
     position: relative;
     display: flex;
@@ -139,15 +110,15 @@ table{width:100%;
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(128, 128, 128, 0.3); /* gray transparent overlay */
-    z-index: 1; /* place the overlay below the text */
+    background-color: rgba(128, 128, 128, 0.3);
+    z-index: 1;
     border-radius: 20px;
 }
 
 .hero-text {
     font-size: 2em;
     position: relative;
-    z-index: 2; /* place the text above the overlay */
+    z-index: 2;
 }
 
 .hero-text {
@@ -203,6 +174,8 @@ table{width:100%;
     .hero-text{
         font-size: 1em;
     }
+
+
 
 }
 
