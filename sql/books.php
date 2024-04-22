@@ -291,6 +291,38 @@ function crop_text($input, $n) {
     }
 }
 
+//EXPERIMENTAL SIMPLE SQL LIKE SEARCH
+
+function books_sql_like_search($searchTerm): array
+{
+    global $conn;
+
+    $sql = "SELECT bookid FROM books WHERE 
+            bookid LIKE ? OR 
+            title LIKE ? OR 
+            author LIKE ? OR 
+            isbn LIKE ? OR 
+            description LIKE ?";
+
+    $stmt = mysqli_prepare($conn, $sql);
+
+    $param = "%" . $searchTerm . "%";
+
+    mysqli_stmt_bind_param($stmt, "sssss", $param, $param, $param, $param, $param);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    mysqli_stmt_close($stmt);
+
+
+    $bookids = [];
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $bookids[] = $row['bookid'];
+    }
+
+    return $bookids;
+}
+
 
 
 
