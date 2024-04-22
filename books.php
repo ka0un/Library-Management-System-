@@ -31,7 +31,7 @@ require_once __DIR__ . '/sql/categories.php'
                         <?php
                         function display_categories(){
                             foreach (get_all_categoryids() as $categoryid) {
-                                echo '<button type="submit" class="cat-item-button" value="'. get_categroy_name($categoryid) .'">Novels</button>';
+                                echo '<button type="submit" class="cat-item-button" value="'. $categoryid .'">'. get_categroy_name($categoryid) .'</button>';
                             }
                         }
 
@@ -90,6 +90,13 @@ require_once __DIR__ . '/sql/categories.php'
                     // Listen for input events (which are fired whenever the input changes)
                     searchInput.addEventListener('input', function() {
                         searchForm.submit();
+                    });
+
+
+                    // Listen for submit events on the form
+                    searchForm.addEventListener('submit', function(event) {
+                        // Prevent the form from causing a page reload
+                        event.preventDefault();
                     });
 
                 </script>
