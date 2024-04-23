@@ -62,6 +62,7 @@ body{
     font-size: large;
     border-color: <?php echo PRIMARY_COLOR; ?>;
     background-color: <?php echo SECONDARY_COLOR; ?>;
+    border-width: 0px;
     
 }
 
@@ -88,6 +89,8 @@ body{
     font-weight: bold;
     align-items: center;
     cursor: pointer;
+    border: 0px;
+
 }
 
 .book-holder{
@@ -223,6 +226,7 @@ a:link {
         padding-left: 10px;
         margin: 0 10px 0 0;
         height: 60px;
+        border-width: 2px;
     }
 
 
