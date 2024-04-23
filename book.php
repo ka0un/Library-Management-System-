@@ -180,8 +180,8 @@ generate_header([
 
                     if(can_user_reserve_book($uuid, $bookid)){
                         add_reservation($bookid, $uuid);
-                        //reload the page
-                        header('Location: ' . $_SERVER['PHP_SELF']);
+                        //Send to the dashboard
+                        header('Location: /dashboard.php');
                         exit;
 
                     }else{
@@ -192,20 +192,6 @@ generate_header([
 
                 }
                 ?>
-
-                <script>
-
-                    var reserveButton = document.getElementById('button');
-
-                    reserveButton.addEventListener('click', function() {
-                        reserveButton.disabled = true;
-                        reserveButton.value = "Reserved!";
-                        // submit
-                        document.getElementById('res').submit();
-
-                    });
-
-                </script>
 
             </div>
         </div>
