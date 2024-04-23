@@ -281,6 +281,25 @@ function get_array_of_bookids(): array
 }
 
 
+function get_array_of_bookids_in_category($categoryid): array
+{
+    global $conn;
+    $sql = "SELECT bookid FROM books WHERE categoryid = ?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $categoryid);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    mysqli_stmt_close($stmt);
+
+    $bookids = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $bookids[] = $row['bookid'];
+    }
+
+    return $bookids;
+}
+
+
 //private functions
 
 function crop_text($input, $n) {
@@ -322,6 +341,8 @@ function books_sql_like_search($searchTerm): array
 
     return $bookids;
 }
+
+
 
 
 

@@ -21,7 +21,16 @@ require_once __DIR__ . '/sql/categories.php'
             <div class ="category">
                 <div class="searchbar">
                     <form id="searchForm">
-                    <div class ="searchbar-container"><input type ="text" id="searchinput" placeholder="Search" ></div>
+                    <div class ="searchbar-container">
+                        <datalist id="searchlist">
+                            <?php
+                            foreach (get_array_of_bookids() as $id) {
+                                echo '<option value="'. get_book_title($id) .'">';
+                            }
+                            ?>
+                        </datalist>
+                        <input type ="text" id="searchinput" placeholder="Search" list="searchlist">
+                    </div>
                     </form>
                 </div>
             
@@ -46,7 +55,15 @@ require_once __DIR__ . '/sql/categories.php'
 
                 <?php
 
+                $lookup = $_GET['lookup'] ?? null;
+                $categoryid = $_GET['category'] ?? null;
+
                 function display_books($book_id_array){
+
+                    if (empty($book_id_array)){
+                        echo '<h1 style="color:'. SECONDARY_COLOR .'; padding-left: 10px;">No books found : (</h1>';
+                    }
+
                     foreach ($book_id_array as $bookid) {
                         echo '<a href="'.get_book_url($bookid).'">';
                         echo '<div class ="book-holder">';
@@ -57,46 +74,47 @@ require_once __DIR__ . '/sql/categories.php'
                     }
                 }
 
-                display_books(get_array_of_bookids());
+                //if lookup is null
+                if ($lookup == null){
 
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    // Get the search term from the POST parameters
-                    $searchTerm = $_POST['searchTerm'];
+                    if ($categoryid == null){
 
-                    //clean the old books
-                    echo "<script type='text/javascript'>document.querySelector('.books').innerHTML = '';</script>";
-
-                    //if search term is empty, display all books
-                    if (empty($searchTerm)) {
                         display_books(get_array_of_bookids());
-                        return;
+
+                    } else {
+
+                        display_books(get_array_of_bookids_in_category($categoryid));
+
                     }
 
-                    // Perform the search
-                    $bookIds = books_sql_like_search($searchTerm);
+                } else {
 
-                    display_book($bookIds);
+                    display_books(books_sql_like_search($lookup));
+
                 }
+
 
                 ?>
 
                 <script>
-                    // Get the search input element
+
                     var searchInput = document.getElementById('searchinput');
 
-                    // Get the form element
-                    var searchForm = document.getElementById('searchForm');
 
-                    // Listen for input events (which are fired whenever the input changes)
-                    searchInput.addEventListener('input', function() {
-                        searchForm.submit();
+                    searchInput.addEventListener('change', function() {
+
+                        var searchTerm = searchInput.value;
+
+                        // Redirect to the books page with the search term as a query parameter
+                        window.location.href = 'books.php?lookup=' + encodeURIComponent(searchTerm);
                     });
 
+                    var categoryForm = document.getElementById('categoryForm');
 
-                    // Listen for submit events on the form
-                    searchForm.addEventListener('submit', function(event) {
-                        // Prevent the form from causing a page reload
+                    categoryForm.addEventListener('submit', function(event) {
                         event.preventDefault();
+                        var categoryid = event.submitter.value;
+                        window.location.href = 'books.php?category=' + encodeURIComponent(categoryid);
                     });
 
                 </script>
