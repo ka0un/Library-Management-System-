@@ -157,7 +157,7 @@ generate_header([
                                         } else {
                                             echo '<div class="description">
                                         <span>This book is available for reservations!</span>
-                                        <form action="" method="post">
+                                        <form action="" method="post" id="res">
                                         <div class="book-button">
                                         <input type="submit" id="button" value="Reserve" name="Reserve" class="login_submit">
                                         </div>
@@ -200,6 +200,9 @@ generate_header([
                     reserveButton.addEventListener('click', function() {
                         reserveButton.disabled = true;
                         reserveButton.value = "Reserved!";
+                        // submit
+                        document.getElementById('res').submit();
+
                     });
 
                 </script>
