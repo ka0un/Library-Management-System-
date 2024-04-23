@@ -6,7 +6,7 @@ require_once __DIR__ . '/../auth/permission.php';
 require_once __DIR__ . '/../components/admin-sideBar.php';
 require_once __DIR__ . '/../components/header.php';
 
-if (!has_permission(get_user_id($_SESSION['uuid']), 'VIEW_ADMIN_DASHBOARD')) {
+if (!has_permission($_SESSION['uuid'], 'VIEW_ADMIN_DASHBOARD')) {
     header("Location: /index.php");
 }
 ?>
