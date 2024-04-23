@@ -193,6 +193,16 @@ generate_header([
                 }
                 ?>
 
+                <script>
+
+                    var reserveButton = document.getElementById('button');
+
+                    reserveButton.addEventListener('click', function() {
+                        reserveButton.disabled = true;
+                        reserveButton.value = "Reserved!";
+                    });
+
+                </script>
 
             </div>
         </div>
