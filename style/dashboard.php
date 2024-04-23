@@ -193,6 +193,19 @@ require_once __DIR__ . '/../config.php';
         margin: 5px;
     }
 
+    a {
+        text-decoration: none;
+        color: <?php echo SECONDARY_COLOR; ?>;
+    }
+
+    a:visited {
+        color: <?php echo SECONDARY_COLOR; ?>;
+    }
+
+    a:link {
+        color: <?php echo SECONDARY_COLOR; ?>;
+    }
+
     @media (max-width: 768px) {
         .container {
             flex-direction: column;

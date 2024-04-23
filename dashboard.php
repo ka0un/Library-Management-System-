@@ -112,6 +112,7 @@ generate_header(array());
                         foreach($reservations as $reservationid)
                         {
                             echo '<div class="row">
+                            <a href="'. get_book_url(get_reservation_book_id($reservationid)).'">
                             <div class="c1">
                             '.get_book_title(get_reservation_book_id($reservationid)).'
                             </div>
@@ -124,6 +125,7 @@ generate_header(array());
                             <div class="c4">
                             '.get_reservation_time_left_string($reservationid).'
                             </div>
+                            </a>
                             </div>';
                         }
                     }
