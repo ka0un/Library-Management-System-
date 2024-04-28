@@ -64,14 +64,23 @@ function setup($conn): void
     $schedules_table_create = "CREATE TABLE IF NOT EXISTS schedules (
         id VARCHAR(255) PRIMARY KEY,
         time TIMESTAMP
-    );
-";
+    );";
+
+    $report_table_create = "CREATE TABLE IF NOT EXISTS report (
+        copyid VARCHAR(255) PRIMARY KEY,
+        action VARCHAR(255),
+        uuid VARCHAR(255),
+        date VARCHAR(255),
+        time VARCHAR(255),
+        );";
+
 
 
     //if table not exists create table
     if (!($conn->query($users_table_create) === TRUE)) {
         echo "Error creating table: " . $conn->error . "<br>";
     }
+
 
 
     //books part
