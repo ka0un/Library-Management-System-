@@ -316,12 +316,10 @@ function books_sql_like_search($searchTerm): array
 {
     global $conn;
 
-    $sql = "SELECT bookid FROM books WHERE 
-            bookid LIKE ? OR 
+    $sql = "SELECT bookid FROM books WHERE  
             title LIKE ? OR 
             author LIKE ? OR 
-            isbn LIKE ? OR 
-            description LIKE ?";
+            categoryid LIKE ?";
 
     $stmt = mysqli_prepare($conn, $sql);
 
