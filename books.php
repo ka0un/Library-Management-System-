@@ -28,9 +28,6 @@ require_once __DIR__ . '/sql/categories.php'
                                 echo '<option value="'. get_book_title($id) .'">';
                                 echo '<option value="'. get_book_author($id) .'">';
                             }
-                            foreach (get_all_categoryids() as $categoryid) {
-                                echo '<option value="'. $categoryid .'">'. get_categroy_name($categoryid) .'</option>';
-                            }
                             ?>
                         </datalist>
 
