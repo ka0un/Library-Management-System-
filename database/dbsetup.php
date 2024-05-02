@@ -22,7 +22,7 @@ function setup($conn): void
         isbn VARCHAR(255),
         reservations INT,
         description TEXT,
-        categoryid VARCHAR(255),
+        categoryid INT,
         FOREIGN KEY (categoryid) REFERENCES categories(categoryid)
                             
     );";
@@ -37,7 +37,7 @@ function setup($conn): void
     );";
 
     $category_table_create = "CREATE TABLE IF NOT EXISTS categories (
-        categoryid VARCHAR(255) PRIMARY KEY,
+        categoryid INT PRIMARY KEY AUTO_INCREMENT,
         name VARCHAR(255)
     );";
 

@@ -9,7 +9,7 @@
 	border-radius:20px;
 	background-color:#292929;
 }
-#textbox{
+.textbox{
 	border:2px solid #292929;
 	border-bottom:2px solid #D9D9D9;
 	background-color:#292929;
@@ -20,7 +20,7 @@
 h1{
 	color:#D9D9D9;
 }
-#textarea_addbook{
+.textarea_addbook{
 	color:#D9D9D9;
 	background-color:#292929;
 	border:1px solid #D9D9D9;
