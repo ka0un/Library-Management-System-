@@ -14,7 +14,7 @@ session_start();
         background-color: <?php echo PRIMARY_COLOR; ?>;
         overflow: auto;
         margin-top: 10px;
-        height: 90%;
+        height: 85%;
         border-radius: 20px;
         margin-right: 10px;
     }
