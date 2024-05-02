@@ -101,7 +101,7 @@ session_start();
 
     <?php
 
-    if (has_permission($_SESSION['uuid'], 'ADD BOOK')) {
+    if (has_permission($_SESSION['uuid'], 'ADD_BOOK')) {
         echo '<a href = "/../admin/addbook.php">
         <div class = "tab">
             Add Book
@@ -109,7 +109,7 @@ session_start();
         </a>';
     }
 
-    if (has_permission($_SESSION['uuid'], 'UPDATE BOOK')) {
+    if (has_permission($_SESSION['uuid'], 'UPDATE_BOOK')) {
         echo '<a href = "/../admin/updatebook.php">
         <div class = "tab">
             Update Book
