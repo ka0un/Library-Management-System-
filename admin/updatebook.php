@@ -67,6 +67,7 @@ if (!has_permission($_SESSION['uuid'], 'UPDATE_BOOK')) {
     </style>
 
 <body bgcolor="<?php echo SECONDARY_COLOR;?>">
+
 <?php
 
 generate_header(array());
@@ -74,19 +75,26 @@ generate_header(array());
 ?>
 
 <?php
+
 include( __DIR__ . '/../components/sidebar.php');
+
 ?>
+
 <div class="panel">
 
-    <?php
+<?php
+
     if (!isset($_GET['bookid'])) {
+
         echo '<div class="enter_id">';
         echo '<h1>Enter Book ID</h1>';
         echo '<form action="" method="post">';
         echo '<datalist id = "data">';
+
         foreach (get_array_of_bookids() as $bookid) {
             echo '<option value="'. $bookid .'">';
         }
+
         echo '</datalist>';
         echo '<input type ="text" id="searchinput" placeholder="Category" list="data" class="textbox" required name="category">';
         echo '<br><br>';
@@ -103,6 +111,7 @@ include( __DIR__ . '/../components/sidebar.php');
             }
 
         }
+
     }else{
 
         $bookid = $_GET['bookid'];
@@ -285,10 +294,7 @@ include( __DIR__ . '/../components/sidebar.php');
         echo '</div>';
 
 
-
-
     }
-
 
     ?>
 </div>
