@@ -26,9 +26,11 @@ require_once __DIR__ . '/sql/categories.php'
                             <?php
                             foreach (get_array_of_bookids() as $id) {
                                 echo '<option value="'. get_book_title($id) .'">';
+                                echo '<option value="'. get_book_author($id) .'">';
                             }
                             ?>
                         </datalist>
+
                         <input type ="text" id="searchinput" placeholder="Search" list="searchlist">
                     </div>
                     </form>

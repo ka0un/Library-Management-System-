@@ -45,11 +45,15 @@ function update_copy($copyid, $bookid, $status, $pr, $pcondition): void
     $sql = "UPDATE copies SET bookid = ?, status = ?, pr = ?, pcondition = ? WHERE copyid = ?";
 
     $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "sssss", $bookid, $status, $pr, $pcondition, $copyid);
+    mysqli_stmt_bind_param($stmt, "siiss", $bookid, $status, $pr, $pcondition, $copyid);
     mysqli_stmt_execute($stmt);
 
     if (mysqli_stmt_affected_rows($stmt) == 0) {
         echo "Error updating copy.";
+    }
+
+    if (mysqli_error($conn)) {
+        echo mysqli_error($conn);
     }
 
     mysqli_stmt_close($stmt);

@@ -9,6 +9,8 @@
 //===================================================================
 //SQL Database configuration - Tested on MySQL and MariaDB
 //===================================================================
+
+
 const DB_HOST = "129.146.1.186"; /* Your Database Host (without port) */
 const DB_PORT = 3306; /* Your Database Port (usually 3306) */
 const DB_USERNAME = "u14_Rf6AAvsnO7"; /* Your Database Username */
@@ -23,7 +25,7 @@ const GENERATE_TABLES = true; /* Change this to false in a production env*/
 const MAX_BOOK_RESERVATIONS = 1; /* Maximum number of books a user can reserve */
 const MAX_RESERVATION_DAYS = 7; /* Maximum number of days a book can be reserved */
 const MAX_RESERVATION_SECOUNDS = 60; /* Maximum number of days a book can be reserved */
-const MAX_CHECKOUTS = 1; /* Maximum number of books a user can checkout */
+const MAX_CHECKOUTS = 1; /* Maximum number of books a user can check out */
 const MAX_CHECKOUT_DAYS = 14; /* Maximum number of days a book can be checked out */
 const FINE_PER_DAY = 0.5; /* Fine per day for overdue books */
 //===================================================================

@@ -1,7 +1,10 @@
 <?php
 require_once __DIR__ . '/components/header.php';
 require_once __DIR__ . '/sql/books.php';
-?>
+require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/sql/books.php';
+require_once __DIR__ . '/components/header.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,3 +81,4 @@ generate_header(array());
 </div>
 </body>
 </html>
+?>
