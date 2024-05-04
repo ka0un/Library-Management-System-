@@ -141,7 +141,7 @@ generate_header(array());
                         </div>
                         <div class="row-head">
                             <div class="c1">
-                                Book
+                                Copy ID
                             </div>
                             <div class="c2">
                                 Checkout Date Time
@@ -150,7 +150,7 @@ generate_header(array());
                                 Checkout Duration
                             </div>
                             <div class="c4">
-                                Return Time Left
+                                Return Time Left / Fine
                             </div>
                         </div>
                         <?php function generate_checkouts($uuid)
@@ -169,6 +169,7 @@ generate_header(array());
 
                             foreach($checkouts as $checkoutid)
                             {
+                                echo '<a href="'. get_book_url(get_copy_bookid(get_checkout_copyid($checkoutid))).'">';
                                 echo '<div class="row">
                                 <div class="c1">
                                 '.get_copy_bookid(get_checkout_copyid($checkoutid)).'
@@ -177,12 +178,13 @@ generate_header(array());
                                 '.get_checkout_start($checkoutid).'
                                 </div>
                                 <div class="c3">
-                                '.MAX_CHECKOUT_DAYS . ' days' .'
+                                '.date("H:i:s", MAX_CHECKOUT_SECONDS).'
                                 </div>
                                 <div class="c4">
-                                '.MAX_CHECKOUT_DAYS.'
+                                '.get_checkout_time_left_or_fine($checkoutid).'
                                 </div>
-                                </div>';
+                                </div>
+                                </a>';
                             }
                         }
 
@@ -195,4 +197,17 @@ generate_header(array());
 </div>
     </body>
     </html>
+
+<?php
+function get_checkout_time_left_or_fine($checkoutid): string
+{
+    if (is_checkout_time_exceeded($checkoutid))
+    {
+        return "Fine: " . get_checkout_fine($checkoutid);
+    }
+
+    return get_checkout_time_left_string($checkoutid);
+}
+?>
+
 

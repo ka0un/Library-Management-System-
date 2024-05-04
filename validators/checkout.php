@@ -137,6 +137,7 @@ function get_checkout_fine($checkoutid): float
     $fine = 0;
     if ($checkout_time_left < 0){
         $amount_days_passed = abs($checkout_time_left) / (24 * 60 * 60);
+        $amount_days_passed = ceil($amount_days_passed);
         $fine = $amount_days_passed * FINE_PER_DAY;
     }
     return $fine;
