@@ -133,16 +133,8 @@ function get_checkout_time_left_string($checkoutid): string
 
 function get_checkout_fine($checkoutid): float
 {
-    $checkout_time_left = get_checkout_time_left_seconds($checkoutid);
-    $fine = 0;
-    if ($checkout_time_left < 0){
-        $amount_days_passed = abs($checkout_time_left) / (24 * 60 * 60);
-        $amount_days_passed = ceil($amount_days_passed);
-        $fine = $amount_days_passed * FINE_PER_DAY;
-    }
-    return $fine;
+    return get_checkout_exceeded_days($checkoutid) * FINE_PER_DAY;
 }
-
 
 
 //private functions
@@ -150,4 +142,15 @@ function has_user_exceeded_checkout_limit($uuid): bool
 {
     $checkouts = get_amount_of_checkouts_of_user($uuid);
     return $checkouts >= MAX_CHECKOUTS;
+}
+
+function get_checkout_exceeded_days($checkoutid): int
+{
+    $checkout_time_left = get_checkout_time_left_seconds($checkoutid);
+    if ($checkout_time_left < 0){
+        $amount_days_exceeded = abs($checkout_time_left) / (24 * 60 * 60);
+        $amount_days_exceeded = ceil($amount_days_exceeded);
+    }else{
+        return 0;
+    }
 }

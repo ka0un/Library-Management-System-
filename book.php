@@ -97,19 +97,14 @@ generate_header([
                         //get checkout start timestamp
                         $checkout_start_timestamp = strtotime($checkout_start_date);
 
-                        //get amount of days left for checkout
-                        $amount_of_chekout_days_left = ($checkout_start_timestamp + (MAX_CHECKOUT_DAYS * 24 * 60 * 60) - time()) / (24 * 60 * 60);
 
                         //if the amount of days left is less than 0, the user has exceeded the checkout limit
-                        if ($amount_of_chekout_days_left < 0) {
-
-                            $exceeded_amount_of_days = abs($amount_of_chekout_days_left);
-                            $fine = $exceeded_amount_of_days * FINE_PER_DAY;
+                        if (get_checkout_time_left_seconds($checkout_id) < 0) {
                             echo '<div class="description">
                             <span>You have exceeded max day limit!</span>
                             <span>Copy ID : '. $checkouted_copyid . '</span>
-                            <span>Days Exceeded : '. $exceeded_amount_of_days . '</span>
-                            <span>Fine : '. $fine . '</span>
+                            <span>Days Exceeded : '. get_checkout_exceeded_days($checkout_id) . '</span>
+                            <span>Fine : '. get_checkout_fine($checkout_id) . '</span>
                         </div>';
 
 
@@ -119,7 +114,7 @@ generate_header([
                         <span>You have already checked out a copy of this book!</span>
                         <span>Copy ID : '. $checkouted_copyid . '</span>
                         <span>Checkout Start Date : '. $checkout_start_date . '</span>
-                        <span>Days Left : '. $amount_of_chekout_days_left . '</span>
+                        <span>Time Left : '. get_checkout_time_left_string($checkout_id) . '</span>
                     </div>
                         
                         ';
