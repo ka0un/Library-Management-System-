@@ -2,110 +2,173 @@
   require_once __DIR__ . '/../database/database.php';
   require_once __DIR__ . '/../config.php';
   require_once __DIR__ . '/../sql/copies.php';
-   require_once __DIR__ . '/../sql/checkouts.php';
+  require_once __DIR__ . '/../sql/checkouts.php';
 
+  global $conn;
   $conn = getConnection();
   $reservedCopies = array();
-  function get_data_forReport($action,$tabel_name){
-      Global $conn;
-      $sql = "SELECT uuid , bookid , DATE(start) AS start_date, TIME(start) AS start_time From $tabel_name";
+  function get_data_forReport($action, $table_name)
+  {
+      global $conn;
+
+      $sql = "SELECT uuid, bookid, DATE(start) AS start_date, TIME(start) AS start_time FROM $table_name";
       $result = $conn->query($sql);
-      if($result ->num_rows > 0) {
+
+      if ($result->num_rows > 0) {
           while ($row = $result->fetch_assoc()) {
-              $bookID = $row["bookid"];
-              $copies = get_array_of_copyids($bookID);
-
-              foreach ($copies as $copyid) {
-                  $Non_available = is_copy_alredy_checked_out($copyid);
-
-                  if ($Non_available == 0) {
-                      if (isReserved($copyid) == "can reserve") {
-                          $copyID = $copyid;
-                          addReservedCopy($copyid);
-                          break;
-                      }
-                  }
-              }
-
               $uuid = $row["uuid"];
+              $copyid = $row["bookid"];
               $date = $row["start_date"];
               $time = $row["start_time"];
 
 
+              insert_data_For_Report($copyid, $action, $uuid, $date, $time);
           }
+      } else {
+          echo "error";
       }
-      else{
-          echo"Error";
-      }
-      $conn->close();
-
   }
+
+function get_data_forReport_from_checkout($action, $table_name)
+  {
+      global $conn;
+
+      $sql = "SELECT uuid, copyid, DATE(start) AS start_date, TIME(start) AS start_time FROM $table_name";
+      $result = $conn->query($sql);
+
+      if ($result->num_rows > 0) {
+          while ($row = $result->fetch_assoc()) {
+              $uuid = $row["uuid"];
+              $copyid = $row["bookid"];
+              $date = $row["start_date"];
+              $time = $row["start_time"];
+
+
+              insert_data_For_Report($copyid, $action, $uuid, $date, $time);
+          }
+      } else {
+          echo "error";
+      }
+  }
+
 
   function addReservedCopy($copy) {
     global $reservedCopies;
     $reservedCopies[] = $copy;
 }
 
+
 function isReserved($copy)
 {
     global $reservedCopies;
-    $resavation = in_array($copy, $reservedCopies);
-    if ($resavation == 0) {
+    $reservation = in_array($copy, $reservedCopies);
+    if (!$reservation) {
         return "can reserve";
+    } else {
+        return "copy already reserved";
     }
 }
 
-function insert_data_For_Report($copyid,$action,$userid,$date,$time)
+
+function insert_data_For_Report($copyid, $action, $uuid, $date, $time)
 {
-    global $conn;
-    $sql = "Insert into report values($copyid,$action,$userid,$date,$time);";
-    if ($conn->query($sql) !== TRUE) return true; // Return true if insertion was successful
-    {
-        echo"Cant record insert!!";
+    global $conn; // Assuming $conn is your database connection object
+
+    // Using prepared statements to prevent SQL injection
+    $sqlTruncate = "TRUNCATE TABLE report";
+    if (!$conn->query($sqlTruncate)) {
+        echo "Error truncating table: " . $conn->error;
+        // Handle error gracefully, e.g., log it or return false
+        return false;
     }
 
+    $sql = "INSERT INTO report (copyid, action, uuid, date, time) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ssiss", $copyid, $action, $uuid, $date, $time);
+    if (!$stmt->execute()) {
+        echo "Error inserting data: " . $stmt->error;
+        // Handle error gracefully, e.g., log it or return false
+        return false;
+    }
+
+    // Close prepared statement
+    $stmt->close();
+
+    return true; // Insertion successful
 }
 
 
 function read_data_fromReport()
 {
     global $conn;
-    $sql = "select * from report";
+    $sql = "SELECT * FROM report";
     $result = $conn->query($sql);
+
+    if (!$result) {
+        echo "Error: " . $conn->error;
+        // Handle error gracefully, e.g., log it or return false
+        return;
+    }
+
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
             echo "<td>" . $row["copyid"] . "</td>";
-            echo "<td>" . $row["userid"] . "</td>";
             echo "<td>" . $row["action"] . "</td>";
-            echo "<td>" . $row["start_date"] . "</td>";
-            echo "<td>" . $row["start_time"] . "</td>";
+            echo "<td>";
+            // Check if $uuid is empty before echoing
+            echo $row["uuid"] ? $row["uuid"] : "No UUID"; // If $uuid is empty, print "No UUID"
+            echo "</td>";
+            echo "<td>" . $row["date"] . "</td>";
+            echo "<td>" . $row["time"] . "</td>";
             echo "</tr>";
         }
+    } else {
+        echo "No records found.";
     }
-
 }
 
-function fiterByDate_fromReport($startDate,$endDate)
+
+function filterByDate_fromReport($startDate, $endDate)
 {
     global $conn;
-    $sql = "select * from report where date > $startDate and date < $endDate order by date desc";
-    $result = $conn->query($sql);
+
+    // Prepare the SQL statement with placeholders
+    $sql = "SELECT * FROM report WHERE date > ? AND date < ? ORDER BY date DESC";
+
+    // Prepare and bind parameters
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $startDate, $endDate);
+
+    // Execute the query
+    $stmt->execute();
+
+    // Get the result
+    $result = $stmt->get_result();
+
+    // Check if there are rows returned
     if ($result->num_rows > 0) {
+        // Loop through the result set and display data
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
             echo "<td>" . $row["copyid"] . "</td>";
-            echo "<td>" . $row["userid"] . "</td>";
+            echo "<td>" . $row["uuid"] . "</td>";
             echo "<td>" . $row["action"] . "</td>";
-            echo "<td>" . $row["start_date"] . "</td>";
-            echo "<td>" . $row["start_time"] . "</td>";
+            echo "<td>" . $row["date"] . "</td>";
+            echo "<td>" . $row["time"] . "</td>";
             echo "</tr>";
         }
+    } else {
+        echo "No records found.";
     }
+
+    // Close the statement
+    $stmt->close();
 }
 
 
-get_data_forReport("reserve", "reservations");
+
+?>
 
 
 

@@ -16,6 +16,7 @@ const DB_PASSWORD = "5!csXM+5^fke.XNpM=fIfI99"; /* Your Database Password */
 const DB_DATABASE = "s14_main"; /* Your Database Name */
 const GENERATE_TABLES = true; /* Change this to false in a production env*/
 
+
 //===================================================================
 //Limits configuration
 //===================================================================

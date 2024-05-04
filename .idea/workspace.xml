@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a426cd7-99c1-49b2-9ba4-ccf91bec19dc" name="Changes" comment="report table">
-      <change afterPath="$PROJECT_DIR$/sql/Report_page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reportpage/report_table_data_entry.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reportpage/report_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/Reportpage/report_page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dbsetup.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbsetup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/Report_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/sql/Report_page.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +22,38 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/Report-genaration" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;history&quot;: [
@@ -56,6 +91,9 @@
     &quot;accountId&quot;: &quot;ed0dd838-3ed4-4a55-9402-842bd121d208&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/sql/Report_page.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+  </component>
   <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
     <include_path>
@@ -72,14 +110,20 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;PHP Script.report_page.php.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;report&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;
+    ]
   }
 }</component>
   <component name="SharedIndexes">
@@ -100,7 +144,35 @@
       <updated>1714282836159</updated>
       <workItem from="1714282838295" duration="14873000" />
       <workItem from="1714301744203" duration="3739000" />
+      <workItem from="1714308951045" duration="1615000" />
+      <workItem from="1714310647344" duration="7681000" />
+      <workItem from="1714325962453" duration="471000" />
+      <workItem from="1714451560909" duration="16000" />
+      <workItem from="1714451604584" duration="406000" />
+      <workItem from="1714556518235" duration="15139000" />
+      <workItem from="1714624407800" duration="55000" />
+      <workItem from="1714631798224" duration="669000" />
+      <workItem from="1714724207229" duration="17112000" />
+      <workItem from="1714749088648" duration="5278000" />
+      <workItem from="1714796101452" duration="17507000" />
     </task>
+    <task id="LOCAL-00001" summary="report table">
+      <option name="closed" value="true" />
+      <created>1714309200226</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1714309200226</updated>
+    </task>
+    <task id="LOCAL-00002" summary="report table">
+      <option name="closed" value="true" />
+      <created>1714309333932</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714309333932</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

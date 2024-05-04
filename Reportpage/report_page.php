@@ -1,3 +1,13 @@
+<?php
+require_once __DIR__ . '/../sql/Report_page.php';
+require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../database/database.php';
+require_once __DIR__ . '/../database/dbsetup.php';
+?>
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,7 +16,9 @@
         <link rel ="stylesheet" href="report_page.css">
     </head>
     <body >
-        <div class ="main">
+
+
+     <div class ="main">
             <div class ="sidebar">
                 
             </div>
@@ -50,70 +62,14 @@
                                     <td>2023/04/04</td>
                                     <td>17:12:31</td>
                                 </tr>
+                                <?php
+                                     #get_data_forReport('Reserve','reservations');
 
-                                <tr>
-                                    <td>C001</td>
-                                    <td>Reserve</td>
-                                    <td>U002</td>
-                                    <td>2023/04/04</td>
-                                    <td>17:12:31</td>
-                                </tr>
 
-                                <tr>
-                                    <td>C001</td>
-                                    <td>Reserve</td>
-                                    <td>U002</td>
-                                    <td>2023/04/04</td>
-                                    <td>17:12:31</td>
-                                </tr>
+                                     #read_data_fromReport();
+                                     ?>
 
-                                <tr>
-                                    <td>C001</td>
-                                    <td>Reserve</td>
-                                    <td>U002</td>
-                                    <td>2023/04/04</td>
-                                    <td>17:12:31</td>
-                                </tr>
 
-                                <tr>
-                                    <td>C001</td>
-                                    <td>Reserve</td>
-                                    <td>U002</td>
-                                    <td>2023/04/04</td>
-                                    <td>17:12:31</td>
-                                </tr>
-
-                                <tr>
-                                    <td>C001</td>
-                                    <td>Reserve</td>
-                                    <td>U002</td>
-                                    <td>2023/04/04</td>
-                                    <td>17:12:31</td>
-                                </tr>
-
-                                <tr>
-                                    <td>C001</td>
-                                    <td>Reserve</td>
-                                    <td>U002</td>
-                                    <td>2023/04/04</td>
-                                    <td>17:12:31</td>
-                                </tr>
-
-                                <tr>
-                                    <td>C001</td>
-                                    <td>Reserve</td>
-                                    <td>U002</td>
-                                    <td>2023/04/04</td>
-                                    <td>17:12:31</td>
-                                </tr>
-
-                                <tr>
-                                    <td>C001</td>
-                                    <td>Reserve</td>
-                                    <td>U002</td>
-                                    <td>2023/04/04</td>
-                                    <td>17:12:31</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -135,3 +91,4 @@
     </body>
 
 </html>
+
