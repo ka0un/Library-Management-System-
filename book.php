@@ -101,12 +101,11 @@ generate_header([
                         //if the amount of days left is less than 0, the user has exceeded the checkout limit
                         if (get_checkout_time_left_seconds($checkout_id) < 0) {
                             echo '<div class="description">
-                            <span>You have exceeded max day limit!</span>
+                            <span>You have exceeded checkout time limit!</span>
                             <span>Copy ID : '. $checkouted_copyid . '</span>
                             <span>Days Exceeded : '. get_checkout_exceeded_days($checkout_id) . '</span>
                             <span>Fine : '. get_checkout_fine($checkout_id) . '</span>
                         </div>';
-
 
                         }else{
 

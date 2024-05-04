@@ -150,6 +150,7 @@ function get_checkout_exceeded_days($checkoutid): int
     if ($checkout_time_left < 0){
         $amount_days_exceeded = abs($checkout_time_left) / (24 * 60 * 60);
         $amount_days_exceeded = ceil($amount_days_exceeded);
+        return $amount_days_exceeded;
     }else{
         return 0;
     }
