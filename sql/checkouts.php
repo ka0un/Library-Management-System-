@@ -120,12 +120,12 @@ function is_user_checked_out_copy($uuid, $copyid): bool
     return $row['COUNT(*)'] > 0;
 }
 
-function get_checkout_id($uuid, $copyid): string
+function get_checkout_id($copyid): string
 {
     global $conn;
-    $sql = "SELECT id FROM checkouts WHERE uuid = ? AND copyid = ? AND valid = 1";
+    $sql = "SELECT id FROM checkouts WHERE copyid = ? AND valid = 1";
     $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "ss", $uuid, $copyid);
+    mysqli_stmt_bind_param($stmt, "s", $copyid);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
     mysqli_stmt_close($stmt);

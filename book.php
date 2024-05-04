@@ -88,7 +88,7 @@ generate_header([
 
                     if ($is_user_checked_out) {
 
-                        $checkout_id = get_checkout_id($_SESSION['uuid'], $checkouted_copyid);
+                        $checkout_id = get_checkout_id($checkouted_copyid);
                         $checkout_copy_id = get_checkout_copyid($checkout_id);
 
                         //get checkout start date

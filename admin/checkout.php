@@ -304,7 +304,7 @@ function display_checkout($userid, $copyid)
     }
 
     echo '<form action="" method="post" id="checkout">';
-    echo '<input type="submit" value="Checkout" name="checkout">';
+    echo '<input type="submit" value="Confirm Checkout" name="checkout">';
     echo '</form>';
 
     //handle button click
