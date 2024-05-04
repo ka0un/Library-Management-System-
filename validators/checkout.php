@@ -96,6 +96,54 @@ function get_reason_why_user_cannot_checkout_copy($uuid, $copyid): string
 
 }
 
+function is_checkout_time_exceeded($checkoutid): bool
+{
+    $start = get_checkout_start($checkoutid);
+    $start = strtotime($start);
+    $current = time();
+    $difference = $current - $start;
+
+    if ($difference > MAX_CHECKOUT_SECONDS){
+        return true;
+    }
+
+    return false;
+}
+
+function get_checkout_time_left_seconds($checkoutid): int
+{
+    $start = get_checkout_start($checkoutid);
+    $start = strtotime($start);
+    $current = time();
+    $difference = $current - $start;
+
+    return MAX_CHECKOUT_SECONDS - $difference;
+}
+
+function get_checkout_time_left_string($checkoutid): string
+{
+    $start = get_checkout_start($checkoutid);
+    $start = strtotime($start);
+    $current = time();
+    $difference = $current - $start;
+    $time_left = MAX_CHECKOUT_SECONDS - $difference;
+    $time_left_string = gmdate("H:i:s", $time_left);
+    return $time_left_string;
+}
+
+function get_checkout_fine($checkoutid): float
+{
+    $checkout_time_left = get_checkout_time_left_seconds($checkoutid);
+    $fine = 0;
+    if ($checkout_time_left < 0){
+        $amount_days_passed = abs($checkout_time_left) / (24 * 60 * 60);
+        $fine = $amount_days_passed * FINE_PER_DAY;
+    }
+    return $fine;
+}
+
+
+
 //private functions
 function has_user_exceeded_checkout_limit($uuid): bool
 {
