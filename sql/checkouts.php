@@ -93,7 +93,7 @@ function is_copy_alredy_checked_out($copyid): bool
 function invalidate_checkout($checkoutid): void
 {
     global $conn;
-    $sql = "UPDATE checkouts SET valid = 0 WHERE id = ?";
+    $sql = "UPDATE checkouts SET valid = 0 WHERE id = ? AND valid = 1";
 
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($stmt, "s", $checkoutid);

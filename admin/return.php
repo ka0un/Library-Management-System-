@@ -174,7 +174,7 @@ include( __DIR__ . '/../components/sidebar.php');
             //copy id form
             if(isset($_POST['copyid'])){
                 //redirect user to current page with copy id and user id parameter
-                echo '<script>window.location.href = "/admin/checkout.php?&copyid='.$_POST['copyid'].'";</script>';
+                echo '<script>window.location.href = "/admin/return.php?&copyid='.$_POST['copyid'].'";</script>';
             }
 
             if (isset($_GET['copyid'])){
@@ -189,8 +189,8 @@ include( __DIR__ . '/../components/sidebar.php');
         <div class="output3">
 
             <?php
-            if (isset($_GET['userid']) && isset($_GET['copyid'])){
-                display_return($_GET['userid'], $_GET['copyid']);
+            if (isset($_GET['copyid'])){
+                display_return($_GET['copyid']);
             }
             ?>
 
@@ -217,19 +217,15 @@ function display_return_copy($copyid)
 
     $checkoutid = get_checkout_id($copyid);
 
-    echo '<h3> Book<h3>';
     echo '<br>';
     echo '<img src="'. get_book_image(get_copy_bookid($copyid)).'" width="100px" height="100px">';
-    echo '<br>';
     echo 'Title : '.get_book_title(get_copy_bookid($copyid));
+    echo '<br>';
     echo 'Condition : '.get_copy_pcondition($copyid);
     echo '<br>';
-    echo '<h3> User<h3>';
+    echo 'User : '.get_user_name(get_checkout_uuid($checkoutid)).'<h3>';
     echo '<br>';
-    echo '<img src="'. get_user_profile_picture_url(get_checkout_uuid($checkoutid), 60).'" width="100px" height="100px">';
-    echo '<br>';
-    echo 'Name : '.get_user_name(get_checkout_uuid($checkoutid)).'<h3>';
-    echo '<br>';
+    echo '<style> .output2 { background-color: #aaffa7; } </style>';
 
 
 }
@@ -242,33 +238,38 @@ function display_return($copyid)
     if (is_checkout_time_exceeded($checkoutid)){
         echo '<h3>Checkout time exceeded</h3>';
         echo '<br>';
-        echo 'checkout date : '.get_checkout_start($checkoutid);
+        echo 'borrowed date : '.get_checkout_start($checkoutid);
         echo '<br>';
-        echo 'checkout duration : '.date("H:i:s", MAX_CHECKOUT_SECOUNDS);
+        echo 'late days : '.get_checkout_exceeded_days($checkoutid);
         echo '<br>';
         echo 'Fine : '.get_checkout_fine($checkoutid);
         echo '<br>';
         echo '<style> .output3 { background-color: #ffa7bf; } </style>';
 
-        echo '<form action="" method="post" id="return_with_fine">';
+        echo '<form action="" method="post" id="return_with_fine" name="returnfine">';
         echo '<input type="checkbox" name="confirm" value="confirm">';
-        echo '<input type="submit" value="Confirm Return" name="checkout" disabled> ';
+        echo '<input type="submit" value="Confirm Return" name="returnfine" disabled id="finesubmit"> ';
         echo '</form>';
+
+        //handle return with fine
+        if (isset($_POST['returnfine'])) {
+            invalidate_checkout(get_checkout_id($copyid));
+            echo '<script>window.location.href = "/admin/return.php";</script>';
+
+        }
 
         return;
     }
 
     echo '<h3>Book Returned On Time!</h3>';
     echo '<br>';
-    echo 'checkout date : '.get_checkout_start($checkoutid);
-    echo '<br>';
-    echo 'checkout duration : '.date("H:i:s", MAX_CHECKOUT_SECOUNDS);
+    echo 'borrowed date : '.get_checkout_start($checkoutid);
     echo '<br>';
     echo '<style> .output3 { background-color: #aaffa7; } </style>';
 
 
-    echo '<form action="" method="post" id="return">';
-    echo '<input type="submit" value="Confirm Return" name="checkout">';
+    echo '<form action="" method="post" id="return" name="return">';
+    echo '<input type="submit" value="Confirm Return" name="return">';
     echo '</form>';
 
     //handle return
@@ -277,26 +278,16 @@ function display_return($copyid)
         echo '<script>window.location.href = "/admin/return.php";</script>';
     }
 
-    //handle return with fine
-    if (isset($_POST['return_with_fine'])) {
-        if (isset($_POST['confirm'])) {
-            invalidate_checkout(get_checkout_id($copyid));
-            echo '<script>window.location.href = "/admin/return.php";</script>';
-        }
-    }
+
 
 }
+
+
 
 ?>
 
 <!--js that auto submit the form once x amount of characters enters to the form-->
 <script>
-    document.getElementById('userid').addEventListener('input', function (e) {
-        if (e.target.value.length === 8) {
-            e.target.form.submit();
-        }
-    });
-
     document.getElementById('copyid').addEventListener('input', function (e) {
         if (e.target.value.length === 8) {
             e.target.form.submit();
@@ -307,7 +298,8 @@ function display_return($copyid)
 <!--js to enable the button once the checkbox is checked-->
 <script>
     document.getElementById('return_with_fine').addEventListener('input', function (e) {
-        if (e.target.value === 'confirm') {
-            document.getElementById('checkout').disabled = false;
+        if (e.target.checked) {
+            document.getElementById('finesubmit').disabled = false;
         }
     });
+</script>
