@@ -29,6 +29,6 @@ require_once __DIR__ . '/auth/permission.php';
     <li>Has Every Permission : <?php if (has_permission($_SESSION["uuid"], "RADMOM")) echo "true"; else echo "false" ?></li>
 </ul>
 <br>
-<a href="index.php">Back to home</a>
+<a href="index.php">Back to home1</a>
 </body>
 </html>
