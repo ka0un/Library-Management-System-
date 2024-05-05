@@ -62,17 +62,17 @@ function is_user_has_ticket($uuid): bool
 {
     global $conn;
 
-    $sql = "SELECT * FROM ticket WHERE uuid=?";
-
+    $sql = "SELECT COUNT(*) FROM ticket WHERE uuid=?";
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($stmt, "s", $uuid);
     mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
+    mysqli_stmt_bind_result($stmt, $count);
+    mysqli_stmt_fetch($stmt);
     mysqli_stmt_close($stmt);
 
-    $count = mysqli_fetch_row($result)[0];
     return $count > 0;
 }
+
 
 function get_array_of_ticketids(): array
 {
@@ -92,10 +92,10 @@ function get_array_of_ticketids(): array
 
 }
 
-function get_ticketid_of_user($uuid): int
+function get_ticketid_of_user($uuid)
 {
     global $conn;
-    $sql = "SELECT ticket_id FROM messages where sender_uuid = ?";
+    $sql = "SELECT ticket_id FROM ticket where uuid = ?";
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($stmt, "s", $uuid);
     mysqli_stmt_execute($stmt);

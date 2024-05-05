@@ -159,18 +159,47 @@ include(__DIR__.'/auth/session.php');
 
 			<br><br>
 
-		<Div id="inputs">
+			<Div id="inputs">
 			<div id="content_inputs">
+			<form action="" method="post">
 				<div id="textinput">
-					<textarea rows="2" cols="200" maxlength="300"></textarea>
+					<textarea rows="2" cols="200" maxlength="300" name="content_textbox"></textarea>
 			 	</div>
 			 </div>
 			 <div id="button">
-				<form action="support.php" method="post">
 				<input type="submit" value='Send' name="submit" class="submit_button">
 				</form>
 			</div>
 		</Div>
 	</Div>
+	<?php
+		if(isset($_POST['content_textbox']))
+		{
+				
+			msg_send($_SESSION['uuid'],$_POST['content_textbox']);
+			echo 'perm : '.has_permission($uuid,'VIEW_TICKET');
+			echo 'get : '.isset($_GET['id']); 
+
+		}
+	function msg_send($uuid,$content)
+	{
+		if(has_permission($uuid,'VIEW_TICKET')&& isset($_GET['id']))
+		{
+			add_messages($_GET['id'],$uuid,$content);
+			return ;
+		}
+
+		if(is_user_has_ticket($uuid))
+		{
+			$ticket_id=get_ticketid_of_user($uuid);
+			add_messages($ticket_id,$uuid,$content);
+		}
+		else{
+			add_ticket($uuid);
+			$ticket_id=get_ticketid_of_user($uuid);
+			add_messages($ticket_id,$uuid,$content);
+		}
+	}
+	?>
 </body>
 </html>
