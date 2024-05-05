@@ -12,6 +12,7 @@ include(__DIR__.'/auth/session.php');
 <!DOCTYPE HTML>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
 <style>
 	html,body {
     height: 95%;
@@ -41,16 +42,29 @@ include(__DIR__.'/auth/session.php');
 	display: flex;
 	flex-direction: row-reverse;
 	padding-left: 15%;
+	text-align: right;
 }
+
 #message2 #content{
 	background-color: #F5F5DC;
+}
+
+#message2 #content #text{
+	background-color: #F5F5DC;
+	margin-right: 10px;
+}
+
+#message2 #content #name{
+	background-color: #F5F5DC;
+	margin-right: 10px;
 }
 
 #profile{
 	background-color: transparent;
 	height: 40px;
 	width: 40px;
-	margin-left: 20px;
+	margin-left: 10px;
+	margin-right: 15px;
 	align-self: flex-start;
 	margin-top: 10px;
 }
@@ -61,6 +75,7 @@ include(__DIR__.'/auth/session.php');
 	margin: 10px;
 	border-radius: 10px;
 	overflow: hidden;
+	font-size: 15px;
 }
 #inputs{
 	width: 100%;
@@ -100,6 +115,19 @@ include(__DIR__.'/auth/session.php');
 	overflow: hidden;
 }
 
+#name{
+	margin-left: 10px;
+	margin-top: 5px;
+}
+
+#text{
+	margin-left: 12px;
+	margin-top: 2px;
+	margin-bottom: 10px;
+	font-size: 12px;
+	font-weight: lighter;
+}
+
 </style>
 
 </head>
@@ -110,20 +138,6 @@ include(__DIR__.'/auth/session.php');
 			echo '<script>window.location.href = "/support.php?&id='.get_ticketid_of_user($_SESSION['uuid']).'";</script>';
 		}
 		
-		// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		// 	// Check if the form was submitted
-		
-		// 	// Retrieve the message content from the form
-		// 	$content = $_POST['content'];
-
-		// 	$ticket_id=1;
-		// 	$sender_uuid=
-		
-		// 	// Call a function to insert the message into the database
-		// 	add_messages($ticket_id,$sender_uuid,$content);
-	
-		// 	exit();
-		// }
 	?>
 
 <Div id="container"> 
@@ -163,7 +177,7 @@ include(__DIR__.'/auth/session.php');
 			<div id="content_inputs">
 			<form action="" method="post">
 				<div id="textinput">
-					<textarea rows="2" cols="200" maxlength="300" name="content_textbox"></textarea>
+					<textarea rows="2" cols="200" maxlength="300" name="content_textbox" id="content"></textarea>
 			 	</div>
 			 </div>
 			 <div id="button">
@@ -177,8 +191,6 @@ include(__DIR__.'/auth/session.php');
 		{
 				
 			msg_send($_SESSION['uuid'],$_POST['content_textbox']);
-			echo 'perm : '.has_permission($uuid,'VIEW_TICKET');
-			echo 'get : '.isset($_GET['id']); 
 
 		}
 	function msg_send($uuid,$content)
@@ -201,5 +213,6 @@ include(__DIR__.'/auth/session.php');
 		}
 	}
 	?>
+	<script src="scriots/support.js"></script>
 </body>
 </html>

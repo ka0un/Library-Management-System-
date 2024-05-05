@@ -69,7 +69,8 @@ function setup($conn): void
     $ticket_table_create = "CREATE TABLE IF NOT EXISTS ticket(
         ticket_id INT PRIMARY KEY AUTO_INCREMENT,
         uuid VARCHAR(255),
-        FOREIGN KEY (uuid) REFERENCES users(uuid)
+        FOREIGN KEY (uuid) REFERENCES users(uuid),
+        is_admin_responses BOOLEAN
     );";
 
     $messages_table_create = "CREATE TABLE IF NOT EXISTS messages(
@@ -81,6 +82,7 @@ function setup($conn): void
         content text(5000),
         time TIMESTAMP
     );";
+
 
 
 
@@ -123,6 +125,4 @@ function setup($conn): void
         echo "Error creating table: " . $conn->error . "<br>";
     }
 
-
 }
-
