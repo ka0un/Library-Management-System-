@@ -8,6 +8,7 @@ require_once __DIR__ . '/../sql/checkouts.php';
 require_once __DIR__ . '/../sql/copies.php';
 require_once __DIR__ . '/../sql/users.php';
 require_once __DIR__ . '/../validators/checkout.php';
+require_once __DIR__ . '/../Reportpage/report_table_data_entry.php';
 
 
 if (!has_permission($_SESSION['uuid'], 'CHECKOUT')) {
@@ -311,6 +312,8 @@ function display_checkout($userid, $copyid)
     if (isset($_POST['checkout'])){
 
         add_checkout($copyid, $userid);
+        add_checkout_report($copyid, $userid);
+        staff_action_with_book($_SESSION['uuid'],$copyid,'Checkout');
 
         //if copy is reserved, invalidate reservation
         if (is_user_reserved_book($userid, get_copy_bookid($copyid))){

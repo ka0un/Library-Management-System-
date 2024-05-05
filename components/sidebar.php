@@ -125,10 +125,20 @@ require_once __DIR__ . '/../auth/permission.php';
         </a>';
     }
 
+
+
     if (has_permission($_SESSION['uuid'], 'RETURN')) {
         echo '<a href = "/../admin/return.php">
         <div class = "tab">
             Return
+        </div>
+        </a>';
+    }
+
+     if (has_permission($_SESSION['uuid'], 'CHECKOUT')) {
+        echo '<a href = "/../Reportpage/report_table_data_entry.php">
+        <div class = "tab">
+            Reports
         </div>
         </a>';
     }

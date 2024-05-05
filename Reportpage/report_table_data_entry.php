@@ -145,7 +145,7 @@ function filterByDate_fromReport($startDate, $endDate)
 
             $sql2 = "INSERT INTO tempory_books_report (copyid, action, uuid, date, time)values(?,?,?,?,?)";
             $stmt = $conn->prepare($sql2);
-            $stmt->bind_param("ssss", $copyid, $action,$uuid,$date,$time);
+            $stmt->bind_param("sass", $copyid, $action,$uuid,$date,$time);
 
 
             if (!$stmt->execute()) {

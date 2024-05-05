@@ -49,12 +49,13 @@
                                     
                                 </tr>
                             </thead>
+
                             <tbody>
                            <?php
                            if (isset($_GET['reserve'])) {
                                $startdate = $_GET['startdate'];
                                $enddate = $_GET['enddate'];
-                               @display_filter_checkoutBooks($startdate,$enddate);
+                               @display_filtered_reservedBooks($startdate,$enddate);
                            }
                            if(isset($_POST['submit'])){
                                $uuid = $_POST['uuid'];

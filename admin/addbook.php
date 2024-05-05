@@ -90,6 +90,7 @@ if (isset($_POST['submit'])) {
     $number = $_POST['number'];
 
     $bookid = generate_bookID();
+    staff_action_with_book($_SESSION['uuid'],$bookid,'AddBook');
 
     //checks if category exists if yes use that id
     $categoryid = null;
