@@ -36,6 +36,7 @@ if (!has_permission($_SESSION['uuid'], 'VIEW_ADMIN_DASHBOARD')) {
         font-weight: bold;
         font-size: 14px;
     }
+    
 </style>
 
 <body bgcolor="<?php echo SECONDARY_COLOR;?>">
@@ -51,15 +52,15 @@ include( __DIR__ . '/../components/sidebar.php');
 
 <div class="panel">
     <form action="" method="POST">
-        <table >
+        <table>
             <tr>
                 <th>message</th>
                 <th>Options</th>
             </tr>
             <tr>
                 <td>Hii...</td>
-            
-                 </tr>
+                <td><button class="ticket_delete_button">Delete</button></td>
+            </tr>
         </table>
     </form>
 </div>
