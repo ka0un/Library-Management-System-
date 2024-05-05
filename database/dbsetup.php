@@ -64,8 +64,16 @@ function setup($conn): void
     $schedules_table_create = "CREATE TABLE IF NOT EXISTS schedules (
         id VARCHAR(255) PRIMARY KEY,
         time TIMESTAMP
-    );
-";
+    );";
+
+    $announcement_table_create = "CREATE TABLE IF NOT EXISTS announcement (
+        id INT PRIMARY KEY AUTO_INCREMENT,
+        title VARCHAR(255),
+        description TEXT,
+        start TIMESTAMP,
+        end TIMESTAMP
+    );";
+
 
 
     //if table not exists create table
@@ -100,7 +108,13 @@ function setup($conn): void
         echo "Error creating table: " . $conn->error . "<br>";
     }
 
+    
+    //announcement part
+
+    if (!($conn->query($announcement_table_create) === TRUE)) {
+        echo "Error creating table: " . $conn->error . "<br>";
+    }
+
 
 
 }
-

@@ -11,11 +11,11 @@
 //===================================================================
 
 
-const DB_HOST = "129.146.1.186"; /* Your Database Host (without port) */
+const DB_HOST = "localhost"; /* Your Database Host (without port) */
 const DB_PORT = 3306; /* Your Database Port (usually 3306) */
-const DB_USERNAME = "u14_Rf6AAvsnO7"; /* Your Database Username */
-const DB_PASSWORD = "5!csXM+5^fke.XNpM=fIfI99"; /* Your Database Password */
-const DB_DATABASE = "s14_main"; /* Your Database Name */
+const DB_USERNAME = "root"; /* Your Database Username */
+const DB_PASSWORD = ""; /* Your Database Password */
+const DB_DATABASE = "local"; /* Your Database Name */
 const GENERATE_TABLES = true; /* Change this to false in a production env*/
 
 

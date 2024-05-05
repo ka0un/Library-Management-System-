@@ -132,6 +132,22 @@ session_start();
         </div>
         </a>';
     }
+
+    if (has_permission($_SESSION['uuid'], 'CREATE_ANNOUNCEMENT')) {
+        echo '<a href = "/../admin/create_announcement.php">
+        <div class = "tab">
+            Create Announce
+        </div>
+        </a>';
+    }
+
+    if (has_permission($_SESSION['uuid'], 'UPDATE_ANNOUNCEMENT')) {
+        echo '<a href = "/../admin/update_announcement.php">
+        <div class = "tab">
+            Update Announce
+        </div>
+        </a>';
+    }
     ?>
 
     <a href = "/../logout.php">
