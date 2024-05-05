@@ -1,3 +1,9 @@
+<?php
+   require_once __DIR__ . '/report_table_data_entry.php';
+   require_once __DIR__ . '/../config.php';
+   require_once __DIR__ . '/../database/database.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,22 +12,29 @@
         <link rel ="stylesheet" href ="subpages.css">
     </head>
     <body >
+         <div class="header">
+            <?php
+            include( __DIR__ . '/../components/header.php');
+            @generate_header(array());
+           ?>
+        </div>
         <div class ="main">
             <div class ="sidebar">
-                
+                            <?php
+@include( __DIR__ . '/../components/sidebar.php');
+?>
             </div>
                     
             <div class ="report">
-                <div class="part1">
+                <div class="partt1">
                     
                     head.....................................................
 
                 </div>
-                <div class ="part2">
-                    <form class="secondform">
-                        <label>USER_ID</label><input type="text"><input type="Submit" value ="Filter">
-                        <label>Reserved _DATE</label><input type="date"><input type="Submit" value ="Filter">
-                        <label>Dead_LINE</label><input type="date"><input type="Submit" value ="Filter"><br><br>
+                <div class ="partt2">
+                    <form class="secondform" action ="Reserved_books.php" method="post">
+                        <label>USER_ID</label><input type="text"><input type="Submit" value ="Filter" name="submit"><br><br>
+
                     </form>
                     <div class ="table">
                         <table>
@@ -37,8 +50,18 @@
                                 </tr>
                             </thead>
                             <tbody>
+                           <?php
+                           if (isset($_GET['reserve'])) {
+                               $startdate = $_GET['startdate'];
+                               $enddate = $_GET['enddate'];
+                               @display_filter_checkoutBooks($startdate,$enddate);
+                           }
+                           if(isset($_POST['submit'])){
+                               $uuid = $_POST['uuid'];
+                               @filter_reserve($uuid);
+                           }
+                           ?>
 
-                                
 
 
                                 

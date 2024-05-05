@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../sql/users.php';
 require_once __DIR__ . '/../auth/permission.php';
-session_start();
+
 ?>
 
 <style>

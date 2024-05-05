@@ -6,6 +6,42 @@
 
    $conn= getconnection();
    /* ..................... books_report table functions..........................................................*/
+function display_main_report()
+{
+    global $conn;
+    $sql = "SELECT * FROM books_report ";
+
+    // Prepare and bind parameters
+    $stmt = $conn->prepare($sql);
+    // Execute the query
+    $stmt->execute();
+    // Get the result
+    $result = $stmt->get_result();
+
+    // Check if there are rows returned
+    if ($result->num_rows > 0) {
+        // Loop through the result set and display data
+        while ($row = $result->fetch_assoc()) {
+            $copyid = $row["copyid"];
+            $uuid = $row["uuid"];
+            $date = $row["date"];
+            $time = $row["time"];
+            $action = $row["action"];
+            echo "<tr>";
+            echo "<td>" . $copyid . "</td>";
+            echo "<td>" . $uuid . "</td>";
+            echo "<td>" . $action . "</td>";
+            echo "<td>" . $date . "</td>";
+            echo "<td>" . $time . "</td>";
+            echo "</tr>";
+        }
+    }
+    else{
+        echo "No records found.";
+    }
+
+
+}
 function add_reservation_report($bookid, $uuid)
 {
     global $conn;
@@ -121,6 +157,45 @@ function filterByDate_fromReport($startDate, $endDate)
     }
 }
 
+function filter_tempory_books_report($uuid)
+{
+    global $conn;
+
+    $sql = "SELECT * FROM tempory_books_report WHERE uuid = ? ";
+
+    // Prepare and bind parameters
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $uuid);
+
+    // Execute the query
+    $stmt->execute();
+
+    // Get the result
+    $result = $stmt->get_result();
+
+    // Check if there are rows returned
+    if ($result->num_rows > 0) {
+        // Loop through the result set and display data
+        while ($row = $result->fetch_assoc()) {
+            $copyid = $row["copyid"];
+            $action = $row["action"];
+            $uuid = $row["uuid"];
+            $date = $row["date"];
+            $time = $row["time"];
+            echo "<tr>";
+            echo "<td>" . $copyid . "</td>";
+            echo "<td>" . $action . "</td>";
+            echo "<td>" . $uuid . "</td>";
+            echo "<td>" . $date . "</td>";
+            echo "<td>" . $time . "</td>";
+            echo "</tr>";
+        }
+    }
+    else {
+        echo "No records found.";
+    }
+}
+
 
 
 
@@ -206,6 +281,13 @@ function display_filter_checkoutBooks($startdate,$enddate)
 {
     $action = "Checkout";
     global $conn;
+
+    $sqlTruncate = "TRUNCATE TABLE tempory_current_display_values_BR";
+    if (!$conn->query($sqlTruncate)) {
+        echo "Error truncating table: " . $conn->error;
+        // Handle error gracefully, e.g., log it or return false
+        return false;
+    }
     $sql = "SELECT * FROM tempory_books_report WHERE action = ? ";
 
     // Prepare and bind parameters
@@ -247,6 +329,15 @@ function display_filter_checkoutBooks($startdate,$enddate)
             echo "<td>" . $staff. "</td>";
             echo "<td>" . $date. "</td>";
             echo "</tr>";
+
+            $sql2 = "INSERT INTO tempory_current_display_values_BR (copyid,  uuid, staff, date)values(?,?,?,?,?)";
+            $stmt = $conn->prepare($sql2);
+            $stmt->bind_param("ssss", $copyid, $uuid,$staff,$date);
+
+
+            if (!$stmt->execute()) {
+            echo "Error adding for temporary table: " . $conn->error;
+            }
 
         }
     } else {
@@ -258,6 +349,12 @@ function display_filtered_returnedBooks($startdate,$enddate)
 {
     $action = "Return";
     global $conn;
+    $sqlTruncate = "TRUNCATE TABLE tempory_current_display_values_BR";
+    if (!$conn->query($sqlTruncate)) {
+        echo "Error truncating table: " . $conn->error;
+        // Handle error gracefully, e.g., log it or return false
+        return false;
+    }
     $sql = "SELECT * FROM tempory_books_report WHERE action = ? ";
 
     // Prepare and bind parameters
@@ -300,6 +397,16 @@ function display_filtered_returnedBooks($startdate,$enddate)
             echo "<td>" . $date. "</td>";
             echo "</tr>";
 
+            $sql2 = "INSERT INTO tempory_current_display_values_BR (copyid,  uuid, staff, date)values(?,?,?,?,?)";
+            $stmt = $conn->prepare($sql2);
+            $stmt->bind_param("ssss", $copyid, $uuid,$staff,$date);
+
+
+            if (!$stmt->execute()) {
+            echo "Error adding for temporary table: " . $conn->error;
+            }
+
+
         }
     } else {
         echo "No records found.";
@@ -310,7 +417,15 @@ function display_filtered_reservedBooks($startdate,$enddate)
 {
     $action = "Reserve";
     global $conn;
+    $sqlTruncate = "TRUNCATE TABLE tempory_current_display_values_reserve";
+    if (!$conn->query($sqlTruncate)) {
+        echo "Error truncating table: " . $conn->error;
+        // Handle error gracefully, e.g., log it or return false
+        return false;
+    }
     $sql = "SELECT * FROM tempory_books_report WHERE action = ? ";
+
+
 
     // Prepare and bind parameters
     $stmt = $conn->prepare($sql);
@@ -336,6 +451,15 @@ function display_filtered_reservedBooks($startdate,$enddate)
             echo "<td>" . $date. "</td>";
             echo "<td>" . $deadline. "</td>";
             echo "</tr>";
+
+            $sql2 = "INSERT INTO tempory_current_display_values_reserve (copyid,  uuid, date, deadline)values(?,?,?,?,?)";
+            $stmt = $conn->prepare($sql2);
+            $stmt->bind_param("ssss", $copyid, $uuid,$date,$deadline);
+
+
+            if (!$stmt->execute()) {
+            echo "Error adding for temporary table: " . $conn->error;
+            }
 
         }
     } else {
@@ -444,6 +568,78 @@ function  userlogout($userID)
 
 }
 
+function userlogin_logout_display()
+{
+    global $conn;
+    $sql = "SELECT * FROM user_access_system ";
+
+    // Prepare and bind parameters
+    $stmt = $conn->prepare($sql);
+    // Execute the query
+    $stmt->execute();
+    // Get the result
+    $result = $stmt->get_result();
+
+    // Check if there are rows returned
+    if ($result->num_rows > 0) {
+        // Loop through the result set and display data
+        while ($row = $result->fetch_assoc()) {
+            $uuid = $row["uuid"];
+            $access = $row["access"];
+            $date = $row["date"];
+            $time = $row["time"];
+
+            echo "<tr>";
+            echo "<td>" . $uuid . "</td>";
+            echo "<td>" . $access . "</td>";
+            echo "<td>" . $date . "</td>";
+            echo "<td>" . $time . "</td>";
+            echo "</tr>";
+        }
+    }
+    else{
+        echo "No records found.";
+    }
+
+}
+
+function userlogin_logout_display_filtered($uuid)
+{
+    global $conn;
+    $sql = "SELECT * FROM user_access_system where uuid=?";
+
+    // Prepare and bind parameters
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s",$uuid);
+    // Execute the query
+    $stmt->execute();
+    // Get the result
+    $result = $stmt->get_result();
+
+    // Check if there are rows returned
+    if ($result->num_rows > 0) {
+        // Loop through the result set and display data
+        while ($row = $result->fetch_assoc()) {
+            $uuid = $row["uuid"];
+            $access = $row["access"];
+            $date = $row["date"];
+            $time = $row["time"];
+
+            echo "<tr>";
+            echo "<td>" . $uuid . "</td>";
+            echo "<td>" . $access . "</td>";
+            echo "<td>" . $date . "</td>";
+            echo "<td>" . $time . "</td>";
+            echo "</tr>";
+        }
+    }
+    else{
+        echo "No records found.";
+    }
+
+}
+
+
 /* ....................Staff actions with books..................................................................*/
 function staff_action_with_book($uuid,$copyid,$action)
 {
@@ -460,6 +656,80 @@ function staff_action_with_book($uuid,$copyid,$action)
 
     $stmt->close();
 }
+
+function staff_action_display()
+{
+    global $conn;
+    $sql = "SELECT * FROM staff_action_system ";
+
+    // Prepare and bind parameters
+    $stmt = $conn->prepare($sql);
+    // Execute the query
+    $stmt->execute();
+    // Get the result
+    $result = $stmt->get_result();
+
+    // Check if there are rows returned
+    if ($result->num_rows > 0) {
+        // Loop through the result set and display data
+        while ($row = $result->fetch_assoc()) {
+            $copyid = $row["copyid"];
+            $uuid = $row["uuid"];
+            $date = $row["date"];
+            $time = $row["time"];
+            $action = $row["action"];
+            echo "<tr>";
+            echo "<td>" . $uuid . "</td>";
+            echo "<td>" . $action . "</td>";
+            echo "<td>" . $copyid . "</td>";
+            echo "<td>" . $date . "</td>";
+            echo "<td>" . $time . "</td>";
+            echo "</tr>";
+        }
+    }
+    else{
+        echo "No records found.";
+    }
+
+}
+
+function staff_action_display_filtered($uuid)
+{
+    global $conn;
+    $sql = "SELECT * FROM staff_action_system where uuid = ?";
+
+    // Prepare and bind parameters
+    $stmt = $conn->prepare($sql);
+
+    $stmt->execute();
+     $stmt->bind_param("s", $uuid);
+    // Get the result
+    $result = $stmt->get_result();
+
+    // Check if there are rows returned
+    if ($result->num_rows > 0) {
+        // Loop through the result set and display data
+        while ($row = $result->fetch_assoc()) {
+            $copyid = $row["copyid"];
+            $uuid = $row["uuid"];
+            $date = $row["date"];
+            $time = $row["time"];
+            $action = $row["action"];
+            echo "<tr>";
+            echo "<td>" . $uuid . "</td>";
+            echo "<td>" . $action . "</td>";
+            echo "<td>" . $copyid . "</td>";
+            echo "<td>" . $date . "</td>";
+            echo "<td>" . $time . "</td>";
+            echo "</tr>";
+        }
+    }
+    else{
+        echo "No records found.";
+    }
+
+}
+
 
 
 
@@ -506,5 +776,157 @@ function add_past_user($uuid,$admin_id)
 
 }
 
+function pastusers_display()
+{
+    global $conn;
+    $sql = "SELECT * FROM past_users ";
+
+    // Prepare and bind parameters
+    $stmt = $conn->prepare($sql);
+    // Execute the query
+    $stmt->execute();
+    // Get the result
+    $result = $stmt->get_result();
+
+    // Check if there are rows returned
+    if ($result->num_rows > 0) {
+        // Loop through the result set and display data
+        while ($row = $result->fetch_assoc()) {
+            $nic = $row["nic"];
+            $name = $row["name"];
+            $email = $row["email"];
+            $banned_date = $row["banned_date"];
+            $admin_id = $row["admin_id"];
+
+            echo "<tr>";
+            echo "<td>" . $nic . "</td>";
+            echo "<td>" . $name . "</td>";
+            echo "<td>" . $email . "</td>";
+            echo "<td>" . $banned_date . "</td>";
+            echo "<td>" . $admin_id . "</td>";
+            echo "</tr>";
+        }
+    }
+    else{
+        echo "No records found.";
+    }
+
+}
+
+function pastusers_display_filtered($admin)
+{
+    global $conn;
+    $sql = "SELECT * FROM past_users where admin_id =? ";
+
+    // Prepare and bind parameters
+    $stmt = $conn->prepare($sql);
+    // Execute the query
+    $stmt->execute();
+    $stmt->bind_param("s", $admin);
+    $result = $stmt->get_result();
+
+    // Check if there are rows returned
+    if ($result->num_rows > 0) {
+        // Loop through the result set and display data
+        while ($row = $result->fetch_assoc()) {
+            $nic = $row["nic"];
+            $name = $row["name"];
+            $email = $row["email"];
+            $banned_date = $row["banned_date"];
+            $admin_id = $row["admin_id"];
+
+            echo "<tr>";
+            echo "<td>" . $nic . "</td>";
+            echo "<td>" . $name . "</td>";
+            echo "<td>" . $email . "</td>";
+            echo "<td>" . $banned_date . "</td>";
+            echo "<td>" . $admin_id . "</td>";
+            echo "</tr>";
+        }
+    }
+    else{
+        echo "No records found.";
+    }
+
+}
+
+/*..................DATA FIltering functions*/
+
+function filter_BR($uuid)
+{
+    global $conn;
+
+    $sql = "SELECT * FROM tempory_current_display_values_BR WHERE uuid = ? ";
+
+    // Prepare and bind parameters
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $uuid);
+
+    // Execute the query
+    $stmt->execute();
+
+    // Get the result
+    $result = $stmt->get_result();
+
+    // Check if there are rows returned
+    if ($result->num_rows > 0) {
+        // Loop through the result set and display data
+        while ($row = $result->fetch_assoc()) {
+            $copyid = $row["copyid"];
+            $uuid = $row["uuid"];
+            $staff = $row["staff"];
+            $date = $row["date"];
+            echo "<tr>";
+            echo "<td>" . $copyid . "</td>";
+            echo "<td>" . $uuid . "</td>";
+            echo "<td>" . $staff . "</td>";
+            echo "<td>" . $date . "</td>";
+            echo "</tr>";
+        }
+    }
+    else {
+        echo "No records found.";
+    }
+}
+
+function filter_reserve($uuid)
+{
+    global $conn;
+
+    $sql = "SELECT * FROM tempory_current_display_values_reserve WHERE uuid = ? ";
+
+    // Prepare and bind parameters
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $uuid);
+
+    // Execute the query
+    $stmt->execute();
+
+    // Get the result
+    $result = $stmt->get_result();
+
+    // Check if there are rows returned
+    if ($result->num_rows > 0) {
+        // Loop through the result set and display data
+        while ($row = $result->fetch_assoc()) {
+            $copyid = $row["copyid"];
+            $uuid = $row["uuid"];
+            $date = $row["date"];
+            $deadline = $row["deadline"];
+            echo "<tr>";
+            echo "<td>" . $copyid . "</td>";
+            echo "<td>" . $uuid . "</td>";
+            echo "<td>" . $date . "</td>";
+            echo "<td>" . $deadline . "</td>";
+            echo "</tr>";
+        }
+    }
+    else {
+        echo "No records found.";
+    }
+}
+
 
 ?>
+
+

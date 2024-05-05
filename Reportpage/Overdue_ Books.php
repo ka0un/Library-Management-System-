@@ -2,25 +2,34 @@
 <html lang="en">
     <head>
         
-        <title>Borrowed Books</title>
+        <title>Overduebooks</title>
         <link rel ="stylesheet" href ="subpages.css">
     </head>
     <body >
+         <div class="header">
+            <?php
+            include( __DIR__ . '/../components/header.php');
+            @generate_header(array());
+           ?>
+        </div>
         <div class ="main">
             <div class ="sidebar">
-                
+                            <?php
+@include( __DIR__ . '/../components/sidebar.php');
+?>
             </div>
                     
             <div class ="report">
-                <div class="part1">
+                <div class="partt1">
                     
                     head.....................................................
 
                 </div>
-                <div class ="part2">
+                <div class ="partt2">
                     <form class="secondform">
-                        <label>STAFFMEMBER_ID</label><input type="text"><input type="Submit" value ="Filter">
-                        <label>USER_ID</label><input type="text"><input type="Submit" value ="Filter"><br><br>
+                        <label>USER_ID</label><input type="text"><input type="Submit" value ="Filter">
+
+                       <br><br>
                     </form>
                     <div class ="table">
                         <table>
@@ -28,8 +37,11 @@
                                 <tr>
                                     <th>COPY_ID</th>
                                     <th>USER_ID</th>
-                                    <th>StaffMember</th>
-                                    <th>Date</th>
+                                    <th>StaffMember(chechout)</th>
+                                    <th>Date(chechout)</th>
+                                    <th>Overdued time</th>
+                                  
+
                                     
                                 </tr>
                             </thead>
@@ -37,51 +49,49 @@
                                 <tr>
                                     <td>C001</td>
                                     <td>U002</td>
-                                    <td>Soo4</td>
-                                    <td>2023/04/04</td>   
+                                    <td>S005</td>   
+                                    <td>2023/05/04</td> 
+                                    <td>5</td>  
                                 </tr>
 
                                 <tr>
                                     <td>C001</td>
                                     <td>U002</td>
-                                    <td>Soo4</td>
-                                    <td>2023/04/04</td>   
+                                    <td>S005</td>   
+                                    <td>2023/05/04</td> 
+                                    <td>5</td>  
                                 </tr>
+
 
                                 <tr>
                                     <td>C001</td>
                                     <td>U002</td>
-                                    <td>Soo4</td>
-                                    <td>2023/04/04</td>   
+                                    <td>S005</td>   
+                                    <td>2023/05/04</td> 
+                                    <td>5</td>  
                                 </tr>
+
 
                                 <tr>
                                     <td>C001</td>
                                     <td>U002</td>
-                                    <td>Soo4</td>
-                                    <td>2023/04/04</td>   
+                                    <td>S005</td>   
+                                    <td>2023/05/04</td> 
+                                    <td>5</td>  
                                 </tr>
+
 
                                 <tr>
                                     <td>C001</td>
                                     <td>U002</td>
-                                    <td>Soo4</td>
-                                    <td>2023/04/04</td>   
+                                    <td>S005</td>   
+                                    <td>2023/05/04</td> 
+                                    <td>5</td>  
                                 </tr>
 
-                                <tr>
-                                    <td>C001</td>
-                                    <td>U002</td>
-                                    <td>Soo4</td>
-                                    <td>2023/04/04</td>   
-                                </tr>
 
-                                <tr>
-                                    <td>C001</td>
-                                    <td>U002</td>
-                                    <td>Soo4</td>
-                                    <td>2023/04/04</td>   
-                                </tr>
+                                
+                                
 
                                 
                             </tbody>

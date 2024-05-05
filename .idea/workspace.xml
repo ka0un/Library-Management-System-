@@ -5,13 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a426cd7-99c1-49b2-9ba4-ccf91bec19dc" name="Changes" comment="report table">
-      <change afterPath="$PROJECT_DIR$/Reportpage/report_table_data_entry.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reportpage/past_users.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reportpage/userslogin_logout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reportpage/report_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/Reportpage/report_page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reportpage/Overdue_ Books.html" beforeDir="false" afterPath="$PROJECT_DIR$/Reportpage/Overdue_ Books.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reportpage/Reserved_books.html" beforeDir="false" afterPath="$PROJECT_DIR$/Reportpage/Reserved_books.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reportpage/Returned books.html" beforeDir="false" afterPath="$PROJECT_DIR$/Reportpage/Returned books.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reportpage/borrowed books.html" beforeDir="false" afterPath="$PROJECT_DIR$/Reportpage/borrowed books.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reportpage/report_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/Reportpage/report_page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reportpage/report_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/Reportpage/report_page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reportpage/report_table_data_entry.php" beforeDir="false" afterPath="$PROJECT_DIR$/Reportpage/report_table_data_entry.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reportpage/subpages.css" beforeDir="false" afterPath="$PROJECT_DIR$/Reportpage/subpages.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/sidebar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dbsetup.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/dbsetup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/Report_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/sql/Report_page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +27,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <excluded-from-favorite>
@@ -110,6 +124,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;PHP Script.report_page.php.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;report&quot;,
@@ -155,6 +170,10 @@
       <workItem from="1714724207229" duration="17112000" />
       <workItem from="1714749088648" duration="5278000" />
       <workItem from="1714796101452" duration="17507000" />
+      <workItem from="1714817734604" duration="2074000" />
+      <workItem from="1714820917342" duration="13531000" />
+      <workItem from="1714860023541" duration="7221000" />
+      <workItem from="1714880653388" duration="16546000" />
     </task>
     <task id="LOCAL-00001" summary="report table">
       <option name="closed" value="true" />
@@ -172,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714309333932</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="report table">
+      <option name="closed" value="true" />
+      <created>1714817791654</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714817791654</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

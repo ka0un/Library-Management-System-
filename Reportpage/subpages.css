@@ -1,38 +1,46 @@
 body {
     font-family: Inter, sans-serif;
     background-color: #595959;
+   display: grid;
+    grid-template-rows: 17% 83%;
+}
+.header{
+    grid-row:1;
+
 }
 .main{
-   display: flex;
+   grid-row:2;
+   display: grid;
+   grid-auto-columns: 260px auto;
    
 }
 .sidebar{
-   width:18%;
-   height: 100vh;
-   
+   grid-column: 1;
+    height: 100vh;
 }
 .report{
-   display: grid;
-   grid-template-rows: 30% 50%;
-   
-   width:82%;
-   height: 100vh;
+    grid-column: 2;
+    display: grid;
+    grid-template-rows: auto auto;
+    margin-top: 10px;
+    width:auto;
+    height: 85%;
 }
-.part1{
+.partt1{
    grid-row: 1;
    border: 2px solid black;
    margin-bottom: 10px;
    padding-bottom: 20px;
    background-color: #D9D9D9;
 }
-.part2{
+.partt2{
    grid-row: 2;
    border: 2px solid black;
   
    background-color: #292929;
 
 }
-.part1 , .part2{
+.partt1 , .partt2{
    border-radius: 20px;
 }
 
@@ -64,10 +72,10 @@ label{
    margin-right: 10px;
 }
 
-.part2 form{
+.partt2 form{
    margin-left: 10px;
 }
-.part2 form input[type="submit"]{
+.partt2 form input[type="submit"]{
       margin-left: 10px;
 }
 

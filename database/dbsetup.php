@@ -99,9 +99,23 @@ function setup($conn): void
         name varchar(50),
         email varchar(50),
         banned_date date,
-        admin_id varchar(50),
+        admin_id varchar(50)
         
 )";
+    $tempory_table_create = "CREATE TABLE IF NOT EXISTS tempory_current_display_values_reserve(
+    copyid VARCHAR(50) PRIMARY KEY,
+    uuid VARCHAR(50),
+    date date,
+    deadline date
+) ";
+
+    $tempory_table_create2 = "CREATE TABLE IF NOT EXISTS tempory_current_display_values_BR(
+    copyid VARCHAR(50) PRIMARY KEY,
+    uuid VARCHAR(50),
+    staff varchar(50),
+    date date
+    
+) ";
 
 
     //if table not exists create table
@@ -155,6 +169,14 @@ function setup($conn): void
     }
 
      if (!($conn->query($past_users_table_create) === TRUE)) {
+        echo "Error creating table: " . $conn->error . "<br>";
+    }
+
+      if (!($conn->query($tempory_table_create) === TRUE)) {
+        echo "Error creating table: " . $conn->error . "<br>";
+    }
+
+       if (!($conn->query($tempory_table_create2) === TRUE)) {
         echo "Error creating table: " . $conn->error . "<br>";
     }
 
