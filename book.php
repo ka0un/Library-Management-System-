@@ -9,6 +9,7 @@ require_once __DIR__ . '/validators/reservation.php';
 require_once __DIR__ . '/sql/checkouts.php';
 require_once __DIR__ . '/sql/categories.php';
 require_once __DIR__ . '/schedules/sheduler.php';
+require_once __DIR__ . '/Reportpage/report_table_data_entry.php';
 ?>
 
 <!DOCTYPE html>
@@ -174,6 +175,7 @@ generate_header([
 
                     if(can_user_reserve_book($uuid, $bookid)){
                         add_reservation($bookid, $uuid);
+                        add_reservation_report($bookid, $uuid);
                         //Send to the dashboard
                         header('Location: /dashboard.php');
                         exit;

@@ -14,7 +14,7 @@ require_once __DIR__ . '/components/header.php'; ?>
 </head>
 <body>
 <?php
-generate_header(array());
+@generate_header(array());
 ?>
 <div class="hero">
     <div class="hero-text">

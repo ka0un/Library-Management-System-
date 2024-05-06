@@ -66,6 +66,58 @@ function setup($conn): void
         time TIMESTAMP
     );";
 
+
+    $Books_report_table_create = "CREATE TABLE IF NOT EXISTS books_report (
+        copyid VARCHAR(50) PRIMARY KEY,
+        action VARCHAR(50),
+        uuid VARCHAR(50),
+        date DATE,
+        time TIME
+        );";
+
+    $filtered_temporary_report_table_create = "CREATE TABLE IF NOT EXISTS tempory_books_report (
+        copyid VARCHAR(50) PRIMARY KEY,
+        action VARCHAR(50),
+        uuid VARCHAR(50),
+        date DATE,
+        time TIME
+        );";
+    $user_Actions_table_create = "CREATE TABLE IF NOT EXISTS user_access_system(
+        uuid VARCHAR(50),
+        access VARCHAR(50),
+        date DATE,
+        time TIME
+)";
+    $staff_actions_table_create ="CREATE TABLE IF NOT EXISTS staff_action_system(
+        uuid VARCHAR(50),
+        action VARCHAR(50),
+        copyid varchar(50),
+        date DATE,
+        time TIME
+)";
+    $past_users_table_create ="CREATE TABLE IF NOT EXISTS past_users(
+        nic varchar(50),
+        name varchar(50),
+        email varchar(50),
+        banned_date date,
+        admin_id varchar(50)
+        
+)";
+    $tempory_table_create = "CREATE TABLE IF NOT EXISTS tempory_current_display_values_reserve(
+    copyid VARCHAR(50) PRIMARY KEY,
+    uuid VARCHAR(50),
+    date date,
+    deadline date
+) ";
+
+    $tempory_table_create2 = "CREATE TABLE IF NOT EXISTS tempory_current_display_values_BR(
+    copyid VARCHAR(50) PRIMARY KEY,
+    uuid VARCHAR(50),
+    staff varchar(50),
+    date date
+    
+) ";
+
     $ticket_table_create = "CREATE TABLE IF NOT EXISTS ticket(
         ticket_id INT PRIMARY KEY AUTO_INCREMENT,
         uuid VARCHAR(255),
@@ -90,6 +142,7 @@ function setup($conn): void
     if (!($conn->query($users_table_create) === TRUE)) {
         echo "Error creating table: " . $conn->error . "<br>";
     }
+
 
 
     //books part
@@ -125,4 +178,36 @@ function setup($conn): void
         echo "Error creating table: " . $conn->error . "<br>";
     }
 
+
+  //report part
+     if (!($conn->query($Books_report_table_create) === TRUE)) {
+        echo "Error creating table: " . $conn->error . "<br>";
+    }
+
+     if (!($conn->query($filtered_temporary_report_table_create) === TRUE)) {
+        echo "Error creating table: " . $conn->error . "<br>";
+    }
+
+     if (!($conn->query($user_Actions_table_create) === TRUE)) {
+        echo "Error creating table: " . $conn->error . "<br>";
+    }
+
+     if (!($conn->query($staff_actions_table_create) === TRUE)) {
+        echo "Error creating table: " . $conn->error . "<br>";
+    }
+
+     if (!($conn->query($past_users_table_create) === TRUE)) {
+        echo "Error creating table: " . $conn->error . "<br>";
+    }
+
+      if (!($conn->query($tempory_table_create) === TRUE)) {
+        echo "Error creating table: " . $conn->error . "<br>";
+    }
+
+       if (!($conn->query($tempory_table_create2) === TRUE)) {
+        echo "Error creating table: " . $conn->error . "<br>";
+    }
+
 }
+
+
