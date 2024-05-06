@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fec76f0e-468f-4997-8373-29fc1e950206" name="Changes" comment="added requre_once to kavindu's submission">
+    <list default="true" id="fec76f0e-468f-4997-8373-29fc1e950206" name="Changes" comment="sidebar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book.php" beforeDir="false" afterPath="$PROJECT_DIR$/book.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,11 +78,11 @@
       <recent name="C:\Users\Kasun\PhpstormProjects\webapp\session" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Kasun\PhpstormProjects\webapp\books_functions" />
+      <recent name="C:\Users\Kasun\PhpstormProjects\webapp\books_functions\bookratings" />
       <recent name="C:\Users\Kasun\PhpstormProjects\webapp\admin" />
       <recent name="C:\Users\Kasun\PhpstormProjects\webapp\unfinished" />
       <recent name="C:\Users\Kasun\PhpstormProjects\webapp\style" />
-      <recent name="C:\Users\Kasun\PhpstormProjects\webapp\unfinished\abandoned" />
-      <recent name="C:\Users\Kasun\PhpstormProjects\webapp\images" />
     </key>
   </component>
   <component name="RunManager">
@@ -146,15 +146,7 @@
       <workItem from="1714800531339" duration="698000" />
       <workItem from="1714848762233" duration="1403000" />
       <workItem from="1714923185682" duration="2008000" />
-      <workItem from="1714989310197" duration="3856000" />
-    </task>
-    <task id="LOCAL-00076" summary="Book page issue fixed">
-      <option name="closed" value="true" />
-      <created>1713620703030</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1713620703030</updated>
+      <workItem from="1714989310197" duration="5579000" />
     </task>
     <task id="LOCAL-00077" summary="updated reservation system">
       <option name="closed" value="true" />
@@ -540,7 +532,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714993448827</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="sidebar">
+      <option name="closed" value="true" />
+      <created>1714994190074</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1714994190074</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -558,7 +558,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="linked books to book and header.php" />
     <MESSAGE value="fixed books alignment issues in mobile view" />
     <MESSAGE value="[UNSTABLE] intergrated books to backend" />
     <MESSAGE value="fixed Overflow issue in books mobile view" />
@@ -583,7 +582,8 @@
     <MESSAGE value="dropping days constant" />
     <MESSAGE value="Ignored exceptions of statistics system." />
     <MESSAGE value="added requre_once to kavindu's submission" />
-    <option name="LAST_COMMIT_MESSAGE" value="added requre_once to kavindu's submission" />
+    <MESSAGE value="sidebar" />
+    <option name="LAST_COMMIT_MESSAGE" value="sidebar" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -23,12 +23,10 @@ require_once __DIR__ . '/Reportpage/report_table_data_entry.php';
 <body bgcolor="<?php echo SECONDARY_COLOR;?>">
 <?php
 
-$book_title = get_book_title($bookid);
-
 // Function to get average rating
 function get_average_rating($bookid) {
     global $conn;  // Use the database connection
-    $avg_rating_query = "SELECT AVG(rating) AS avg_rating FROM ratings WHERE book_id = ?";
+    $avg_rating_query = "SELECT AVG(rating) AS avg_rating FROM ratings WHERE bookid = ?";
     $stmt = $conn->prepare($avg_rating_query);
     $stmt->bind_param("s", $bookid);
     $stmt->execute();
@@ -37,7 +35,7 @@ function get_average_rating($bookid) {
     return $result->num_rows > 0 ? round($row['avg_rating'], 1) : "Not rated";
 }
 
-$average_rating = get_average_rating($bookid);
+$average_rating = get_average_rating($_GET['id']);
 
 $bookid = 'B0000001';
 
@@ -67,6 +65,8 @@ generate_header([
                 </div>
                 <div class="book-title">
                     <h1><?php echo get_book_title($bookid); ?></h1>
+                </div>
+                <div class="book-author">
                     <h2>Average Rating: <?php echo $average_rating; ?></h2>
                 </div>
                 <div class="book-author">
