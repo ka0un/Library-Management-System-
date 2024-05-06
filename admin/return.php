@@ -255,8 +255,10 @@ function display_return($copyid)
         //handle return with fine
         if (isset($_POST['returnfine'])) {
             invalidate_checkout(get_checkout_id($copyid));
+
             add_return_report($copyid, $userid);
             staff_action_with_book($_SESSION['uuid'],$copyid,'Return');
+
             echo '<script>window.location.href = "/admin/return.php";</script>';
 
         }
@@ -305,4 +307,6 @@ function display_return($copyid)
             document.getElementById('finesubmit').disabled = false;
         }
     });
+
 </script>
+

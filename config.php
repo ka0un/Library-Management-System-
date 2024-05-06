@@ -28,6 +28,7 @@ const MAX_RESERVATION_SECOUNDS = 60; /* Maximum number of days a book can be res
 const MAX_CHECKOUTS = 1; /* Maximum number of books a user can check out */
 const MAX_CHECKOUT_DAYS = 14; /* Maximum number of days a book can be checked out */
 const FINE_PER_DAY = 0.5; /* Fine per day for overdue books */
+const MAX_CHECKOUT_SECONDS = 60; /* Maximum number of days a book can be checked out */
 //===================================================================
 //Schedules configuration
 //===================================================================

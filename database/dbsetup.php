@@ -66,6 +66,7 @@ function setup($conn): void
         time TIMESTAMP
     );";
 
+
     $Books_report_table_create = "CREATE TABLE IF NOT EXISTS books_report (
         copyid VARCHAR(50) PRIMARY KEY,
         action VARCHAR(50),
@@ -117,6 +118,25 @@ function setup($conn): void
     
 ) ";
 
+    $ticket_table_create = "CREATE TABLE IF NOT EXISTS ticket(
+        ticket_id INT PRIMARY KEY AUTO_INCREMENT,
+        uuid VARCHAR(255),
+        FOREIGN KEY (uuid) REFERENCES users(uuid),
+        is_admin_responses BOOLEAN
+    );";
+
+    $messages_table_create = "CREATE TABLE IF NOT EXISTS messages(
+        msg_id INT PRIMARY KEY AUTO_INCREMENT,
+        ticket_id INT,
+        FOREIGN KEY (ticket_id) REFERENCES ticket(ticket_id),
+        sender_uuid VARCHAR(255),
+        FOREIGN KEY (sender_uuid) REFERENCES users(uuid),
+        content text(5000),
+        time TIMESTAMP
+    );";
+
+
+
 
     //if table not exists create table
     if (!($conn->query($users_table_create) === TRUE)) {
@@ -150,6 +170,14 @@ function setup($conn): void
     if (!($conn->query($schedules_table_create) === TRUE)) {
         echo "Error creating table: " . $conn->error . "<br>";
     }
+    if (!($conn->query($ticket_table_create) === TRUE)) {
+        echo "Error creating table: " . $conn->error . "<br>";
+    }
+    
+    if (!($conn->query($messages_table_create) === TRUE)) {
+        echo "Error creating table: " . $conn->error . "<br>";
+    }
+
 
   //report part
      if (!($conn->query($Books_report_table_create) === TRUE)) {
@@ -181,4 +209,5 @@ function setup($conn): void
     }
 
 }
+
 
