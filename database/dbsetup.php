@@ -135,6 +135,24 @@ function setup($conn): void
         time TIMESTAMP
     );";
 
+    $ratings_table_create = "CREATE TABLE IF NOT EXISTS ratings (
+        rating_id INT AUTO_INCREMENT PRIMARY KEY,
+        book_id VARCHAR(255),
+        user_id VARCHAR(255),
+        rating INT,
+        FOREIGN KEY (book_id) REFERENCES books(bookid),
+        FOREIGN KEY (user_id) REFERENCES users(uuid)
+    );";
+
+    $transactions_table_create = "CREATE TABLE IF NOT EXISTS transactions (
+        transaction_id INT AUTO_INCREMENT PRIMARY KEY,
+        book_id VARCHAR(255),
+        user_id VARCHAR(255),
+        type ENUM('checkout', 'return'),
+        date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (book_id) REFERENCES books(bookid),
+        FOREIGN KEY (user_id) REFERENCES users(uuid)
+    );";
 
 
 
@@ -208,6 +226,16 @@ function setup($conn): void
         echo "Error creating table: " . $conn->error . "<br>";
     }
 
-}
+    //ratings
 
+    if (!($conn->query($ratings_table_create) === TRUE)) {
+        echo "Error creating table: " . $conn->error . "<br>";
+    }
+
+    if (!($conn->query($transactions_table_create) === TRUE)) {
+        echo "Error creating table: " . $conn->error . "<br>";
+    }
+    
+
+}
 
