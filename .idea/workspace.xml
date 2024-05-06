@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fec76f0e-468f-4997-8373-29fc1e950206" name="Changes" comment="updated config.php">
+      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
+    <include_path>
+      <path value="$USER_HOME$/Downloads/php-8.3.4-nts-Win32-vs16-x64" />
+      <path value="$PROJECT_DIR$/../../../../php" />
+    </include_path>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2doh5URXQxQS7wYfQC1aL5QEkm3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;PHP Script.index.php.executor&quot;: &quot;Run&quot;,
+    &quot;PHP Script.login.php.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Kasun/PhpstormProjects/webapp/admin&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Kasun\PhpstormProjects\webapp\admin" />
+      <recent name="C:\Users\Kasun\PhpstormProjects\webapp\session" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Kasun\PhpstormProjects\webapp\admin" />
+      <recent name="C:\Users\Kasun\PhpstormProjects\webapp\unfinished" />
+      <recent name="C:\Users\Kasun\PhpstormProjects\webapp\style" />
+      <recent name="C:\Users\Kasun\PhpstormProjects\webapp\unfinished\abandoned" />
+      <recent name="C:\Users\Kasun\PhpstormProjects\webapp\images" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="index.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/index.php">
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14808.18" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fec76f0e-468f-4997-8373-29fc1e950206" name="Changes" comment="" />
+      <created>1710680155637</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710680155637</updated>
+      <workItem from="1710680159839" duration="757000" />
+      <workItem from="1712673226783" duration="691000" />
+      <workItem from="1712673928619" duration="221000" />
+      <workItem from="1712674158500" duration="1719000" />
+      <workItem from="1712833173119" duration="513000" />
+      <workItem from="1712836021859" duration="954000" />
+      <workItem from="1712836988422" duration="1818000" />
+      <workItem from="1712852088155" duration="5032000" />
+      <workItem from="1712857137051" duration="712000" />
+      <workItem from="1712857860031" duration="11185000" />
+      <workItem from="1712893263697" duration="12026000" />
+      <workItem from="1712926347947" duration="6118000" />
+      <workItem from="1712975426260" duration="19684000" />
+      <workItem from="1713060832294" duration="4980000" />
+      <workItem from="1713100033192" duration="7738000" />
+      <workItem from="1713152073042" duration="5259000" />
+      <workItem from="1713190560446" duration="9449000" />
+      <workItem from="1713277307242" duration="1379000" />
+      <workItem from="1713317233310" duration="1064000" />
+      <workItem from="1713370250648" duration="20154000" />
+      <workItem from="1713452982294" duration="844000" />
+      <workItem from="1713453838221" duration="12754000" />
+      <workItem from="1713524198452" duration="9448000" />
+      <workItem from="1713615440405" duration="21995000" />
+      <workItem from="1713686513709" duration="11681000" />
+      <workItem from="1713793276933" duration="14218000" />
+      <workItem from="1713869605850" duration="8359000" />
+      <workItem from="1714202901688" duration="2988000" />
+      <workItem from="1714217654624" duration="523000" />
+      <workItem from="1714281129497" duration="5980000" />
+      <workItem from="1714309705920" duration="2028000" />
+      <workItem from="1714571734314" duration="1216000" />
+      <workItem from="1714668168637" duration="5718000" />
+      <workItem from="1714679211616" duration="901000" />
+      <workItem from="1714680123340" duration="13779000" />
+      <workItem from="1714726421052" duration="7842000" />
+      <workItem from="1714736554468" duration="10249000" />
+      <workItem from="1714764982672" duration="10352000" />
+      <workItem from="1714800531339" duration="698000" />
+      <workItem from="1714848762233" duration="1403000" />
+      <workItem from="1714923185682" duration="2008000" />
+      <workItem from="1714989310197" duration="1418000" />
+    </task>
+    <task id="LOCAL-00072" summary="updated index.php">
+      <option name="closed" value="true" />
+      <created>1713532248093</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1713532248093</updated>
+    </task>
+    <task id="LOCAL-00073" summary="[UNSTABLE] scheduler v1 ready for testing">
+      <option name="closed" value="true" />
+      <created>1713618503154</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1713618503154</updated>
+    </task>
+    <task id="LOCAL-00074" summary="[UNSTABLE] fixed schduler v1 table creation issue">
+      <option name="closed" value="true" />
+      <created>1713618703568</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1713618703568</updated>
+    </task>
+    <task id="LOCAL-00075" summary="[UNSTABLE Fixed some reservation issues">
+      <option name="closed" value="true" />
+      <created>1713619841621</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1713619841621</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Book page issue fixed">
+      <option name="closed" value="true" />
+      <created>1713620703030</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1713620703030</updated>
+    </task>
+    <task id="LOCAL-00077" summary="updated reservation system">
+      <option name="closed" value="true" />
+      <created>1713621265389</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1713621265389</updated>
+    </task>
+    <task id="LOCAL-00078" summary="epoch issue fixed">
+      <option name="closed" value="true" />
+      <created>1713622943173</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1713622943173</updated>
+    </task>
+    <task id="LOCAL-00079" summary="abanded custom session token and ban system">
+      <option name="closed" value="true" />
+      <created>1713625380955</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1713625380955</updated>
+    </task>
+    <task id="LOCAL-00080" summary="fixed login page issue">
+      <option name="closed" value="true" />
+      <created>1713628611213</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1713628611213</updated>
+    </task>
+    <task id="LOCAL-00081" summary="[STABLE] Added User Dashboard V1">
+      <option name="closed" value="true" />
+      <created>1713637440850</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1713637440850</updated>
+    </task>
+    <task id="LOCAL-00082" summary="[STABLE] User Dashboard small fixes">
+      <option name="closed" value="true" />
+      <created>1713638213083</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1713638213083</updated>
+    </task>
+    <task id="LOCAL-00083" summary="fixed logout token issue">
+      <option name="closed" value="true" />
+      <created>1713638394855</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1713638394855</updated>
+    </task>
+    <task id="LOCAL-00084" summary="fixed reservation time issues">
+      <option name="closed" value="true" />
+      <created>1713688223901</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1713688223902</updated>
+    </task>
+    <task id="LOCAL-00085" summary="fixed missing imports issue">
+      <option name="closed" value="true" />
+      <created>1713688626468</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1713688626468</updated>
+    </task>
+    <task id="LOCAL-00086" summary="called schedular in dashboard for more accurate results">
+      <option name="closed" value="true" />
+      <created>1713688876375</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1713688876375</updated>
+    </task>
+    <task id="LOCAL-00087" summary="changed user role to Member">
+      <option name="closed" value="true" />
+      <created>1713690191156</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1713690191156</updated>
+    </task>
+    <task id="LOCAL-00088" summary="added admin panel">
+      <option name="closed" value="true" />
+      <created>1713691182696</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1713691182696</updated>
+    </task>
+    <task id="LOCAL-00089" summary="perm issue fixed">
+      <option name="closed" value="true" />
+      <created>1713692454275</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1713692454275</updated>
+    </task>
+    <task id="LOCAL-00090" summary="perm config updated">
+      <option name="closed" value="true" />
+      <created>1713692475417</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1713692475417</updated>
+    </task>
+    <task id="LOCAL-00091" summary="updated user dashboard to show user id">
+      <option name="closed" value="true" />
+      <created>1713692730866</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1713692730866</updated>
+    </task>
+    <task id="LOCAL-00092" summary="fixed permission issue in reservations">
+      <option name="closed" value="true" />
+      <created>1713693840478</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1713693840479</updated>
+    </task>
+    <task id="LOCAL-00093" summary="identified and resoulved the dangers that are assoicated with web crawlers (Turnitin)&#10;&#10;https://www.turnitin.com/robot/crawlerinfo.html#:~:text=To%20exclude%20TurnitinBot%20from%20all%20or%20portions%20of,the%20top%20most%20directory%20of%20your%20web%20site.">
+      <option name="closed" value="true" />
+      <created>1713712194193</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1713712194194</updated>
+    </task>
+    <task id="LOCAL-00094" summary="added comment to robots.txt">
+      <option name="closed" value="true" />
+      <created>1713712283826</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1713712283826</updated>
+    </task>
+    <task id="LOCAL-00095" summary="refactored book page">
+      <option name="closed" value="true" />
+      <created>1713794221977</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1713794221978</updated>
+    </task>
+    <task id="LOCAL-00096" summary="fixed books styling issues">
+      <option name="closed" value="true" />
+      <created>1713798728962</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1713798728963</updated>
+    </task>
+    <task id="LOCAL-00097" summary="removed unused index css">
+      <option name="closed" value="true" />
+      <created>1713799601491</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1713799601492</updated>
+    </task>
+    <task id="LOCAL-00098" summary="linked books to book and header.php">
+      <option name="closed" value="true" />
+      <created>1713799686840</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1713799686841</updated>
+    </task>
+    <task id="LOCAL-00099" summary="fixed books alignment issues in mobile view">
+      <option name="closed" value="true" />
+      <created>1713800214531</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1713800214531</updated>
+    </task>
+    <task id="LOCAL-00100" summary="[UNSTABLE] intergrated books to backend">
+      <option name="closed" value="true" />
+      <created>1713801206843</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1713801206843</updated>
+    </task>
+    <task id="LOCAL-00101" summary="fixed Overflow issue in books mobile view">
+      <option name="closed" value="true" />
+      <created>1713810255597</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1713810255597</updated>
+    </task>
+    <task id="LOCAL-00102" summary="[EXPERIMENTAL] added simple sql like search stmt">
+      <option name="closed" value="true" />
+      <created>1713810877495</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1713810877495</updated>
+    </task>
+    <task id="LOCAL-00103" summary="[UNSTABLE] SEARCHING PROTOTYPE V1">
+      <option name="closed" value="true" />
+      <created>1713812480371</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1713812480371</updated>
+    </task>
+    <task id="LOCAL-00104" summary="[UNSTABLE] SEARCHING PROTOTYPE V1 testing">
+      <option name="closed" value="true" />
+      <created>1713812859385</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1713812859385</updated>
+    </task>
+    <task id="LOCAL-00105" summary="[STABLE] BOOK SEARCH V2 - Working Prototype">
+      <option name="closed" value="true" />
+      <created>1713872431248</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1713872431249</updated>
+    </task>
+    <task id="LOCAL-00106" summary="fixed small styling issues in books.php">
+      <option name="closed" value="true" />
+      <created>1713872808435</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1713872808435</updated>
+    </task>
+    <task id="LOCAL-00107" summary="reserve button feedback">
+      <option name="closed" value="true" />
+      <created>1713873323503</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1713873323503</updated>
+    </task>
+    <task id="LOCAL-00108" summary="dashboard book links and styling issues fixed">
+      <option name="closed" value="true" />
+      <created>1713873833476</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1713873833476</updated>
+    </task>
+    <task id="LOCAL-00109" summary="dashboard book links and styling issues fixed">
+      <option name="closed" value="true" />
+      <created>1713874027638</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1713874027639</updated>
+    </task>
+    <task id="LOCAL-00110" summary="fixed some issues in book display and reservations">
+      <option name="closed" value="true" />
+      <created>1713874616425</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1713874616425</updated>
+    </task>
+    <task id="LOCAL-00111" summary="admin dashboard perm check">
+      <option name="closed" value="true" />
+      <created>1713876177008</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1713876177008</updated>
+    </task>
+    <task id="LOCAL-00112" summary="admin sidebar completed&#10;admin panel home layout completed">
+      <option name="closed" value="true" />
+      <created>1714684742253</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1714684742254</updated>
+    </task>
+    <task id="LOCAL-00113" summary="started intergrating add book">
+      <option name="closed" value="true" />
+      <created>1714685161997</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1714685161997</updated>
+    </task>
+    <task id="LOCAL-00114" summary="fixed sidebar height issue">
+      <option name="closed" value="true" />
+      <created>1714685315836</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1714685315837</updated>
+    </task>
+    <task id="LOCAL-00115" summary="first successful prototype of add book page">
+      <option name="closed" value="true" />
+      <created>1714690060661</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1714690060661</updated>
+    </task>
+    <task id="LOCAL-00116" summary="working prototype of update book without copy editing part">
+      <option name="closed" value="true" />
+      <created>1714693119856</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1714693119856</updated>
+    </task>
+    <task id="LOCAL-00117" summary="working prototype of update book with copy editing part">
+      <option name="closed" value="true" />
+      <created>1714759259995</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1714759259995</updated>
+    </task>
+    <task id="LOCAL-00118" summary="whitespace removal">
+      <option name="closed" value="true" />
+      <created>1714762338885</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1714762338885</updated>
+    </task>
+    <task id="LOCAL-00119" summary="working prototype of checkout.php">
+      <option name="closed" value="true" />
+      <created>1714800628308</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1714800628308</updated>
+    </task>
+    <task id="LOCAL-00120" summary="updated config.php">
+      <option name="closed" value="true" />
+      <created>1714990583236</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1714990583236</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="refactored book page" />
+    <MESSAGE value="fixed books styling issues" />
+    <MESSAGE value="removed unused index css" />
+    <MESSAGE value="linked books to book and header.php" />
+    <MESSAGE value="fixed books alignment issues in mobile view" />
+    <MESSAGE value="[UNSTABLE] intergrated books to backend" />
+    <MESSAGE value="fixed Overflow issue in books mobile view" />
+    <MESSAGE value="[EXPERIMENTAL] added simple sql like search stmt" />
+    <MESSAGE value="[UNSTABLE] SEARCHING PROTOTYPE V1" />
+    <MESSAGE value="[UNSTABLE] SEARCHING PROTOTYPE V1 testing" />
+    <MESSAGE value="[STABLE] BOOK SEARCH V2 - Working Prototype" />
+    <MESSAGE value="fixed small styling issues in books.php" />
+    <MESSAGE value="reserve button feedback" />
+    <MESSAGE value="dashboard book links and styling issues fixed" />
+    <MESSAGE value="fixed some issues in book display and reservations" />
+    <MESSAGE value="admin dashboard perm check" />
+    <MESSAGE value="admin sidebar completed&#10;admin panel home layout completed" />
+    <MESSAGE value="started intergrating add book" />
+    <MESSAGE value="fixed sidebar height issue" />
+    <MESSAGE value="first successful prototype of add book page" />
+    <MESSAGE value="working prototype of update book without copy editing part" />
+    <MESSAGE value="working prototype of update book with copy editing part" />
+    <MESSAGE value="whitespace removal" />
+    <MESSAGE value="working prototype of checkout.php" />
+    <MESSAGE value="updated config.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated config.php" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
