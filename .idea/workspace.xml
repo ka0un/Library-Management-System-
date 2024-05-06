@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a426cd7-99c1-49b2-9ba4-ccf91bec19dc" name="Changes" comment="report table">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reportpage/Reserved_books.php" beforeDir="false" afterPath="$PROJECT_DIR$/Reportpage/Reserved_books.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reportpage/report_table_data_entry.php" beforeDir="false" afterPath="$PROJECT_DIR$/Reportpage/report_table_data_entry.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/addbook.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/addbook.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/checkout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/return.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/return.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/updatebook.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/updatebook.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book.php" beforeDir="false" afterPath="$PROJECT_DIR$/book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/sidebar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
-    </list>
+    <list default="true" id="6a426cd7-99c1-49b2-9ba4-ccf91bec19dc" name="Changes" comment="report table" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -180,7 +166,8 @@
       <workItem from="1714880653388" duration="16546000" />
       <workItem from="1714913479409" duration="4797000" />
       <workItem from="1714921360483" duration="184000" />
-      <workItem from="1714924874067" duration="1120000" />
+      <workItem from="1714924874067" duration="1294000" />
+      <workItem from="1714960277249" duration="1969000" />
     </task>
     <task id="LOCAL-00001" summary="report table">
       <option name="closed" value="true" />
@@ -206,7 +193,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714817791654</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="report table">
+      <option name="closed" value="true" />
+      <created>1714926894874</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714926894876</updated>
+    </task>
+    <task id="LOCAL-00005" summary="report table">
+      <option name="closed" value="true" />
+      <created>1714926908023</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714926908023</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

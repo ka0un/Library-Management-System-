@@ -35,7 +35,7 @@ require_once __DIR__ . '/../config.php';
                         <form action='report_page.php' method='post'>
                             <label >DURATION</label><br><br>
                             <label>Start date </label> <input type ="date" name='startDate'><br><br>
-                            <label>End date </label> <input type ="date" name="endDate"><br>
+                            <label>End date </label> <input type ="date" name='endDate'><br>
                             <input type ="submit" value ="Get Details" name='submit_duration'>
                         </form>
                     </div>
@@ -98,7 +98,7 @@ require_once __DIR__ . '/../config.php';
 
                         <div class="Action">Returned Books -<div class="count">15</div><form action='Returned_books.php?startdate=<?php echo urlencode($startDate); ?>&enddate=<?php echo urlencode($endDate); ?>' method="get"><input type ="submit" value="View" name ="return"></form></div>
                         <div class="Action">Reserved Books -<div class="count">5</div><form action='Reserved_books.php?startdate=<?php echo urlencode($startDate); ?>&enddate=<?php echo urlencode($endDate); ?>' method="get"><input type ="submit" value="View" name ="reserve"></form></div>
-                        /*<div class="Action">Overdue Books  -<div class="count">3</div><form ><input type ="submit" value="View"></form></div>*/
+                        <div class="Action">Overdue Books  -<div class="count">3</div><form ><input type ="submit" value="View"></form></div>
 
 
 
