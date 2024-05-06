@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fec76f0e-468f-4997-8373-29fc1e950206" name="Changes" comment="Ignored exceptions of statistics system.">
+    <list default="true" id="fec76f0e-468f-4997-8373-29fc1e950206" name="Changes" comment="added requre_once to kavindu's submission">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/updatebook.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/updatebook.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/sidebar.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,15 +146,7 @@
       <workItem from="1714800531339" duration="698000" />
       <workItem from="1714848762233" duration="1403000" />
       <workItem from="1714923185682" duration="2008000" />
-      <workItem from="1714989310197" duration="3248000" />
-    </task>
-    <task id="LOCAL-00075" summary="[UNSTABLE Fixed some reservation issues">
-      <option name="closed" value="true" />
-      <created>1713619841621</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1713619841621</updated>
+      <workItem from="1714989310197" duration="3856000" />
     </task>
     <task id="LOCAL-00076" summary="Book page issue fixed">
       <option name="closed" value="true" />
@@ -540,7 +532,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714992528639</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="added requre_once to kavindu's submission">
+      <option name="closed" value="true" />
+      <created>1714993448826</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1714993448827</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -558,7 +558,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="removed unused index css" />
     <MESSAGE value="linked books to book and header.php" />
     <MESSAGE value="fixed books alignment issues in mobile view" />
     <MESSAGE value="[UNSTABLE] intergrated books to backend" />
@@ -583,7 +582,8 @@
     <MESSAGE value="updated config.php" />
     <MESSAGE value="dropping days constant" />
     <MESSAGE value="Ignored exceptions of statistics system." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ignored exceptions of statistics system." />
+    <MESSAGE value="added requre_once to kavindu's submission" />
+    <option name="LAST_COMMIT_MESSAGE" value="added requre_once to kavindu's submission" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
