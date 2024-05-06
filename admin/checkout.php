@@ -312,8 +312,11 @@ function display_checkout($userid, $copyid)
     if (isset($_POST['checkout'])){
 
         add_checkout($copyid, $userid);
-        add_checkout_report($copyid, $userid);
-        staff_action_with_book($_SESSION['uuid'],$copyid,'Checkout');
+
+        try{
+            add_checkout_report($copyid, $userid);
+            staff_action_with_book($_SESSION['uuid'],$copyid,'Checkout');
+        } catch (Exception $ignored) {}
 
         //if copy is reserved, invalidate reservation
         if (is_user_reserved_book($userid, get_copy_bookid($copyid))){

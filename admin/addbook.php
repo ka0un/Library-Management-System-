@@ -90,7 +90,6 @@ if (isset($_POST['submit'])) {
     $number = $_POST['number'];
 
     $bookid = generate_bookID();
-    staff_action_with_book($_SESSION['uuid'],$bookid,'AddBook');
 
     //checks if category exists if yes use that id
     $categoryid = null;
@@ -115,6 +114,10 @@ if (isset($_POST['submit'])) {
     }
 
     add_book($bookid, $title, $author, $isbn,0, $description, $categoryid);
+
+    try {
+        staff_action_with_book($_SESSION['uuid'],$bookid,'AddBook');
+    } catch (Exception $ignored) {}
 
     for ($i = 0; $i < $number; $i++) {
         add_copy(generate_copyID(), $bookid, 0, 0, "good");

@@ -187,7 +187,10 @@ include( __DIR__ . '/../components/sidebar.php');
                 }
             }
 
-            staff_action_with_book($_SESSION['uuid'],$bookid,'Update');
+            try{
+                staff_action_with_book($_SESSION['uuid'],$bookid,'Update');
+            }catch (Exception $ignored) {}
+
             update_book($bookid, $title, $author, $isbn, get_book_reservations($bookid),$description, $categoryid);
 
             echo '<script>window.location = "updatebook.php?bookid=' . $bookid . '"</script>';
@@ -211,13 +214,20 @@ include( __DIR__ . '/../components/sidebar.php');
 
             //delete copies
             foreach ($copies as $copyid) {
-                staff_action_with_book($_SESSION['uuid'],$copyid,'Remove');
+
+                try {
+                    staff_action_with_book($_SESSION['uuid'],$copyid,'Remove');
+                }catch (Exception $ignored) {}
+
                 remove_copy($copyid);
 
             }
 
             //delete book
-            staff_action_with_book($_SESSION['uuid'],$bookid,'Remove');
+            try {
+                staff_action_with_book($_SESSION['uuid'],$bookid,'Remove');
+            }catch (Exception $ignored) {}
+
             remove_book($bookid);
 
             echo '<script>window.location = "updatebook.php"</script>';
@@ -244,7 +254,11 @@ include( __DIR__ . '/../components/sidebar.php');
                 $status = 0;
                 $condition = "Good";
                 $pr = 0;
-                staff_action_with_book($_SESSION['uuid'],$copyid,'AddCopy');
+
+                try {
+                    staff_action_with_book($_SESSION['uuid'],$copyid,'AddCopy');
+                }catch (Exception $ignored) {}
+
                 add_copy($copyid, $bookid, $status, $pr, $condition);
             }
             //reload page
@@ -285,7 +299,11 @@ include( __DIR__ . '/../components/sidebar.php');
             $pr = $_POST['pr'];
 
             update_copy($copyid, $bookid, $status, $pr, $condition);
-            staff_action_with_book($_SESSION['uuid'],$bookid,'Update');
+
+            try{
+                staff_action_with_book($_SESSION['uuid'],$bookid,'Update');
+            }catch (Exception $ignored) {}
+
 
             echo '<script>window.location = "updatebook.php?bookid=' . $bookid . '"</script>';
         }
@@ -293,7 +311,11 @@ include( __DIR__ . '/../components/sidebar.php');
         //handle delete button
         if (isset($_POST['deletecopy'])) {
             $copyid = $_POST['copyid'];
-            staff_action_with_book($_SESSION['uuid'],$copyid,'Remove');
+
+            try{
+                staff_action_with_book($_SESSION['uuid'],$copyid,'Remove');
+            }catch (Exception $ignored) {}
+
             remove_copy($copyid);
 
 

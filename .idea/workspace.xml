@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fec76f0e-468f-4997-8373-29fc1e950206" name="Changes" comment="updated config.php">
-      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
+    <list default="true" id="fec76f0e-468f-4997-8373-29fc1e950206" name="Changes" comment="dropping days constant">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_2_56_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_2_56_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_2_56_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_2_56_PM__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/addbook.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/addbook.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/checkout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/return.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/return.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/updatebook.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/updatebook.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book.php" beforeDir="false" afterPath="$PROJECT_DIR$/book.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,23 +154,7 @@
       <workItem from="1714800531339" duration="698000" />
       <workItem from="1714848762233" duration="1403000" />
       <workItem from="1714923185682" duration="2008000" />
-      <workItem from="1714989310197" duration="1418000" />
-    </task>
-    <task id="LOCAL-00072" summary="updated index.php">
-      <option name="closed" value="true" />
-      <created>1713532248093</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1713532248093</updated>
-    </task>
-    <task id="LOCAL-00073" summary="[UNSTABLE] scheduler v1 ready for testing">
-      <option name="closed" value="true" />
-      <created>1713618503154</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1713618503154</updated>
+      <workItem from="1714989310197" duration="2356000" />
     </task>
     <task id="LOCAL-00074" summary="[UNSTABLE] fixed schduler v1 table creation issue">
       <option name="closed" value="true" />
@@ -539,7 +532,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714990583236</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="dropping days constant">
+      <option name="closed" value="true" />
+      <created>1714991489777</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1714991489777</updated>
+    </task>
+    <task id="LOCAL-00122" summary="dropping days constant">
+      <option name="closed" value="true" />
+      <created>1714991541073</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1714991541073</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,7 +566,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactored book page" />
     <MESSAGE value="fixed books styling issues" />
     <MESSAGE value="removed unused index css" />
     <MESSAGE value="linked books to book and header.php" />
@@ -582,7 +590,8 @@
     <MESSAGE value="whitespace removal" />
     <MESSAGE value="working prototype of checkout.php" />
     <MESSAGE value="updated config.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated config.php" />
+    <MESSAGE value="dropping days constant" />
+    <option name="LAST_COMMIT_MESSAGE" value="dropping days constant" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

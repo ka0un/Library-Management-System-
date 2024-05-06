@@ -2,7 +2,10 @@
 require_once __DIR__ . '/Reportpage/report_table_data_entry.php';
 session_start();
 
-userlogout($_SESSION["uuid"]);
+try{
+    userlogout($_SESSION["uuid"]);
+}catch (Exception $ignored){}
+
 $uuid = $_SESSION["uuid"];
 
 

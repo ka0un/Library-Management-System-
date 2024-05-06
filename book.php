@@ -175,7 +175,11 @@ generate_header([
 
                     if(can_user_reserve_book($uuid, $bookid)){
                         add_reservation($bookid, $uuid);
-                        add_reservation_report($bookid, $uuid);
+
+                        try{
+                            add_reservation_report($bookid, $uuid);
+                        }catch (Exception $ignored) {}
+
                         //Send to the dashboard
                         header('Location: /dashboard.php');
                         exit;

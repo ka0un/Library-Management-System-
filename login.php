@@ -54,7 +54,12 @@ if(isset($_POST["login"])){
                 $uuid = get_user_id($email);
 
                 $_SESSION["uuid"] = $uuid;
-                userlogin($_SESSION["uuid"]);
+
+                //stats
+                try{
+                    userlogin($_SESSION["uuid"]);
+                }catch (Exception $ignored){}
+
 
 
                 header("Location: /index.php");
