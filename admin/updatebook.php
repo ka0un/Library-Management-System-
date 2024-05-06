@@ -8,6 +8,8 @@ require_once __DIR__ . '/../sql/categories.php';
 require_once __DIR__ . '/../sql/books.php';
 require_once __DIR__ . '/../sql/copies.php';
 require_once __DIR__ . '/../Reportpage/report_table_data_entry.php';
+require_once __DIR__ . '/../sql/reservations.php';
+require_once __DIR__ . '/../sql/checkouts.php';
 
 if (!has_permission($_SESSION['uuid'], 'UPDATE_BOOK')) {
     header("Location: /index.php");
@@ -135,6 +137,8 @@ include( __DIR__ . '/../components/sidebar.php');
         //handle image edit
         // not done yet
 
+
+
         echo '</div>';
         echo '</div>';
 
@@ -224,10 +228,16 @@ include( __DIR__ . '/../components/sidebar.php');
 
             }
 
+            foreach (get_reservation_ids_of_book($bookid) as $reservationid) {
+                force_remove_reservation($reservationid);
+            }
+
             //delete book
             try {
                 staff_action_with_book($_SESSION['uuid'],$bookid,'Remove');
             }catch (Exception $ignored) {}
+
+
 
             remove_book($bookid);
 
