@@ -134,6 +134,20 @@ function get_checkout_id($copyid): string
     return $row['id'];
 }
 
+function get_force_checkout_id($copyid): string
+{
+    global $conn;
+    $sql = "SELECT id FROM checkouts WHERE copyid = ?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $copyid);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    mysqli_stmt_close($stmt);
+
+    $row = mysqli_fetch_assoc($result);
+    return $row['id'];
+}
+
 
 // getters
 function get_checkout_copyid($checkoutid): string

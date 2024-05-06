@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fec76f0e-468f-4997-8373-29fc1e950206" name="Changes" comment="rating fixes">
-      <change afterPath="$PROJECT_DIR$/storage/placeholder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/imagestorage.php" afterDir="false" />
+    <list default="true" id="fec76f0e-468f-4997-8373-29fc1e950206" name="Changes" comment="last">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/updatebook.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/updatebook.php" afterDir="false" />
     </list>
@@ -149,14 +147,8 @@
       <workItem from="1714848762233" duration="1403000" />
       <workItem from="1714923185682" duration="2008000" />
       <workItem from="1714989310197" duration="8933000" />
-    </task>
-    <task id="LOCAL-00078" summary="epoch issue fixed">
-      <option name="closed" value="true" />
-      <created>1713622943173</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1713622943173</updated>
+      <workItem from="1715002846350" duration="81000" />
+      <workItem from="1715012333319" duration="403000" />
     </task>
     <task id="LOCAL-00079" summary="abanded custom session token and ban system">
       <option name="closed" value="true" />
@@ -542,7 +534,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714998331760</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="last">
+      <option name="closed" value="true" />
+      <created>1715002913718</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1715002913718</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -560,7 +560,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[UNSTABLE] intergrated books to backend" />
     <MESSAGE value="fixed Overflow issue in books mobile view" />
     <MESSAGE value="[EXPERIMENTAL] added simple sql like search stmt" />
     <MESSAGE value="[UNSTABLE] SEARCHING PROTOTYPE V1" />
@@ -585,7 +584,8 @@
     <MESSAGE value="added requre_once to kavindu's submission" />
     <MESSAGE value="sidebar" />
     <MESSAGE value="rating fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="rating fixes" />
+    <MESSAGE value="last" />
+    <option name="LAST_COMMIT_MESSAGE" value="last" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

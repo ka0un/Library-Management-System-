@@ -224,6 +224,8 @@ include( __DIR__ . '/../components/sidebar.php');
                     staff_action_with_book($_SESSION['uuid'],$copyid,'Remove');
                 }catch (Exception $ignored) {}
 
+                force_remove_checkout(get_force_checkout_id($copyid));
+
                 remove_copy($copyid);
 
             }
