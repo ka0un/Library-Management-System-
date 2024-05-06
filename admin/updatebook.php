@@ -187,8 +187,9 @@ include( __DIR__ . '/../components/sidebar.php');
                 }
             }
 
-
+            staff_action_with_book($_SESSION['uuid'],$bookid,'Update');
             update_book($bookid, $title, $author, $isbn, get_book_reservations($bookid),$description, $categoryid);
+
             echo '<script>window.location = "updatebook.php?bookid=' . $bookid . '"</script>';
 
 
@@ -210,12 +211,17 @@ include( __DIR__ . '/../components/sidebar.php');
 
             //delete copies
             foreach ($copies as $copyid) {
+                staff_action_with_book($_SESSION['uuid'],$copyid,'Remove');
                 remove_copy($copyid);
+
             }
 
             //delete book
+            staff_action_with_book($_SESSION['uuid'],$bookid,'Remove');
             remove_book($bookid);
+
             echo '<script>window.location = "updatebook.php"</script>';
+
         }
 
         echo '</div>';
@@ -238,6 +244,7 @@ include( __DIR__ . '/../components/sidebar.php');
                 $status = 0;
                 $condition = "Good";
                 $pr = 0;
+                staff_action_with_book($_SESSION['uuid'],$copyid,'AddCopy');
                 add_copy($copyid, $bookid, $status, $pr, $condition);
             }
             //reload page
@@ -278,6 +285,7 @@ include( __DIR__ . '/../components/sidebar.php');
             $pr = $_POST['pr'];
 
             update_copy($copyid, $bookid, $status, $pr, $condition);
+            staff_action_with_book($_SESSION['uuid'],$bookid,'Update');
 
             echo '<script>window.location = "updatebook.php?bookid=' . $bookid . '"</script>';
         }
@@ -285,7 +293,9 @@ include( __DIR__ . '/../components/sidebar.php');
         //handle delete button
         if (isset($_POST['deletecopy'])) {
             $copyid = $_POST['copyid'];
+            staff_action_with_book($_SESSION['uuid'],$copyid,'Remove');
             remove_copy($copyid);
+
 
             echo '<script>window.location = "updatebook.php?bookid=' . $bookid . '"</script>';
         }

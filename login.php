@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/Reportpage/report_table_data_entry.php';
 
 session_start();
 if(isset($_SESSION["uuid"])){
@@ -53,6 +54,8 @@ if(isset($_POST["login"])){
                 $uuid = get_user_id($email);
 
                 $_SESSION["uuid"] = $uuid;
+                userlogin($_SESSION["uuid"]);
+
 
                 header("Location: /index.php");
                 die();

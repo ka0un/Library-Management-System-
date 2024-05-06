@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../sql/users.php';
 require_once __DIR__ . '/../auth/permission.php';
-session_start();
+
 ?>
 
 <style>
@@ -125,10 +125,20 @@ session_start();
         </a>';
     }
 
+
+
     if (has_permission($_SESSION['uuid'], 'RETURN')) {
         echo '<a href = "/../admin/return.php">
         <div class = "tab">
             Return
+        </div>
+        </a>';
+    }
+
+     if (has_permission($_SESSION['uuid'], 'CHECKOUT')) {
+        echo '<a href = "/../Reportpage/report_table_data_entry.php">
+        <div class = "tab">
+            Reports
         </div>
         </a>';
     }
