@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fec76f0e-468f-4997-8373-29fc1e950206" name="Changes" comment="dropping days constant">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_2_56_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_2_56_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_2_56_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_2_56_PM__Changes_1.xml" afterDir="false" />
+    <list default="true" id="fec76f0e-468f-4997-8373-29fc1e950206" name="Changes" comment="Ignored exceptions of statistics system.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/addbook.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/addbook.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/checkout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/return.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/return.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/updatebook.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/updatebook.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book.php" beforeDir="false" afterPath="$PROJECT_DIR$/book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,15 +146,7 @@
       <workItem from="1714800531339" duration="698000" />
       <workItem from="1714848762233" duration="1403000" />
       <workItem from="1714923185682" duration="2008000" />
-      <workItem from="1714989310197" duration="2356000" />
-    </task>
-    <task id="LOCAL-00074" summary="[UNSTABLE] fixed schduler v1 table creation issue">
-      <option name="closed" value="true" />
-      <created>1713618703568</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1713618703568</updated>
+      <workItem from="1714989310197" duration="3248000" />
     </task>
     <task id="LOCAL-00075" summary="[UNSTABLE Fixed some reservation issues">
       <option name="closed" value="true" />
@@ -548,7 +532,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714991541073</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="Ignored exceptions of statistics system.">
+      <option name="closed" value="true" />
+      <created>1714992528639</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1714992528639</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,7 +558,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed books styling issues" />
     <MESSAGE value="removed unused index css" />
     <MESSAGE value="linked books to book and header.php" />
     <MESSAGE value="fixed books alignment issues in mobile view" />
@@ -591,7 +582,8 @@
     <MESSAGE value="working prototype of checkout.php" />
     <MESSAGE value="updated config.php" />
     <MESSAGE value="dropping days constant" />
-    <option name="LAST_COMMIT_MESSAGE" value="dropping days constant" />
+    <MESSAGE value="Ignored exceptions of statistics system." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ignored exceptions of statistics system." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

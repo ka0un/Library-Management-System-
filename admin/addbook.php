@@ -7,6 +7,7 @@ require_once __DIR__ . '/../components/header.php';
 require_once __DIR__ . '/../sql/categories.php';
 require_once __DIR__ . '/../sql/books.php';
 require_once __DIR__ . '/../sql/copies.php';
+require_once __DIR__ . '/../Reportpage/report_table_data_entry.php';
 
 if (!has_permission($_SESSION['uuid'], 'ADD_BOOK')) {
     header("Location: /index.php");
