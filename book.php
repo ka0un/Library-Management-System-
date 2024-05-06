@@ -1,19 +1,27 @@
 <?php
-require_once _DIR_ . '/components/header.php';
-require_once _DIR_ . '/config.php';
-require_once _DIR_ . '/sql/books.php';
-require_once _DIR_ . '/sql/copies.php';
-require_once _DIR_ . '/sql/reservations.php';
-require_once _DIR_ . '/validators/checkout.php';
-require_once _DIR_ . '/validators/reservation.php';
-require_once _DIR_ . '/sql/checkouts.php';
-require_once _DIR_ . '/sql/categories.php';
-require_once _DIR_ . '/schedules/sheduler.php';
+require_once __DIR__ . '/components/header.php';
+require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/sql/books.php';
+require_once __DIR__ . '/sql/copies.php';
+require_once __DIR__ . '/sql/reservations.php';
+require_once __DIR__ . '/validators/checkout.php';
+require_once __DIR__ . '/validators/reservation.php';
+require_once __DIR__ . '/sql/checkouts.php';
+require_once __DIR__ . '/sql/categories.php';
+require_once __DIR__ . '/schedules/sheduler.php';
+require_once __DIR__ . '/Reportpage/report_table_data_entry.php';
+?>
 
-$bookid = 'B0000001';
-if (isset($_GET['id'])) {
-    $bookid = $_GET['id'];
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Page</title>
+    <link rel="stylesheet" href="style/book.php">
+</head>
+<body bgcolor="<?php echo SECONDARY_COLOR;?>">
+<?php
 
 $book_title = get_book_title($bookid);
 
@@ -31,21 +39,22 @@ function get_average_rating($bookid) {
 
 $average_rating = get_average_rating($bookid);
 
+$bookid = 'B0000001';
+
+if(isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $bookid = $id;
+}
+
+$book_title = get_book_title($bookid);
+
 generate_header([
     ['url' => '/books.php', 'text' => 'Books'],
     ['url' => '#', 'text' => $book_title]
 ]);
-?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Page</title>
-    <link rel="stylesheet" href="style/book.php">
-</head>
-<body bgcolor="<?php echo SECONDARY_COLOR;?>">
+
+?>
     <div class="book-container">
         <div class="book-image">
             <img src="<?php echo get_book_image($bookid); ?>" alt="Book Cover">
@@ -57,7 +66,7 @@ generate_header([
                     <span><?php echo get_categroy_name(get_book_category_id($bookid)); ?></span>
                 </div>
                 <div class="book-title">
-                    <h1><?php echo $book_title; ?></h1>
+                    <h1><?php echo get_book_title($bookid); ?></h1>
                     <h2>Average Rating: <?php echo $average_rating; ?></h2>
                 </div>
                 <div class="book-author">
@@ -69,6 +78,7 @@ generate_header([
                 </div>
             </div>
             <div class="book-actions">
+
                 <?php
                 // if the user is not logged in, show a message to login
                 if(!isset($_SESSION['uuid'])) {
@@ -96,7 +106,7 @@ generate_header([
 
                     if ($is_user_checked_out) {
 
-                        $checkout_id = get_checkout_id($_SESSION['uuid'], $checkouted_copyid);
+                        $checkout_id = get_checkout_id($checkouted_copyid);
                         $checkout_copy_id = get_checkout_copyid($checkout_id);
 
                         //get checkout start date
@@ -105,21 +115,15 @@ generate_header([
                         //get checkout start timestamp
                         $checkout_start_timestamp = strtotime($checkout_start_date);
 
-                        //get amount of days left for checkout
-                        $amount_of_chekout_days_left = ($checkout_start_timestamp + (MAX_CHECKOUT_DAYS * 24 * 60 * 60) - time()) / (24 * 60 * 60);
 
                         //if the amount of days left is less than 0, the user has exceeded the checkout limit
-                        if ($amount_of_chekout_days_left < 0) {
-
-                            $exceeded_amount_of_days = abs($amount_of_chekout_days_left);
-                            $fine = $exceeded_amount_of_days * FINE_PER_DAY;
+                        if (get_checkout_time_left_seconds($checkout_id) < 0) {
                             echo '<div class="description">
-                            <span>You have exceeded max day limit!</span>
+                            <span>You have exceeded checkout time limit!</span>
                             <span>Copy ID : '. $checkouted_copyid . '</span>
-                            <span>Days Exceeded : '. $exceeded_amount_of_days . '</span>
-                            <span>Fine : '. $fine . '</span>
+                            <span>Days Exceeded : '. get_checkout_exceeded_days($checkout_id) . '</span>
+                            <span>Fine : '. get_checkout_fine($checkout_id) . '</span>
                         </div>';
-
 
                         }else{
 
@@ -127,7 +131,7 @@ generate_header([
                         <span>You have already checked out a copy of this book!</span>
                         <span>Copy ID : '. $checkouted_copyid . '</span>
                         <span>Checkout Start Date : '. $checkout_start_date . '</span>
-                        <span>Days Left : '. $amount_of_chekout_days_left . '</span>
+                        <span>Time Left : '. get_checkout_time_left_string($checkout_id) . '</span>
                     </div>
                         
                         ';
@@ -188,6 +192,11 @@ generate_header([
 
                     if(can_user_reserve_book($uuid, $bookid)){
                         add_reservation($bookid, $uuid);
+
+                        try{
+                            add_reservation_report($bookid, $uuid);
+                        }catch (Exception $ignored) {}
+
                         //Send to the dashboard
                         header('Location: /dashboard.php');
                         exit;
@@ -200,6 +209,7 @@ generate_header([
 
                 }
                 ?>
+
             </div>
         </div>
     </div>
