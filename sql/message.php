@@ -125,4 +125,15 @@ function get_array_of_msgids($ticket_id): array
     return $msgids;
 }
 
+function update_responses_column($ticket_id) 
+{
+    global $conn;
+    $sql="UPDATE ticket_table SET responses = CASE WHEN (SELECT COUNT(DISTINCT uuid) FROM ticket_table WHERE ticket_id = ?) > 2 THEN 1 ELSE 0 END WHERE ticket_id = ?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "ii", $ticket_id, $ticket_id);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+}
+
+
 ?>
