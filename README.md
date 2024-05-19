@@ -3,6 +3,7 @@
 
 Live Prototype : [https://prototype.hapangama.com](https://prototype.hapangama.com)
 
+> this project was abandoned and no longer will be maintained!
 
 ## Managing a Library Management System: Breaking Down Complexity
 
