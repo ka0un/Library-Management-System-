@@ -7,7 +7,7 @@ Live Prototype : [https://prototype.hapangama.com](https://prototype.hapangama.c
 
 ## Managing a Library Management System: Breaking Down Complexity
 
-> A library management system is complex, so we simplify it by breaking it into smaller parts called subsystems (Abstraction) . This makes it easier to build. We've divided our system into four main components.
+> A library management system is complex, so we simplify it by breaking it into smaller parts called subsystems (Decoupling) . This makes it easier to build. We've divided our system into four main components.
 
  - Frontend (User Interface)
 
