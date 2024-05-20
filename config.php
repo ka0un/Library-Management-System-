@@ -11,13 +11,14 @@
 //===================================================================
 
 
-const DB_HOST = "129.146.1.186"; /* Your Database Host (without port) */   /* localhost*/
+const DB_HOST = ""; /* Your Database Host (without port) */   /* localhost*/
 const DB_PORT = 3306; /* Your Database Port (usually 3306) */
-const DB_USERNAME = "u14_Rf6AAvsnO7"; /* Your Database Username */   /*root*/
-const DB_PASSWORD = "5!csXM+5^fke.XNpM=fIfI99"; /* Your Database Password */  /* ""*/
-const DB_DATABASE = "s14_main"; /* Your Database Name */   /*local*/
+const DB_USERNAME = ""; /* Your Database Username */   /*root*/
+const DB_PASSWORD = ""; /* Your Database Password */  /* ""*/
+const DB_DATABASE = ""; /* Your Database Name */   /*local*/
 const GENERATE_TABLES = true; /* Change this to false in a production env*/
 
+// yes passwords has been rotated alredy dont email me 😀
 
 //===================================================================
 //Limits configuration
