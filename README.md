@@ -56,3 +56,61 @@ Each of these parts can be constructed independently, yet they synergize to achi
 - Domain Retail [namechap.com](https://www.namecheap.com/)
 - Containerization [Docker](https://www.docker.com/)
 - Hosting-Web-Panel [Petrodactyl](https://pterodactyl.io/)
+
+# CI/CD and Deployment
+
+## Automated Testing and Deployment to Vercel
+
+This project is configured to automatically deploy to Vercel when code is merged to the `main` branch. Tests are run before deployment to ensure code quality.
+
+### Workflow Overview
+
+1. **Tests Run First**: When code is pushed to `main`, PHPUnit tests are automatically executed
+2. **Deployment on Success**: If all tests pass, the application is automatically deployed to Vercel
+3. **Deployment Blocked on Failure**: If any tests fail, deployment is prevented
+
+### Setup Instructions
+
+To enable automatic deployment, you need to configure the following GitHub Secrets:
+
+1. **VERCEL_TOKEN**: Your Vercel authentication token
+   - Go to [Vercel Account Tokens](https://vercel.com/account/tokens)
+   - Create a new token
+   - Add it as a GitHub secret named `VERCEL_TOKEN`
+
+2. **VERCEL_ORG_ID**: Your Vercel organization ID
+   - Run `vercel link` in your project directory
+   - Find the `orgId` in `.vercel/project.json`
+   - Add it as a GitHub secret named `VERCEL_ORG_ID`
+
+3. **VERCEL_PROJECT_ID**: Your Vercel project ID
+   - Run `vercel link` in your project directory
+   - Find the `projectId` in `.vercel/project.json`
+   - Add it as a GitHub secret named `VERCEL_PROJECT_ID`
+
+### Running Tests Locally
+
+```bash
+# Install dependencies
+composer install
+
+# Run tests
+composer test
+```
+
+### Manual Deployment to Vercel
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy to production
+vercel --prod
+```
+
+### Testing Infrastructure
+
+- **Framework**: PHPUnit 9.6
+- **Test Location**: `tests/` directory
+- **Configuration**: `phpunit.xml`
+- **Test Suite**: Basic tests to validate PHP environment and file structure

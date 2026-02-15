@@ -1,0 +1,21 @@
+# Dependencies
+/vendor/
+
+# PHPUnit
+.phpunit.result.cache
+
+# IDEs
+.idea/
+.vscode/
+
+# Vercel
+.vercel/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp files
+*.tmp
+*.temp
+*.log
