@@ -1,0 +1,21 @@
+{
+    "name": "ka0un/library-management-system",
+    "description": "Library Management System",
+    "type": "project",
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.6"
+    },
+    "autoload": {
+        "classmap": [
+            "database/",
+            "validators/",
+            "books_functions/"
+        ]
+    },
+    "scripts": {
+        "test": "phpunit --colors=always"
+    }
+}
