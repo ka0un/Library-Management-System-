@@ -1,4 +1,4 @@
-name: CI
+name: CI/CD Pipeline
 
 on:
   push:
@@ -21,8 +21,44 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # TODO: Replace with actual test commands
-      - name: Run tests
+      # Placeholder for Playwright JS tests
+      # TODO: Add Playwright test setup and execution
+      # When ready, uncomment and configure the following steps:
+      # - name: Setup Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: '18'
+      # 
+      # - name: Install Playwright dependencies
+      #   run: |
+      #     npm install
+      #     npx playwright install --with-deps
+      # 
+      # - name: Run Playwright tests
+      #   run: npm test
+      
+      - name: Placeholder - Tests will be added later
         run: |
-          echo "Running tests..."
+          echo "========================================="
+          echo "Placeholder for Playwright JS tests"
+          echo "Tests will be implemented in the future"
+          echo "========================================="
           echo "All tests passed!"
+
+  deploy:
+    name: Deploy to Vercel
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--prod'
